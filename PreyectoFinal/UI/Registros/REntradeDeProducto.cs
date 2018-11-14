@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PreyectoFinal
+namespace PreyectoFinal.UI.Registros
 {
-    public partial class Form1 : Form
+    public partial class REntradeDeProducto : Form
     {
-        public Form1()
+        public REntradeDeProducto()
         {
             InitializeComponent();
         }
