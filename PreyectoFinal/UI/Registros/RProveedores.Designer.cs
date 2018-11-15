@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +44,12 @@
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +105,7 @@
             this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "FechaDeEntrega";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // IDnumericUpDown
             // 
@@ -115,7 +120,7 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(373, 22);
             this.NombretextBox.TabIndex = 7;
-            this.NombretextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // DirecciontextBox
             // 
@@ -139,6 +144,7 @@
             this.Buscarbutton.TabIndex = 10;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // TelefonoMaskedTextBox
             // 
@@ -165,6 +171,7 @@
             this.Nuevobutton.TabIndex = 85;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Guardarbutton
             // 
@@ -174,22 +181,32 @@
             this.Guardarbutton.TabIndex = 86;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // button3
+            // Eliminarbutton
             // 
-            this.button3.Location = new System.Drawing.Point(361, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 33);
-            this.button3.TabIndex = 87;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Location = new System.Drawing.Point(361, 322);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(104, 33);
+            this.Eliminarbutton.TabIndex = 87;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // RProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 398);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.FechadateTimePicker);
@@ -208,6 +225,8 @@
             this.Name = "RProveedores";
             this.Text = "RProveedores";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +249,8 @@
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

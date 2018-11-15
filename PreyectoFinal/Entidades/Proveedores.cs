@@ -13,7 +13,7 @@ namespace PreyectoFinal.Entidades
         public int IDProveedor { get; set; }
         public string NombreProveedor { get; set; }
         public string Direccion { get; set; }
-        public int Telefono { get; set; }
+        public string Telefono { get; set; }
         public string Email { get; set; }
         public DateTime FechaProveedor { get; set; }
 
@@ -22,7 +22,7 @@ namespace PreyectoFinal.Entidades
             IDProveedor = 0;
      
             Direccion = string.Empty;
-            Telefono = 0;
+            Telefono = string.Empty;
             NombreProveedor = string.Empty;
             Email = string.Empty;
             FechaProveedor= DateTime.Now;
