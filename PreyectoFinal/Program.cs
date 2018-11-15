@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PreyectoFinal.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,14 @@ namespace PreyectoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Login lg = new Login();
+           
+            Application.Run(lg);
+            if(lg.DialogResult == DialogResult.OK)
+            {
+                lg.Dispose();
+                Application.Run(new Main());
+            }
         }
     }
 }

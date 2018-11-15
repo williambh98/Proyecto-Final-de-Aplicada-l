@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CantidadTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ProductoComboBox = new System.Windows.Forms.ComboBox();
@@ -37,7 +38,12 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CantidadTextBox
@@ -96,6 +102,7 @@
             this.GuardarButton.TabIndex = 63;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -107,6 +114,7 @@
             this.NuevoButton.TabIndex = 62;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
@@ -118,6 +126,7 @@
             this.BuscarButton.TabIndex = 61;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // label1
             // 
@@ -129,11 +138,50 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "EntradaId";
             // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(366, 40);
+            this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(115, 22);
+            this.FechaDateTimePicker.TabIndex = 70;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(362, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Fecha";
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EliminarButton.Location = new System.Drawing.Point(366, 199);
+            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(113, 28);
+            this.EliminarButton.TabIndex = 71;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // REntradeDeProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 272);
+            this.ClientSize = new System.Drawing.Size(509, 289);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.FechaDateTimePicker);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ProductoComboBox);
@@ -146,6 +194,7 @@
             this.Name = "REntradeDeProducto";
             this.Text = "REntradeDeProducto";
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +211,9 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

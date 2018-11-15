@@ -13,23 +13,15 @@ namespace PreyectoFinal.Entidades
         [Key]
 
         public int Id { get; set; }
-
         public int ArticuloID { get; set; }
-
         public double Cantidad { get; set; }
-
         public double Precio { get; set; }
-
         public double Importe { get; set; }
-
         public DateTime Fecha { get; set; }
-
-       /* [ForeignKey("FacturaId")]
-        public virtual Factura Factura { get; set; }*/
-
+        /*
         [ForeignKey("ProductoId")]
         public virtual Articulo Articulo { get; set; }
-
+        */
 
         public ArticuloDetalle()
         {

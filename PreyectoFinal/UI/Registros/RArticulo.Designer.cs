@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DepartamentoComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -45,17 +46,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ProductoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ArticuloIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.BuscarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
+            this.Addbutton = new System.Windows.Forms.Button();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // DepartamentoComboBox
             // 
             this.DepartamentoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DepartamentoComboBox.FormattingEnabled = true;
-            this.DepartamentoComboBox.Location = new System.Drawing.Point(137, 134);
+            this.DepartamentoComboBox.Location = new System.Drawing.Point(125, 128);
             this.DepartamentoComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.DepartamentoComboBox.Name = "DepartamentoComboBox";
             this.DepartamentoComboBox.Size = new System.Drawing.Size(209, 24);
@@ -64,7 +68,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 137);
+            this.label8.Location = new System.Drawing.Point(19, 131);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 17);
@@ -81,6 +85,7 @@
             this.EliminarButton.TabIndex = 97;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -92,6 +97,7 @@
             this.GuardarButton.TabIndex = 96;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -103,6 +109,7 @@
             this.NuevoButton.TabIndex = 95;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // FechaDateTimePicker
             // 
@@ -216,13 +223,13 @@
             this.label2.TabIndex = 83;
             this.label2.Text = "Descripción";
             // 
-            // ProductoIdNumericUpDown
+            // ArticuloIdNumericUpDown
             // 
-            this.ProductoIdNumericUpDown.Location = new System.Drawing.Point(109, 35);
-            this.ProductoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
-            this.ProductoIdNumericUpDown.Name = "ProductoIdNumericUpDown";
-            this.ProductoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
-            this.ProductoIdNumericUpDown.TabIndex = 82;
+            this.ArticuloIdNumericUpDown.Location = new System.Drawing.Point(109, 35);
+            this.ArticuloIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.ArticuloIdNumericUpDown.Name = "ArticuloIdNumericUpDown";
+            this.ArticuloIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
+            this.ArticuloIdNumericUpDown.TabIndex = 82;
             // 
             // label1
             // 
@@ -244,6 +251,20 @@
             this.BuscarButton.TabIndex = 80;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            // 
+            // Addbutton
+            // 
+            this.Addbutton.Location = new System.Drawing.Point(342, 128);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(33, 23);
+            this.Addbutton.TabIndex = 100;
+            this.Addbutton.Text = "+";
+            this.Addbutton.UseVisualStyleBackColor = true;
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // RArticulo
             // 
@@ -251,6 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(412, 374);
+            this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.DepartamentoComboBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.EliminarButton);
@@ -268,12 +290,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ProductoIdNumericUpDown);
+            this.Controls.Add(this.ArticuloIdNumericUpDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
             this.Name = "RArticulo";
             this.Text = "RArticulo";
-            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +321,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown ProductoIdNumericUpDown;
+        private System.Windows.Forms.NumericUpDown ArticuloIdNumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button Addbutton;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

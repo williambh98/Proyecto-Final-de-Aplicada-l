@@ -14,7 +14,7 @@ namespace PreyectoFinal.DAL
         public DbSet<Proveedores> Clientes { get; set; }
        // public DbSet<Cotizacion> Cotizacion { get; set; }
         public DbSet<CrearUsuario> Usuario { get; set; }
-
+        public DbSet<Entrada> Entrada { get; set; }
         public Contexto() : base("ConStr")
         {
 

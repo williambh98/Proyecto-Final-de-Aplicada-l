@@ -53,10 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ArticuloBLL.cs" />
+    <Compile Include="BLL\EntradaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
+    <Compile Include="Entidades\Departamento.cs" />
     <Compile Include="Entidades\Entrada.cs" />
     <Compile Include="Entidades\Inventario.cs" />
     <Compile Include="Entidades\Proveedores.cs" />
@@ -70,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +102,12 @@
     <Compile Include="UI\Registros\RNombreArticulo.Designer.cs">
       <DependentUpon>RNombreArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\RProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RProveedores.Designer.cs">
+      <DependentUpon>RProveedores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,7 +119,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RArticulo.resx">
       <DependentUpon>RArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RNombreArticulo.resx">
       <DependentUpon>RNombreArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RProveedores.resx">
+      <DependentUpon>RProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,6 +153,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\william.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

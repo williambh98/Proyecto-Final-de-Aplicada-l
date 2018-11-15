@@ -12,21 +12,16 @@ namespace PreyectoFinal.Entidades
         [Key]
 
         public int EntradaId { get; set; }
-
         public DateTime Fecha { get; set; }
-
         public int  ProvedorID { get; set; }
-
-        public int ProductoId { get; set; }
-
+        public int ArticuloID { get; set; }
         public double Cantidad { get; set; }
-
 
         public Entrada()
         {
             EntradaId = 0;
             Fecha = DateTime.Now;
-            ProductoId = 0;
+            ArticuloID = 0;
             Cantidad = 0;
             ProvedorID = 0;
         }

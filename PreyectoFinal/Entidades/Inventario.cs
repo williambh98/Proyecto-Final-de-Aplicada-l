@@ -15,5 +15,13 @@ namespace PreyectoFinal.Entidades
         public DateTime FechaInventario { get; set; }
         public decimal precio { get; set; }
 
+        public Inventario()
+        {
+            IDInveentario = 0;
+            Descripcion = string.Empty;
+            FechaInventario = DateTime.Now;
+            precio = 0;
+        }
+
     }
 }

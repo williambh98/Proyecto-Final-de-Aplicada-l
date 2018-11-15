@@ -13,15 +13,11 @@ namespace PreyectoFinal.Entidades
             [Key]
 
             public int UsuarioId { get; set; }
-
             public string Nombres { get; set; }
-
             public string NoTelefono { get; set; }
-
             public string Email { get; set; }
-
             public string Contraseña { get; set; }
-
+            public DateTime FechaCreacion { get; set; }
 
             public CrearUsuario()
             {
@@ -30,6 +26,7 @@ namespace PreyectoFinal.Entidades
                 NoTelefono = string.Empty;
                 Email = string.Empty;
                 Contraseña = string.Empty;
+                FechaCreacion = DateTime.Now;
             }
 
 
