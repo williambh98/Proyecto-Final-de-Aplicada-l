@@ -10,9 +10,10 @@ namespace PreyectoFinal.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Articulo>_Articulo { get; set; }
+        public DbSet<Articulo> _Articulo { get; set; }
+        public DbSet<Almacen> Almacen { get; set; }
         public DbSet<Proveedores> Clientes { get; set; }
-       // public DbSet<Cotizacion> Cotizacion { get; set; }
+        public DbSet<TipoArticulo> Tipo { get; set; }
         public DbSet<CrearUsuario> Usuario { get; set; }
         public DbSet<Entrada> Entrada { get; set; }
         public Contexto() : base("ConStr")

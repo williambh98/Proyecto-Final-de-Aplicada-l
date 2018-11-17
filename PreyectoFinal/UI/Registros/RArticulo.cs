@@ -19,31 +19,50 @@ namespace PreyectoFinal.UI.Registros
             InitializeComponent();
             LlenarCombo();
 
+
+
         }
 
         private void LlenarCombo()
         {
-            RepositorioBase<Departamento> DepRepositorio = new RepositorioBase<Departamento>();
+            RepositorioBase<Almacen> DepRepositorio = new RepositorioBase<Almacen>();
 
             DepartamentoComboBox.DataSource = DepRepositorio.GetList(c => true);
             DepartamentoComboBox.ValueMember = "DepartamentoId";
             DepartamentoComboBox.DisplayMember = "Nombre";
 
+            RepositorioBase<TipoArticulo> TipRepositorio = new RepositorioBase<TipoArticulo>();
+            TipoCombox.DataSource = TipRepositorio.GetList(x => true);
+            TipoCombox.ValueMember = "TiposId";
+            TipoCombox.DisplayMember = "Nombre";
 
+            RepositorioBase<Proveedores> com = new RepositorioBase<Proveedores>();
+            ProvedorCOmbobox.DataSource = com.GetList(x => true);
+            ProvedorCOmbobox.ValueMember = "IDProveedor";
+            ProvedorCOmbobox.DisplayMember = "NombreProveedor";
         }
+        /*
+        private void LlenarComb()
+        {
+            RepositorioBase<TipoArticulo> TipRepositorio = new RepositorioBase<TipoArticulo>();
+            TipoCombox.DataSource = TipRepositorio.GetList(x => true);
+            TipoCombox.ValueMember = "TiposId";
+            TipoCombox.DisplayMember = "Nombre";
+        }
+        */
 
 
         private void Limpiar()
         {
             ErrorProvider.Clear();
             ArticuloIdNumericUpDown.Value = 0;
-            FechaDateTimePicker.Value = DateTime.Now;
+          //  FechaDateTimePicker.Value = DateTime.Now;
             DepartamentoComboBox.SelectedIndex = 0;
             DescripcionTextBox.Clear();
             CostoTextBox.Clear();
             PrecioTextBox.Clear();
-            PctGananciaTextBox.Clear();
-            InventarioTextBox.Clear();
+          //  PctGananciaTextBox.Clear();
+          //  InventarioTextBox.Clear();
 
 
 
@@ -54,12 +73,12 @@ namespace PreyectoFinal.UI.Registros
 
             articulo.ArticuloID = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
             articulo.DepartamentoId = Convert.ToInt32(DepartamentoComboBox.SelectedValue);
-            articulo.FechaVencimiento = FechaDateTimePicker.Value;
+           // articulo.FechaVencimiento = FechaDateTimePicker.Value;
             articulo.Descripcion = DescripcionTextBox.Text;
             articulo.Costo = Convert.ToDouble(CostoTextBox.Text);
             articulo.Precio = Convert.ToDouble(PrecioTextBox.Text);
-            articulo.PorCientoGanancia = Convert.ToDouble(PctGananciaTextBox.Text);
-            articulo.CantidadIventario = 0;
+           // articulo.PorCientoGanancia = Convert.ToDouble(PctGananciaTextBox.Text);
+           // articulo.CantidadIventario = 0;
 
             return articulo;
         }
@@ -71,13 +90,13 @@ namespace PreyectoFinal.UI.Registros
 
             return Convert.ToDouble(retorno);
         }
-        private void CalcularGanancia()
+       /* private void CalcularGanancia()
         {
             double costo, precio;
             costo = ToDouble(CostoTextBox.Text);
             precio = ToDouble(PrecioTextBox.Text);
-            PctGananciaTextBox.Text = ArticuloBLL.PorcientoGanancia(costo, precio).ToString();
-        }
+         //   PctGananciaTextBox.Text = ArticuloBLL.PorcientoGanancia(costo, precio).ToString();
+        }*/
         private bool HayErrores()
         {
             bool paso = false;
@@ -204,9 +223,80 @@ namespace PreyectoFinal.UI.Registros
                 DescripcionTextBox.Text = articulo.Descripcion;
                 CostoTextBox.Text = articulo.Costo.ToString();
                 PrecioTextBox.Text = articulo.Precio.ToString();
-                PctGananciaTextBox.Text = articulo.PorCientoGanancia.ToString();
-                InventarioTextBox.Text = articulo.CantidadIventario.ToString();
+                textBox1.Text = articulo.sumar.ToString();
+               // PctGananciaTextBox.Text = articulo.PorCientoGanancia.ToString();
+               // InventarioTextBox.Text = articulo.CantidadIventario.ToString();
             }
         }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            RAlmacen rp = new RAlmacen();
+            rp.ShowDialog();
+            LlenarCombo();
+        }
+
+        private void InventarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrecioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public Articulo articulo()
+        {
+            
+            int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
+            Articulo articulo = ArticuloBLL.Buscar(id);
+            if (articulo != null)
+            {
+               // textBox1. = articulo.sumar;
+            }
+            return articulo;
+        }
+        private void tipoButton_Click(object sender, EventArgs e)
+        {
+            RTipoArticulo tp = new RTipoArticulo();
+            tp.ShowDialog();
+            LlenarCombo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RProveedores pv = new RProveedores();
+            pv.ShowDialog();
+            LlenarCombo();
+        }
+
+        private void RArticulo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+          
+        }
+        /*
+private void tipoButton_Click(object sender, EventArgs e)
+{
+RTipoArticulo tp = new RTipoArticulo();
+tp.ShowDialog();
+LlenarComb();
+}
+*/
     }
 }

@@ -21,7 +21,7 @@ namespace PreyectoFinal.BLL
             {
                 if (contexto.Entrada.Add(entrada) != null)
                 {
-                    contexto._Articulo.Find(entrada.ArticuloID).CantidadIventario += entrada.Cantidad;
+                    contexto._Articulo.Find(entrada.ArticuloID).sumar += entrada.Cantidad;
 
                     contexto.SaveChanges();
                     paso = true;
@@ -53,7 +53,7 @@ namespace PreyectoFinal.BLL
                 double modificado = entrada.Cantidad - EntrAnt.Cantidad;
 
                 var Articulo = contexto._Articulo.Find(entrada.ArticuloID);
-                Articulo.CantidadIventario += modificado;
+               // Articulo.CantidadIventario += modificado;
                 ArticuloBLL.Modificar(Articulo);
 
                 contexto.Entry(entrada).State = EntityState.Modified;
@@ -80,7 +80,7 @@ namespace PreyectoFinal.BLL
             {
                 Entrada entrada = contexto.Entrada.Find(id);
 
-                contexto._Articulo.Find(entrada.ArticuloID).CantidadIventario -= entrada.Cantidad;
+                //contexto._Articulo.Find(entrada.ArticuloID).CantidadIventario -= entrada.Cantidad;
 
                 contexto.Entrada.Remove(entrada);
 
@@ -140,8 +140,8 @@ namespace PreyectoFinal.BLL
             var Producto = contexto._Articulo.Find(entradas.ArticuloID);
             var ProductosAnteriores = contexto._Articulo.Find(EntradasAnteriores.ArticuloID);
 
-            Producto.CantidadIventario += entradas.Cantidad;
-            ProductosAnteriores.CantidadIventario -= EntradasAnteriores.Cantidad;
+            //Producto.CantidadIventario += entradas.Cantidad;
+           // ProductosAnteriores.CantidadIventario -= EntradasAnteriores.Cantidad;
             ArticuloBLL.Modificar(Producto);
             ArticuloBLL.Modificar(ProductosAnteriores);
         }

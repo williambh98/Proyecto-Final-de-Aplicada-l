@@ -17,7 +17,7 @@ namespace PreyectoFinal.UI.Registros
         public REntradeDeProducto()
         {
             InitializeComponent();
-          //  LlenarComboBox();
+            LlenarComboBox();
         }
         private void LlenarComboBox()
         {
@@ -35,7 +35,7 @@ namespace PreyectoFinal.UI.Registros
             entrada.EntradaId = Convert.ToInt32(EntradaIdNumericUpDown.Value);
             entrada.Fecha = FechaDateTimePicker.Value;
             entrada.ArticuloID = Convert.ToInt32(ProductoComboBox.SelectedValue);
-            entrada.Cantidad = Convert.ToDouble(CantidadTextBox.Text);
+            entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
 
             return entrada;
         }
@@ -45,17 +45,17 @@ namespace PreyectoFinal.UI.Registros
             EntradaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             ProductoComboBox.SelectedIndex = 0; ;
-            CantidadTextBox.Clear();
+            CantidadnumericUpDown.Value = 0;
             errorProvider.Clear();
         }
 
-        private bool HayErrores()
+        private bool Validar()
         {
             bool paso = false;
 
-            if (String.IsNullOrEmpty(CantidadTextBox.Text))
+            if (String.IsNullOrEmpty(CantidadnumericUpDown.Text))
             {
-                errorProvider.SetError(CantidadTextBox,
+                errorProvider.SetError(CantidadnumericUpDown,
                     "Debe digitar un Cantidad de Entrada para el Producto");
                 paso = true;
             }
@@ -73,7 +73,7 @@ namespace PreyectoFinal.UI.Registros
             Entrada entrada;
             bool paso = false;
 
-            if (HayErrores())
+            if (Validar())
                 MessageBox.Show("Debe llenar los campos indicados", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -139,7 +139,70 @@ namespace PreyectoFinal.UI.Registros
             {
                 FechaDateTimePicker.Value = entrada.Fecha;
                 ProductoComboBox.SelectedValue = entrada.ArticuloID;
-                CantidadTextBox.Text = entrada.Cantidad.ToString();
+                CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
+            }
+        }
+
+        private void REntradeDeProducto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarbutton_Click(object sender, EventArgs e)
+        {
+            List<ArticuloDetalle> detalle = new List<ArticuloDetalle>();
+
+            if (EntradadataGridView.DataSource != null)
+            {
+                detalle = (List<ArticuloDetalle>)EntradadataGridView.DataSource;
+            }
+            /*if (ContarCantidadInventario())
+            {
+                MessageBox.Show("Cantidad mayor a la existente en inventario!!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else*/ if (CantidadnumericUpDown.Value == 0)
+            {
+                MessageBox.Show("Cantidad no puede ser cero!!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                RArticulo ra = new RArticulo();
+                detalle.Add(
+                    new ArticuloDetalle(
+                       id: 0,
+                       fecha: DateTime.Now,
+                       articuloid: (int)EntradaIdNumericUpDown.Value,
+                       //: (int)ProductoComboBox.SelectedValue,
+                       cantidad: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
+                       precio: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
+                       importe: (double)Convert.ToDouble(CantidadnumericUpDown.Value * 10),
+                       vencimiento: (DateTime)dateTimePicker1.Value
+               //    precio: (double)Convert.ToDouble(PrecioTextBox.Text),
+               //  importe: (double)Convert.ToDouble(ImporteTextBox.Text)
+
+               ));
+
+                EntradadataGridView.DataSource = null;
+                EntradadataGridView.DataSource = detalle;
+                EntradadataGridView.Columns[0].Visible = false;
+               // LlenarValores();
+            }
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            if (EntradadataGridView.Rows.Count > 0 && EntradadataGridView.CurrentRow != null)
+            {
+                List<ArticuloDetalle> detalle = (List<ArticuloDetalle>)EntradadataGridView.DataSource;
+
+                detalle.RemoveAt(EntradadataGridView.CurrentRow.Index);
+
+                EntradadataGridView.DataSource = null;
+                EntradadataGridView.DataSource = detalle;
+
+                //RebajarValores();
             }
         }
     }

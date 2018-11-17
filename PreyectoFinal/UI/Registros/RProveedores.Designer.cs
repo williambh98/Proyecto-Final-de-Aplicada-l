@@ -47,15 +47,17 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 77);
+            this.label1.Location = new System.Drawing.Point(20, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 17);
             this.label1.TabIndex = 0;
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 163);
+            this.label2.Location = new System.Drawing.Point(20, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 1;
@@ -73,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 120);
+            this.label3.Location = new System.Drawing.Point(20, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 2;
@@ -82,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 246);
+            this.label4.Location = new System.Drawing.Point(23, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 3;
@@ -91,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 205);
+            this.label5.Location = new System.Drawing.Point(20, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 4;
@@ -100,45 +102,43 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 246);
+            this.label6.Location = new System.Drawing.Point(231, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "FechaDeEntrega";
-            
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(93, 72);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(92, 45);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(162, 22);
             this.IDnumericUpDown.TabIndex = 6;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(93, 115);
+            this.NombretextBox.Location = new System.Drawing.Point(92, 90);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(373, 22);
+            this.NombretextBox.Size = new System.Drawing.Size(316, 22);
             this.NombretextBox.TabIndex = 7;
-            
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(94, 163);
+            this.DirecciontextBox.Location = new System.Drawing.Point(93, 136);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(372, 22);
+            this.DirecciontextBox.Size = new System.Drawing.Size(315, 22);
             this.DirecciontextBox.TabIndex = 8;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(94, 202);
+            this.EmailtextBox.Location = new System.Drawing.Point(92, 173);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(372, 22);
+            this.EmailtextBox.Size = new System.Drawing.Size(316, 22);
             this.EmailtextBox.TabIndex = 9;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(305, 69);
+            this.Buscarbutton.Location = new System.Drawing.Point(304, 42);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(104, 33);
             this.Buscarbutton.TabIndex = 10;
@@ -148,7 +148,7 @@
             // 
             // TelefonoMaskedTextBox
             // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(93, 243);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(92, 216);
             this.TelefonoMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
@@ -158,7 +158,7 @@
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(353, 246);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(352, 219);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(113, 22);
             this.FechadateTimePicker.TabIndex = 84;
@@ -185,7 +185,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(361, 322);
+            this.Eliminarbutton.Location = new System.Drawing.Point(514, 307);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 33);
             this.Eliminarbutton.TabIndex = 87;
@@ -201,11 +201,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(478, 13);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(209, 233);
+            this.pictureBox1.TabIndex = 88;
+            this.pictureBox1.TabStop = false;
+            // 
             // RProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 398);
+            this.ClientSize = new System.Drawing.Size(700, 398);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -227,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +264,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

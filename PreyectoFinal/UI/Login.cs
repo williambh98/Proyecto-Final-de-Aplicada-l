@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,41 +17,47 @@ namespace PreyectoFinal.UI
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
+      
         private void Salirbutton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+       private void Entrarbutton_Click(object sender, EventArgs e)
         {
+            
+           /* DialogResult = DialogResult.OK;
+            Close();*/
+            
 
+          
+            SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
+                + "Integrated Security = true;");
+
+            conexion.Open();
+            string cadena = "select Email, Contraseña from CrearUsuarios where Email ='" + EmailTextBox.Text + "' and Contraseña = '" + ContraseñaTextBox.Text + "' ";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            SqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+
+                if ((registro["Email"].ToString() == EmailTextBox.Text) && (registro["Contraseña"].ToString() == ContraseñaTextBox.Text))
+                {
+                    MessageBox.Show("Correcto");
+                    Main M = new Main();
+                    M.Show();
+                   // M.Activos();
+                    this.Hide();
+                }
+            }
+            else
+                MessageBox.Show("El Email o la Contraseña estan incorrectos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            conexion.Close();
+            
+    
         }
+
+    
     }
 }
