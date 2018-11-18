@@ -33,12 +33,12 @@
             this.registroUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consutasDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.capturarProvedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entradaInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,13 @@
             this.rArticuloToolStripMenuItem.Text = "RArticulo";
             this.rArticuloToolStripMenuItem.Click += new System.EventHandler(this.rArticuloToolStripMenuItem_Click);
             // 
+            // entradaInventarioToolStripMenuItem
+            // 
+            this.entradaInventarioToolStripMenuItem.Name = "entradaInventarioToolStripMenuItem";
+            this.entradaInventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.entradaInventarioToolStripMenuItem.Text = "Entrada Inventario";
+            this.entradaInventarioToolStripMenuItem.Click += new System.EventHandler(this.entradaInventarioToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,13 +116,13 @@
             this.capturarProvedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventarioToolStripMenuItem});
             this.capturarProvedoresToolStripMenuItem.Name = "capturarProvedoresToolStripMenuItem";
-            this.capturarProvedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.capturarProvedoresToolStripMenuItem.Text = "CapturarProvedores";
+            this.capturarProvedoresToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.capturarProvedoresToolStripMenuItem.Text = "Capturar Inventario";
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.inventarioToolStripMenuItem.Text = "Capturar";
             // 
             // ayudaToolStripMenuItem
@@ -123,13 +130,6 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // entradaInventarioToolStripMenuItem
-            // 
-            this.entradaInventarioToolStripMenuItem.Name = "entradaInventarioToolStripMenuItem";
-            this.entradaInventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.entradaInventarioToolStripMenuItem.Text = "Entrada Inventario";
-            this.entradaInventarioToolStripMenuItem.Click += new System.EventHandler(this.entradaInventarioToolStripMenuItem_Click);
             // 
             // Main
             // 

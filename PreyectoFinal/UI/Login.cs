@@ -26,10 +26,12 @@ namespace PreyectoFinal.UI
        private void Entrarbutton_Click(object sender, EventArgs e)
         {
             
-           /* DialogResult = DialogResult.OK;
-            Close();*/
+            /*
+           DialogResult = DialogResult.OK;
+            Close();
+            */
             
-
+           
           
             SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
                 + "Integrated Security = true;");
@@ -43,7 +45,7 @@ namespace PreyectoFinal.UI
 
                 if ((registro["Email"].ToString() == EmailTextBox.Text) && (registro["Contraseña"].ToString() == ContraseñaTextBox.Text))
                 {
-                    MessageBox.Show("Correcto");
+                    //MessageBox.Show("Correcto");
                     Main M = new Main();
                     M.Show();
                    // M.Activos();
@@ -57,7 +59,9 @@ namespace PreyectoFinal.UI
             
     
         }
+        
 
     
     }
+    
 }

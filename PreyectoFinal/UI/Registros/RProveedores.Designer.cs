@@ -102,7 +102,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(231, 219);
+            this.label6.Location = new System.Drawing.Point(224, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 5;
@@ -119,21 +119,21 @@
             // 
             this.NombretextBox.Location = new System.Drawing.Point(92, 90);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(316, 22);
+            this.NombretextBox.Size = new System.Drawing.Size(379, 22);
             this.NombretextBox.TabIndex = 7;
             // 
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(93, 136);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(315, 22);
+            this.DirecciontextBox.Size = new System.Drawing.Size(378, 22);
             this.DirecciontextBox.TabIndex = 8;
             // 
             // EmailtextBox
             // 
             this.EmailtextBox.Location = new System.Drawing.Point(92, 173);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(316, 22);
+            this.EmailtextBox.Size = new System.Drawing.Size(379, 22);
             this.EmailtextBox.TabIndex = 9;
             // 
             // Buscarbutton
@@ -152,20 +152,20 @@
             this.TelefonoMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(132, 22);
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(125, 22);
             this.TelefonoMaskedTextBox.TabIndex = 83;
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(352, 219);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(358, 214);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(113, 22);
             this.FechadateTimePicker.TabIndex = 84;
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(27, 322);
+            this.Nuevobutton.Location = new System.Drawing.Point(26, 278);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(104, 33);
             this.Nuevobutton.TabIndex = 85;
@@ -175,7 +175,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(194, 322);
+            this.Guardarbutton.Location = new System.Drawing.Point(198, 278);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(104, 33);
             this.Guardarbutton.TabIndex = 86;
@@ -185,7 +185,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(514, 307);
+            this.Eliminarbutton.Location = new System.Drawing.Point(367, 278);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 33);
             this.Eliminarbutton.TabIndex = 87;
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 398);
+            this.ClientSize = new System.Drawing.Size(700, 364);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
