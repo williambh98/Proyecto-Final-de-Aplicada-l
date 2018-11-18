@@ -253,7 +253,7 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label1);
             this.Name = "REntradeDeProducto";
-            this.Text = "REntradeDeProducto";
+            this.Text = "Registro De Inventario";
             this.Load += new System.EventHandler(this.REntradeDeProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradadataGridView)).EndInit();

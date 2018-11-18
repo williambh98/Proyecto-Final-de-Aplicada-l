@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace PreyectoFinal.UI.Registros
 {
-    public partial class RAlmacen : Form
+    public partial class RDepapartamento : Form
     {
         RepositorioBase<Departamento> rep;
-        public RAlmacen()
+        public RDepapartamento()
         {
 
             InitializeComponent();

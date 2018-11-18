@@ -21,20 +21,23 @@ namespace PreyectoFinal
 
         private void entradaDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            REntradeDeProducto rp = new REntradeDeProducto();
-            rp.ShowDialog();
+            RArticulo Art = new RArticulo();
+            Art.Show();
+            Art.MdiParent = this;
         }
 
         private void registroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             REgistroUsuario rp = new REgistroUsuario();
-            rp.ShowDialog();
+            rp.Show();
+            rp.MdiParent = this;
         }
 
         private void rArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RArticulo ra = new RArticulo();
-            ra.ShowDialog();
+            REntradeDeProducto Pro = new REntradeDeProducto();
+            Pro.Show();
+            Pro.MdiParent = this;
         }
 
         private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +85,14 @@ namespace PreyectoFinal
             ConsutaUsuario usuario = new ConsutaUsuario();
             usuario.Show();
             usuario.MdiParent = this;
+        }
+
+        private void entradaInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RProveedores Pro = new RProveedores();
+            Pro.Show();
+            Pro.MdiParent = this;
+
         }
     }
 }

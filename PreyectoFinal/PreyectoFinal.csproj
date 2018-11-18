@@ -121,11 +121,11 @@
     <Compile Include="UI\Registros\RArticulo.Designer.cs">
       <DependentUpon>RArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\RAlmacen.cs">
+    <Compile Include="UI\Registros\RDepapartamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\RAlmacen.Designer.cs">
-      <DependentUpon>RAlmacen.cs</DependentUpon>
+    <Compile Include="UI\Registros\RDepapartamento.Designer.cs">
+      <DependentUpon>RDepapartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\REgistroUsuario.cs">
       <SubType>Form</SubType>
@@ -188,8 +188,8 @@
     <EmbeddedResource Include="UI\Registros\RArticulo.resx">
       <DependentUpon>RArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\RAlmacen.resx">
-      <DependentUpon>RAlmacen.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\RDepapartamento.resx">
+      <DependentUpon>RDepapartamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\REgistroUsuario.resx">
       <DependentUpon>REgistroUsuario.cs</DependentUpon>

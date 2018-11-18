@@ -23,6 +23,7 @@ namespace PreyectoFinal.UI.Registros
 
         public void Limpiar()
         {
+
             IDnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
@@ -86,12 +87,12 @@ namespace PreyectoFinal.UI.Registros
             bool paso = true;
             if (FechadateTimePicker.Value < DateTime.Now)
             {
-                errorProvider.SetError(FechadateTimePicker, "Fecha Invalida");
+                errorProvider.SetError(FechadateTimePicker, "La fecha no esta Correcta");
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
             {
-                errorProvider.SetError(TelefonoMaskedTextBox, "Campo Vacio");
+                errorProvider.SetError(TelefonoMaskedTextBox, "Llenar Campo");
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(EmailtextBox.Text))

@@ -113,7 +113,7 @@
             // 
             // Criterio_textBox
             // 
-            this.Criterio_textBox.Location = new System.Drawing.Point(354, 15);
+            this.Criterio_textBox.Location = new System.Drawing.Point(354, 17);
             this.Criterio_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.Criterio_textBox.Name = "Criterio_textBox";
             this.Criterio_textBox.Size = new System.Drawing.Size(184, 22);
@@ -122,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 17);
+            this.label2.Location = new System.Drawing.Point(286, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
@@ -183,6 +183,7 @@
             this.Controls.Add(this.Consulta_dataGridView);
             this.Name = "ConsultaProveedores";
             this.Text = "ConsultaProveedores";
+            this.Load += new System.EventHandler(this.ConsultaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

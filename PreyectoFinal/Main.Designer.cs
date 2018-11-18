@@ -74,29 +74,30 @@
             // registroUsuarioToolStripMenuItem
             // 
             this.registroUsuarioToolStripMenuItem.Name = "registroUsuarioToolStripMenuItem";
-            this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(307, 26);
             this.registroUsuarioToolStripMenuItem.Text = "Registro Usuario";
             this.registroUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registroUsuarioToolStripMenuItem_Click);
             // 
             // entradaDeArticuloToolStripMenuItem
             // 
             this.entradaDeArticuloToolStripMenuItem.Name = "entradaDeArticuloToolStripMenuItem";
-            this.entradaDeArticuloToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.entradaDeArticuloToolStripMenuItem.Text = "Entrada de Articulo";
+            this.entradaDeArticuloToolStripMenuItem.Size = new System.Drawing.Size(307, 26);
+            this.entradaDeArticuloToolStripMenuItem.Text = "Registrar Articulo";
             this.entradaDeArticuloToolStripMenuItem.Click += new System.EventHandler(this.entradaDeArticuloToolStripMenuItem_Click);
             // 
             // rArticuloToolStripMenuItem
             // 
             this.rArticuloToolStripMenuItem.Name = "rArticuloToolStripMenuItem";
-            this.rArticuloToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.rArticuloToolStripMenuItem.Text = "RArticulo";
+            this.rArticuloToolStripMenuItem.Size = new System.Drawing.Size(307, 26);
+            this.rArticuloToolStripMenuItem.Text = "Entrada De Producto O Inventario";
             this.rArticuloToolStripMenuItem.Click += new System.EventHandler(this.rArticuloToolStripMenuItem_Click);
             // 
             // entradaInventarioToolStripMenuItem
             // 
             this.entradaInventarioToolStripMenuItem.Name = "entradaInventarioToolStripMenuItem";
-            this.entradaInventarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.entradaInventarioToolStripMenuItem.Text = "Entrada Inventario";
+            this.entradaInventarioToolStripMenuItem.Size = new System.Drawing.Size(307, 26);
+            this.entradaInventarioToolStripMenuItem.Text = "Registrar Proveedores";
+            this.entradaInventarioToolStripMenuItem.Click += new System.EventHandler(this.entradaInventarioToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -157,7 +158,7 @@
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.inventarioToolStripMenuItem.Text = "Capturar";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -179,7 +180,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

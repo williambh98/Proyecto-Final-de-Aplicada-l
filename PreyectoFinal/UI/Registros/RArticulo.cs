@@ -19,8 +19,6 @@ namespace PreyectoFinal.UI.Registros
             InitializeComponent();
             LlenarCombo();
 
-
-
         }
 
         private void LlenarCombo()
@@ -41,16 +39,6 @@ namespace PreyectoFinal.UI.Registros
             ProvedorCOmbobox.ValueMember = "IDProveedor";
             ProvedorCOmbobox.DisplayMember = "NombreProveedor";
         }
-        /*
-        private void LlenarComb()
-        {
-            RepositorioBase<TipoArticulo> TipRepositorio = new RepositorioBase<TipoArticulo>();
-            TipoCombox.DataSource = TipRepositorio.GetList(x => true);
-            TipoCombox.ValueMember = "TiposId";
-            TipoCombox.DisplayMember = "Nombre";
-        }
-        */
-
 
         private void Limpiar()
         {
@@ -61,6 +49,7 @@ namespace PreyectoFinal.UI.Registros
             DescripcionTextBox.Clear();
             CostoTextBox.Clear();
             PrecioTextBox.Clear();
+            CantidatextBox.Clear();
           //  PctGananciaTextBox.Clear();
           //  InventarioTextBox.Clear();
 
@@ -223,7 +212,7 @@ namespace PreyectoFinal.UI.Registros
                 DescripcionTextBox.Text = articulo.Descripcion;
                 CostoTextBox.Text = articulo.Costo.ToString();
                 PrecioTextBox.Text = articulo.Precio.ToString();
-                textBox1.Text = articulo.sumar.ToString();
+                CantidatextBox.Text = articulo.sumar.ToString();
                // PctGananciaTextBox.Text = articulo.PorCientoGanancia.ToString();
                // InventarioTextBox.Text = articulo.CantidadIventario.ToString();
             }
@@ -231,7 +220,7 @@ namespace PreyectoFinal.UI.Registros
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
-            RAlmacen rp = new RAlmacen();
+            RDepapartamento rp = new RDepapartamento();
             rp.ShowDialog();
             LlenarCombo();
         }

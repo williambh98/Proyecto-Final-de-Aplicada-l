@@ -1,6 +1,6 @@
 ﻿namespace PreyectoFinal.UI.Registros
 {
-    partial class RAlmacen
+    partial class RDepapartamento
     {
         /// <summary>
         /// Required designer variable.
@@ -149,7 +149,7 @@
             this.label3.TabIndex = 76;
             this.label3.Text = "Fecha";
             // 
-            // RAlmacen
+            // RDepapartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,8 +164,8 @@
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.BuscarButton);
-            this.Name = "RAlmacen";
-            this.Text = "Rdepartamento";
+            this.Name = "RDepapartamento";
+            this.Text = "Registro Departamento";
             ((System.ComponentModel.ISupportInitialize)(this.DepartamentoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myErrorProvider)).EndInit();
             this.ResumeLayout(false);

@@ -57,6 +57,11 @@ namespace PreyectoFinal.UI.Consultas
 
         }
 
+        private void ConsultaProveedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,7 +83,7 @@ namespace PreyectoFinal.UI.Consultas
                 // Criterio();
                 //Criterio_textBox = .Criterio_textBox();
                 */
-            }
+    }
             
         }
     

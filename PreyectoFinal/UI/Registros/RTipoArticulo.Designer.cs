@@ -87,7 +87,6 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(245, 22);
             this.DescripcionTextBox.TabIndex = 111;
-            this.DescripcionTextBox.TextChanged += new System.EventHandler(this.DescripcionTextBox_TextChanged);
             // 
             // TipoIdNumericUpDown
             // 
@@ -167,8 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
             this.Name = "RTipoArticulo";
-            this.Text = "TipoArticulo";
-            this.Load += new System.EventHandler(this.RTipoArticulo_Load);
+            this.Text = "Tipo Articulo";
             ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);

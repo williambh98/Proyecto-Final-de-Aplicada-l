@@ -51,7 +51,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CantidatextBox = new System.Windows.Forms.TextBox();
             this.cantidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
@@ -273,14 +273,15 @@
             this.PrecioTextBox.Size = new System.Drawing.Size(125, 22);
             this.PrecioTextBox.TabIndex = 108;
             // 
-            // textBox1
+            // CantidatextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(285, 264);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 22);
-            this.textBox1.TabIndex = 110;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.CantidatextBox.Enabled = false;
+            this.CantidatextBox.Location = new System.Drawing.Point(285, 264);
+            this.CantidatextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CantidatextBox.Name = "CantidatextBox";
+            this.CantidatextBox.Size = new System.Drawing.Size(125, 22);
+            this.CantidatextBox.TabIndex = 110;
+            this.CantidatextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // cantidad
             // 
@@ -296,9 +297,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(472, 388);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CantidatextBox);
             this.Controls.Add(this.cantidad);
             this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.tipoButton);
@@ -321,8 +322,9 @@
             this.Controls.Add(this.ArticuloIdNumericUpDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RArticulo";
-            this.Text = "RArticulo";
+            this.Text = "Registro Articulo";
             this.Load += new System.EventHandler(this.RArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
@@ -355,7 +357,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CantidatextBox;
         private System.Windows.Forms.Label cantidad;
     }
 }

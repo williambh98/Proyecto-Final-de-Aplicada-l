@@ -41,14 +41,12 @@ namespace PreyectoFinal.UI.Registros
         }
         private void LlenarCampos(TipoArticulo tipos)
         {
+
             TipoIdNumericUpDown.Value = Convert.ToInt32(tipos.TiposId);
             TipoTextbox.Text = tipos.Nombre;
             DescripcionTextBox.Text = tipos.Descripcion;
 
-            
         }
-
-
 
         private bool Validar()
         {
@@ -57,18 +55,16 @@ namespace PreyectoFinal.UI.Registros
             if (String.IsNullOrEmpty(DescripcionTextBox.Text))
             {
                 ErrorProvider.SetError(DescripcionTextBox,
-                    "Debe escribir una descipcion para el Articulo");
-                paso = true;
+                    "LLenar Campo Descripcion");
+                paso = false;
             }
           
             if (String.IsNullOrEmpty(TipoTextbox.Text))
             {
                 ErrorProvider.SetError(TipoTextbox,
-                    "Debe escribir una Tipo para el Articulo");
+                    "Llenar Campo Tipo");
                 paso = false;
             }
-            
-
             return paso;
         }
 
@@ -82,9 +78,13 @@ namespace PreyectoFinal.UI.Registros
             rep = new RepositorioBase<TipoArticulo>();
             TipoArticulo tipo;
             bool paso = false;
-            if (Validar())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!Validar())
+            {
+                MessageBox.Show("Llenar campos ", "Validación",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
 
             tipo = LlenaClase();
 
@@ -115,7 +115,7 @@ namespace PreyectoFinal.UI.Registros
                 Limpiar();
             }
             else
-                MessageBox.Show("No se pudo guardar!!", "Falló",
+                MessageBox.Show("No guardardado!!", "Falló",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -168,15 +168,6 @@ namespace PreyectoFinal.UI.Registros
         {
             Limpiar();
         }
-
-        private void RTipoArticulo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DescripcionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

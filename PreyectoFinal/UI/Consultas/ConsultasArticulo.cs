@@ -42,7 +42,7 @@ namespace PreyectoFinal.UI.Consultas
                     else
                     {
                         id = Convert.ToInt32(CristeriotextBox.Text);
-                    filtro = p => p.ArticuloID == id;
+                        filtro = p => p.ArticuloID == id;
                         if (ArticuloBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +116,7 @@ namespace PreyectoFinal.UI.Consultas
                         }
                     }
                     break;
-                case 4://Filtrando por PorcientoGanacia del Producto.
+                case 4://Suma.
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,7 +129,7 @@ namespace PreyectoFinal.UI.Consultas
                     }
                     else
                     {
-                     //   filtro = p => p.PorCientoGanancia.Equals(CristeriotextBox.Text);
+                       filtro = p => p.sumar.Equals(CristeriotextBox.Text);
                         if (ArticuloBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Porciento, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -137,37 +137,12 @@ namespace PreyectoFinal.UI.Consultas
                         }
                     }
                     break;
-                case 5://Filtrando por Cantidad en el Inventario del Producto.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                       // filtro = p => p.CantidadIventario.Equals(CristeriotextBox.Text);
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("No  hay Existencia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        }
-                    }
-                    break;
-                case 6:// Fecha
-                  // filtro = p => p.FechaVencimiento >= DesdedateTimePicker.Value.Date && p.FechaVencimiento <= HastadateTimePicker.Value.Date;
-                    break;
-                case 7://Todo
+                case 5://Todo
                     filtro = p => true;
                     break;
-
-
                     
             }
+            filtro = p => p.FechaCreacion >= DesdedateTimePicker.Value.Date && p.FechaCreacion <= HastadateTimePicker.Value.Date;
             ConsultaDataGridView.DataSource =  ArticuloBLL.GetList(filtro);
             CristeriotextBox.Clear();
             errorProvider.Clear();

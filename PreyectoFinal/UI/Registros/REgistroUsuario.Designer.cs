@@ -224,7 +224,7 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label1);
             this.Name = "REgistroUsuario";
-            this.Text = "REgistroUsuario";
+            this.Text = "Registro Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();

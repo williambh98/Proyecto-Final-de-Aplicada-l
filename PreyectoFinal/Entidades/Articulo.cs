@@ -16,6 +16,7 @@ namespace PreyectoFinal.Entidades
         public double Costo { get; set; }
         public double Precio { get; set; }
         public double sumar { get; set; }
+        public DateTime FechaCreacion { get; set; }
         public Articulo()
         {
             ArticuloID = 0;
@@ -24,6 +25,7 @@ namespace PreyectoFinal.Entidades
             Costo = 0;
             Precio = 0;
             sumar = 0;
+            FechaCreacion = DateTime.Now;
         }
 
         public override string ToString()
