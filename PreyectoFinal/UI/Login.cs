@@ -26,13 +26,10 @@ namespace PreyectoFinal.UI
        private void Entrarbutton_Click(object sender, EventArgs e)
         {
             
-            /*
+            
            DialogResult = DialogResult.OK;
             Close();
-            */
-            
-           
-          
+            /*
             SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
                 + "Integrated Security = true;");
 
@@ -57,10 +54,10 @@ namespace PreyectoFinal.UI
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             conexion.Close();
             
-    
+    */
         }
         
-
+    
     
     }
     

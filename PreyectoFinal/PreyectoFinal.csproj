@@ -58,7 +58,7 @@
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
-    <Compile Include="Entidades\Almacen.cs" />
+    <Compile Include="Entidades\Departamento.cs" />
     <Compile Include="Entidades\Entrada.cs" />
     <Compile Include="Entidades\Inventario.cs" />
     <Compile Include="Entidades\Proveedores.cs" />
@@ -85,11 +85,11 @@
     <Compile Include="UI\Consultas\ConsultaProveedores.Designer.cs">
       <DependentUpon>ConsultaProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultarAlmacen.cs">
+    <Compile Include="UI\Consultas\ConsultarDepartameto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultarAlmacen.Designer.cs">
-      <DependentUpon>ConsultarAlmacen.cs</DependentUpon>
+    <Compile Include="UI\Consultas\ConsultarDepartameto.Designer.cs">
+      <DependentUpon>ConsultarDepartameto.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\ConsultasArticulo.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="UI\Consultas\ConsultaProveedores.resx">
       <DependentUpon>ConsultaProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\ConsultarAlmacen.resx">
-      <DependentUpon>ConsultarAlmacen.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\ConsultarDepartameto.resx">
+      <DependentUpon>ConsultarDepartameto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultasArticulo.resx">
       <DependentUpon>ConsultasArticulo.cs</DependentUpon>

@@ -14,11 +14,11 @@ namespace PreyectoFinal.UI.Registros
 {
     public partial class RProveedores : Form
     {
-        RepositorioBase<Proveedores> repositorio;
+       private  RepositorioBase<Proveedores> repositorio;
         public RProveedores()
         {
             InitializeComponent();
-            repositorio = new RepositorioBase<Proveedores>();
+           
         }
 
         public void Limpiar()

@@ -13,18 +13,20 @@ using System.Windows.Forms;
 
 namespace PreyectoFinal.UI.Consultas
 {
-    public partial class ConsultarAlmacen : Form
+    public partial class ConsultarDepartameto : Form
     {
-        RepositorioBase<Almacen> repositorio;
-        public ConsultarAlmacen()
+       
+        public ConsultarDepartameto()
         {
             InitializeComponent();
-            repositorio = new RepositorioBase<Almacen>();
+            
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            var filtro = new List<Almacen>();
+            RepositorioBase<Departamento> repositorio;
+            repositorio = new RepositorioBase<Departamento>();
+            var filtro = new List<Departamento>();
             int id;
             if (CristeriotextBox.Text.Trim().Length > 0)
             {
@@ -64,6 +66,11 @@ namespace PreyectoFinal.UI.Consultas
             DepartamentosReviewer departamentosReviewer = new DepartamentosReviewer(departamentos);
             departamentosReviewer.ShowDialog();
             */
+
+        }
+
+        private void ConsultarAlmacen_Load(object sender, EventArgs e)
+        {
 
         }
     }

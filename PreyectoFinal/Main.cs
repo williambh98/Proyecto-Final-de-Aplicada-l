@@ -44,14 +44,44 @@ namespace PreyectoFinal
 
         private void consutasDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarAlmacen m = new ConsultarAlmacen();
-            m.ShowDialog();
+            ConsultarDepartameto m = new ConsultarDepartameto();
+            m.Show();
+            m.MdiParent = this;
         }
 
-        private void entradaInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            REntradeDeProducto rp = new REntradeDeProducto();
-            rp.ShowDialog();
+            ConsultaCapturarInventario cap = new ConsultaCapturarInventario();
+            cap.Show();
+            cap.MdiParent = this;
+        }
+
+        private void consutaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaProveedores pro = new ConsultaProveedores();
+            pro.Show();
+            pro.MdiParent = this;
+        }
+
+        private void consultaArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultasArticulo Ar = new ConsultasArticulo();
+            Ar.Show();
+            Ar.MdiParent = this;
+        }
+
+        private void consultaTipoarticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaTipoArticulo Tip = new ConsultaTipoArticulo();
+            Tip.Show();
+            Tip.MdiParent = this;
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsutaUsuario usuario = new ConsutaUsuario();
+            usuario.Show();
+            usuario.MdiParent = this;
         }
     }
 }

@@ -14,16 +14,16 @@ namespace PreyectoFinal.UI.Registros
 {
     public partial class RAlmacen : Form
     {
-        RepositorioBase<Almacen> rep;
+        RepositorioBase<Departamento> rep;
         public RAlmacen()
         {
 
             InitializeComponent();
-            rep = new RepositorioBase<Almacen>();
+            rep = new RepositorioBase<Departamento>();
         }
-        private Almacen LlenaClase()
+        private Departamento LlenaClase()
         {
-            Almacen departamento = new Almacen();
+            Departamento departamento = new Departamento();
 
             departamento.DepartamentoId = Convert.ToInt32(DepartamentoIdNumericUpDown.Value);
             departamento.Nombre = NombreTextBox.Text;
@@ -55,9 +55,9 @@ namespace PreyectoFinal.UI.Registros
         //Progrmación de los Botones
         private void BuscarButton_Click_1(object sender, EventArgs e)
         {
-            rep = new RepositorioBase<Almacen>();
+            rep = new RepositorioBase<Departamento>();
             int id = Convert.ToInt32(DepartamentoIdNumericUpDown.Value);
-            Almacen departamento = rep.Buscar(id);
+            Departamento departamento = rep.Buscar(id);
 
             if (departamento != null)
             {
@@ -72,7 +72,7 @@ namespace PreyectoFinal.UI.Registros
 
         private void GuardarButton_Click_1(object sender, EventArgs e)
         {
-            Almacen departamento;
+            Departamento departamento;
             bool paso = false;
 
             if (HayErrores())
@@ -116,7 +116,7 @@ namespace PreyectoFinal.UI.Registros
         {
             int id = Convert.ToInt32(DepartamentoIdNumericUpDown.Value);
 
-            Almacen departamento = rep.Buscar(id);
+            Departamento departamento = rep.Buscar(id);
             if (departamento != null)
             {
                 if (rep.Eliminar(id))

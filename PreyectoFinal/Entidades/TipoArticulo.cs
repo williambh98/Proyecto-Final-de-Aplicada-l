@@ -13,12 +13,14 @@ namespace PreyectoFinal.Entidades
         public int TiposId { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
         public TipoArticulo()
         {
             TiposId = 0;
             Nombre = string.Empty;
             Descripcion = string.Empty;
+            FechaCreacion = DateTime.Now;
         }
     }
 }

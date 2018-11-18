@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace PreyectoFinal.Entidades
 {
-    public class Almacen
+    public class Departamento
     {
         [Key]
         public int DepartamentoId { get; set; }
         public string Nombre { get; set; }
         public DateTime fecha { get; set; }
 
-        public Almacen()
+        public Departamento()
         {
             DepartamentoId = 0;
             Nombre = string.Empty;

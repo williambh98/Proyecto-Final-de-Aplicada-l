@@ -1,6 +1,6 @@
 ﻿namespace PreyectoFinal.UI.Consultas
 {
-    partial class ConsultarAlmacen
+    partial class ConsultarDepartameto
     {
         /// <summary>
         /// Required designer variable.
@@ -144,7 +144,7 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Filtro";
             // 
-            // ConsultarAlmacen
+            // ConsultarDepartameto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,8 +160,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ConsultarAlmacen";
-            this.Text = "ConsultarAlmacen";
+            this.Name = "ConsultarDepartameto";
+            this.Text = "ConsultarDepartamento";
+            this.Load += new System.EventHandler(this.ConsultarAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

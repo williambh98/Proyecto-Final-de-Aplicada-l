@@ -159,7 +159,7 @@ namespace PreyectoFinal.UI.Consultas
                     }
                     break;
                 case 6:// Fecha
-                  //  filtro = p => p.FechaVencimiento >= DesdedateTimePicker.Value.Date && p.FechaVencimiento <= HastadateTimePicker.Value.Date;
+                  // filtro = p => p.FechaVencimiento >= DesdedateTimePicker.Value.Date && p.FechaVencimiento <= HastadateTimePicker.Value.Date;
                     break;
                 case 7://Todo
                     filtro = p => true;

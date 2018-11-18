@@ -25,7 +25,7 @@ namespace PreyectoFinal.UI.Registros
 
         private void LlenarCombo()
         {
-            RepositorioBase<Almacen> DepRepositorio = new RepositorioBase<Almacen>();
+            RepositorioBase<Departamento> DepRepositorio = new RepositorioBase<Departamento>();
 
             DepartamentoComboBox.DataSource = DepRepositorio.GetList(c => true);
             DepartamentoComboBox.ValueMember = "DepartamentoId";

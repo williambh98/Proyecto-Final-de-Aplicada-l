@@ -28,131 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CristeriotextBox = new System.Windows.Forms.TextBox();
-            this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Consultarbutton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Desde_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Criterio_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // ConsultaDataGridView
+            // Imprimirbutton
             // 
-            this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(24, 119);
-            this.ConsultaDataGridView.Name = "ConsultaDataGridView";
-            this.ConsultaDataGridView.RowTemplate.Height = 24;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(957, 374);
-            this.ConsultaDataGridView.TabIndex = 29;
+            this.Imprimirbutton.Location = new System.Drawing.Point(13, 355);
+            this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(100, 43);
+            this.Imprimirbutton.TabIndex = 61;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
-            // Buscarbutton
+            // Consultarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(886, 20);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(95, 74);
-            this.Buscarbutton.TabIndex = 28;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Location = new System.Drawing.Point(570, 20);
+            this.Consultarbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Consultarbutton.Name = "Consultarbutton";
+            this.Consultarbutton.Size = new System.Drawing.Size(100, 58);
+            this.Consultarbutton.TabIndex = 60;
+            this.Consultarbutton.Text = "Consultar";
+            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
-            // HastadateTimePicker
+            // label5
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(478, 72);
-            this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(383, 22);
-            this.HastadateTimePicker.TabIndex = 27;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.TabIndex = 59;
             // 
-            // DesdedateTimePicker
+            // Hasta_dateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(87, 72);
-            this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(304, 22);
-            this.DesdedateTimePicker.TabIndex = 26;
+            this.Hasta_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Hasta_dateTimePicker.Location = new System.Drawing.Point(354, 82);
+            this.Hasta_dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.Hasta_dateTimePicker.Name = "Hasta_dateTimePicker";
+            this.Hasta_dateTimePicker.Size = new System.Drawing.Size(184, 22);
+            this.Hasta_dateTimePicker.TabIndex = 58;
             // 
-            // CristeriotextBox
+            // Desde_dateTimePicker
             // 
-            this.CristeriotextBox.Location = new System.Drawing.Point(478, 25);
-            this.CristeriotextBox.Name = "CristeriotextBox";
-            this.CristeriotextBox.Size = new System.Drawing.Size(383, 22);
-            this.CristeriotextBox.TabIndex = 25;
-            // 
-            // FiltrocomboBox
-            // 
-            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FiltrocomboBox.FormattingEnabled = true;
-            this.FiltrocomboBox.Items.AddRange(new object[] {
-            "Todos",
-            "VendedorID",
-            "Nombre",
-            "Sueldo",
-            "Retencion",
-            "Retencionp"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(87, 22);
-            this.FiltrocomboBox.Name = "FiltrocomboBox";
-            this.FiltrocomboBox.Size = new System.Drawing.Size(304, 24);
-            this.FiltrocomboBox.TabIndex = 24;
+            this.Desde_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Desde_dateTimePicker.Location = new System.Drawing.Point(102, 87);
+            this.Desde_dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.Desde_dateTimePicker.Name = "Desde_dateTimePicker";
+            this.Desde_dateTimePicker.Size = new System.Drawing.Size(155, 22);
+            this.Desde_dateTimePicker.TabIndex = 57;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(412, 77);
+            this.label4.Location = new System.Drawing.Point(286, 87);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
-            this.label4.TabIndex = 23;
+            this.label4.TabIndex = 56;
             this.label4.Text = "Hasta";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 77);
+            this.label3.Location = new System.Drawing.Point(30, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 22;
+            this.label3.TabIndex = 55;
             this.label3.Text = "Desde";
+            // 
+            // Criterio_textBox
+            // 
+            this.Criterio_textBox.Location = new System.Drawing.Point(354, 15);
+            this.Criterio_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.Criterio_textBox.Name = "Criterio_textBox";
+            this.Criterio_textBox.Size = new System.Drawing.Size(184, 22);
+            this.Criterio_textBox.TabIndex = 54;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(412, 25);
+            this.label2.Location = new System.Drawing.Point(286, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 21;
+            this.label2.TabIndex = 53;
             this.label2.Text = "Cristerio";
+            // 
+            // Filtro_comboBox
+            // 
+            this.Filtro_comboBox.FormattingEnabled = true;
+            this.Filtro_comboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Nombre",
+            "Email",
+            "Dirrecion",
+            "Telefono"});
+            this.Filtro_comboBox.Location = new System.Drawing.Point(102, 17);
+            this.Filtro_comboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.Filtro_comboBox.Name = "Filtro_comboBox";
+            this.Filtro_comboBox.Size = new System.Drawing.Size(160, 24);
+            this.Filtro_comboBox.TabIndex = 52;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 30);
+            this.label1.Location = new System.Drawing.Point(31, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 17);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 51;
             this.label1.Text = "Filtro";
+            // 
+            // Consulta_dataGridView
+            // 
+            this.Consulta_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Consulta_dataGridView.Location = new System.Drawing.Point(13, 117);
+            this.Consulta_dataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.Consulta_dataGridView.Name = "Consulta_dataGridView";
+            this.Consulta_dataGridView.Size = new System.Drawing.Size(704, 219);
+            this.Consulta_dataGridView.TabIndex = 50;
             // 
             // ConsultaProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 523);
-            this.Controls.Add(this.ConsultaDataGridView);
-            this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.HastadateTimePicker);
-            this.Controls.Add(this.DesdedateTimePicker);
-            this.Controls.Add(this.CristeriotextBox);
-            this.Controls.Add(this.FiltrocomboBox);
+            this.ClientSize = new System.Drawing.Size(745, 433);
+            this.Controls.Add(this.Imprimirbutton);
+            this.Controls.Add(this.Consultarbutton);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Hasta_dateTimePicker);
+            this.Controls.Add(this.Desde_dateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.Criterio_textBox);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.Filtro_comboBox);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.Consulta_dataGridView);
             this.Name = "ConsultaProveedores";
             this.Text = "ConsultaProveedores";
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,15 +191,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ConsultaDataGridView;
-        private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.DateTimePicker HastadateTimePicker;
-        private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
-        private System.Windows.Forms.TextBox CristeriotextBox;
-        private System.Windows.Forms.ComboBox FiltrocomboBox;
+        private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.Button Consultarbutton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Desde_dateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Criterio_textBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView Consulta_dataGridView;
     }
 }

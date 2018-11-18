@@ -36,6 +36,8 @@ namespace PreyectoFinal.BLL
 
         public virtual bool Modificar(T entity)
         {
+            RepositorioBase<T> repositorio = new RepositorioBase<T>();
+            _contexto = new Contexto();
             bool paso = false;
 
             try
@@ -48,8 +50,9 @@ namespace PreyectoFinal.BLL
                 throw;
             }
             return paso;
+        
         }
-
+       
         public virtual bool Eliminar(int id)
         {
             bool paso = false;
