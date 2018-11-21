@@ -1,4 +1,5 @@
-﻿using PreyectoFinal.UI;
+﻿using PreyectoFinal.Entidades;
+using PreyectoFinal.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace PreyectoFinal
 {
     static class Program
     {
+        public static CrearUsuario usuario = null;
+
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,7 +27,7 @@ namespace PreyectoFinal
             if(lg.DialogResult == DialogResult.OK)
             {
                 lg.Dispose();
-                Application.Run(new Main());
+                Application.Run(new Menu());
             }
         }
     }

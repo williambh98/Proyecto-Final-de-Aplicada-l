@@ -27,9 +27,10 @@ namespace PreyectoFinal.UI
         {
             
             
-           DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
             Close();
-            /*
+            
+           /*
             SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
                 + "Integrated Security = true;");
 
@@ -43,7 +44,7 @@ namespace PreyectoFinal.UI
                 if ((registro["Email"].ToString() == EmailTextBox.Text) && (registro["Contraseña"].ToString() == ContraseñaTextBox.Text))
                 {
                     //MessageBox.Show("Correcto");
-                    Main M = new Main();
+                    Menu M = new Menu();
                     M.Show();
                    // M.Activos();
                     this.Hide();
@@ -53,11 +54,10 @@ namespace PreyectoFinal.UI
                 MessageBox.Show("El Email o la Contraseña estan incorrectos", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             conexion.Close();
-            
+           
     */
         }
         
-    
     
     }
     

@@ -1,6 +1,6 @@
 ﻿namespace PreyectoFinal
 {
-    partial class Main
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -73,6 +73,7 @@
             // 
             // registroUsuarioToolStripMenuItem
             // 
+            this.registroUsuarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.icons8_administrador_del_hombre_48;
             this.registroUsuarioToolStripMenuItem.Name = "registroUsuarioToolStripMenuItem";
             this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(307, 26);
             this.registroUsuarioToolStripMenuItem.Text = "Registro Usuario";
@@ -115,35 +116,35 @@
             // consutasDepartamentoToolStripMenuItem
             // 
             this.consutasDepartamentoToolStripMenuItem.Name = "consutasDepartamentoToolStripMenuItem";
-            this.consutasDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consutasDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consutasDepartamentoToolStripMenuItem.Text = "Departamento";
             this.consutasDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.consutasDepartamentoToolStripMenuItem_Click);
             // 
             // consutaToolStripMenuItem
             // 
             this.consutaToolStripMenuItem.Name = "consutaToolStripMenuItem";
-            this.consutaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consutaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consutaToolStripMenuItem.Text = "Proveedores";
             this.consutaToolStripMenuItem.Click += new System.EventHandler(this.consutaToolStripMenuItem_Click);
             // 
             // consultaArticuloToolStripMenuItem
             // 
             this.consultaArticuloToolStripMenuItem.Name = "consultaArticuloToolStripMenuItem";
-            this.consultaArticuloToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consultaArticuloToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consultaArticuloToolStripMenuItem.Text = "Articulo";
             this.consultaArticuloToolStripMenuItem.Click += new System.EventHandler(this.consultaArticuloToolStripMenuItem_Click);
             // 
             // consultaTipoarticuloToolStripMenuItem
             // 
             this.consultaTipoarticuloToolStripMenuItem.Name = "consultaTipoarticuloToolStripMenuItem";
-            this.consultaTipoarticuloToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consultaTipoarticuloToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consultaTipoarticuloToolStripMenuItem.Text = "Tipo articulo";
             this.consultaTipoarticuloToolStripMenuItem.Click += new System.EventHandler(this.consultaTipoarticuloToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consultaToolStripMenuItem.Text = "Usuario";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -158,7 +159,7 @@
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.inventarioToolStripMenuItem.Text = "Capturar";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -168,7 +169,7 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // Main
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,8 +180,9 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Main";
+            this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

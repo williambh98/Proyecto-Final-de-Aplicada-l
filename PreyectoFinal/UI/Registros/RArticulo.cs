@@ -44,14 +44,13 @@ namespace PreyectoFinal.UI.Registros
         {
             ErrorProvider.Clear();
             ArticuloIdNumericUpDown.Value = 0;
-          //  FechaDateTimePicker.Value = DateTime.Now;
+            FechadateTimePicker.Value = DateTime.Now;
             DepartamentoComboBox.SelectedIndex = 0;
             DescripcionTextBox.Clear();
             CostoTextBox.Clear();
             PrecioTextBox.Clear();
-            CantidatextBox.Clear();
-          //  PctGananciaTextBox.Clear();
-          //  InventarioTextBox.Clear();
+           // CantidatextBox.Clear();
+     
 
 
 
@@ -62,7 +61,7 @@ namespace PreyectoFinal.UI.Registros
 
             articulo.ArticuloID = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
             articulo.DepartamentoId = Convert.ToInt32(DepartamentoComboBox.SelectedValue);
-           // articulo.FechaVencimiento = FechaDateTimePicker.Value;
+            articulo.FechaCreacion = FechadateTimePicker.Value;
             articulo.Descripcion = DescripcionTextBox.Text;
             articulo.Costo = Convert.ToDouble(CostoTextBox.Text);
             articulo.Precio = Convert.ToDouble(PrecioTextBox.Text);
@@ -212,7 +211,7 @@ namespace PreyectoFinal.UI.Registros
                 DescripcionTextBox.Text = articulo.Descripcion;
                 CostoTextBox.Text = articulo.Costo.ToString();
                 PrecioTextBox.Text = articulo.Precio.ToString();
-                CantidatextBox.Text = articulo.sumar.ToString();
+                FechadateTimePicker.Value = articulo.FechaCreacion;
                // PctGananciaTextBox.Text = articulo.PorCientoGanancia.ToString();
                // InventarioTextBox.Text = articulo.CantidadIventario.ToString();
             }
@@ -225,25 +224,7 @@ namespace PreyectoFinal.UI.Registros
             LlenarCombo();
         }
 
-        private void InventarioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PrecioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        /*
         public Articulo articulo()
         {
             
@@ -255,17 +236,18 @@ namespace PreyectoFinal.UI.Registros
             }
             return articulo;
         }
+        */
         private void tipoButton_Click(object sender, EventArgs e)
         {
             RTipoArticulo tp = new RTipoArticulo();
-            tp.ShowDialog();
+            tp.Show();
             LlenarCombo();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             RProveedores pv = new RProveedores();
-            pv.ShowDialog();
+            pv.Show();
             LlenarCombo();
         }
 
@@ -278,6 +260,11 @@ namespace PreyectoFinal.UI.Registros
         {
            
           
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
         /*
 private void tipoButton_Click(object sender, EventArgs e)

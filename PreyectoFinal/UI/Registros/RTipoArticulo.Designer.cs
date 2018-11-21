@@ -47,36 +47,36 @@
             // EliminarButton
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
             this.EliminarButton.Location = new System.Drawing.Point(245, 182);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(107, 28);
+            this.EliminarButton.Size = new System.Drawing.Size(107, 56);
             this.EliminarButton.TabIndex = 124;
-            this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
             this.GuardarButton.Location = new System.Drawing.Point(137, 182);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(100, 28);
+            this.GuardarButton.Size = new System.Drawing.Size(100, 56);
             this.GuardarButton.TabIndex = 123;
-            this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
             this.NuevoButton.Location = new System.Drawing.Point(32, 182);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(97, 28);
+            this.NuevoButton.Size = new System.Drawing.Size(97, 56);
             this.NuevoButton.TabIndex = 122;
-            this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
@@ -109,12 +109,14 @@
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Location = new System.Drawing.Point(245, 44);
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
+            this.BuscarButton.Location = new System.Drawing.Point(245, 29);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(119, 28);
+            this.BuscarButton.Size = new System.Drawing.Size(119, 43);
             this.BuscarButton.TabIndex = 107;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
@@ -146,15 +148,15 @@
             this.label2.Location = new System.Drawing.Point(17, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 127;
-            this.label2.Text = "Tipo Articuolo";
+            this.label2.Text = "Categoria:";
             // 
             // RTipoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 251);
+            this.ClientSize = new System.Drawing.Size(394, 251);
             this.Controls.Add(this.TipoTextbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);

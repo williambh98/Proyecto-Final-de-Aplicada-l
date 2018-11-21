@@ -21,7 +21,7 @@ namespace PreyectoFinal.BLL
             {
                 if (contexto.Entrada.Add(entrada) != null)
                 {
-                    contexto._Articulo.Find(entrada.ArticuloID).sumar += entrada.Cantidad;
+                    contexto._Articulo.Find(entrada.ArticuloID);//.sumar += entrada.Cantidad;
 
                     contexto.SaveChanges();
                     paso = true;
@@ -106,6 +106,9 @@ namespace PreyectoFinal.BLL
             try
             {
                 entrada = contexto.Entrada.Find(id);
+                if (entrada == null)
+                    return entrada;
+                entrada.Detalle.Count();
                 contexto.Dispose();
             }
             catch (Exception)

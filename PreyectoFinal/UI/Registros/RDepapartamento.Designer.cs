@@ -34,12 +34,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DepartamentoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.myErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.GuardarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DepartamentoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -83,48 +83,38 @@
             // EliminarButton
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EliminarButton.Location = new System.Drawing.Point(266, 124);
+            this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
+            this.EliminarButton.Location = new System.Drawing.Point(266, 113);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(115, 28);
+            this.EliminarButton.Size = new System.Drawing.Size(115, 43);
             this.EliminarButton.TabIndex = 70;
-            this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
-            // 
-            // GuardarButton
-            // 
-            this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GuardarButton.Location = new System.Drawing.Point(143, 124);
-            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(115, 28);
-            this.GuardarButton.TabIndex = 69;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click_1);
             // 
             // NuevoButton
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NuevoButton.Location = new System.Drawing.Point(20, 124);
+            this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
+            this.NuevoButton.Location = new System.Drawing.Point(20, 113);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(115, 28);
+            this.NuevoButton.Size = new System.Drawing.Size(115, 43);
             this.NuevoButton.TabIndex = 68;
-            this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
             this.BuscarButton.Location = new System.Drawing.Point(261, 36);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(115, 28);
+            this.BuscarButton.Size = new System.Drawing.Size(115, 39);
             this.BuscarButton.TabIndex = 67;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
             // 
@@ -148,6 +138,18 @@
             this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 76;
             this.label3.Text = "Fecha";
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
+            this.GuardarButton.Location = new System.Drawing.Point(143, 113);
+            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(115, 43);
+            this.GuardarButton.TabIndex = 69;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click_1);
             // 
             // RDepapartamento
             // 
@@ -180,11 +182,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown DepartamentoIdNumericUpDown;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider myErrorProvider;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.Button GuardarButton;
     }
 }

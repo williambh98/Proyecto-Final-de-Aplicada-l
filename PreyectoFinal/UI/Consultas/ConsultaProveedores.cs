@@ -19,41 +19,107 @@ namespace PreyectoFinal.UI.Consultas
         public ConsultaProveedores()
         {
             InitializeComponent();
-     
+            Filtro_comboBox.SelectedIndex = 0;
+
         }
+        List<Proveedores> lista = new List<Proveedores>();
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Proveedores> repositorio;
             repositorio = new RepositorioBase<Proveedores>();
-            Expression<Func<Proveedores, bool>> filtro = c => true;
-            int id;
-
-        switch(Filtro_comboBox.SelectedIndex)
+            var filtro = new List<Proveedores>();
+    
+            if (Criterio_textBox.Text.Trim().Length >= 0)
             {
-                case 0://Todos
-                    break;
-                case 1://ID
+                switch (Filtro_comboBox.SelectedIndex)
+                {
+                    case 0://Todos
+                        filtro = repositorio.GetList(p => true);
+                        break;
+                    case 1:
+                   
+                        if (Validar(1))
+                        {
+                            MessageBox.Show("Introduce un numero");
+                            return;
+                        }
+                        int id = Convert.ToInt32(Criterio_textBox.Text);
+                        filtro = repositorio.GetList(p => p.IDProveedor == id);
 
-                    id = Convert.ToInt32(Criterio_textBox.Text);
-                    filtro = c=> c.IDProveedor == id;
-                    break;
-                case 2://Nombre
-                    filtro = c => c.NombreProveedor.Contains(Criterio_textBox.Text);
-                    break;
-                case 3://Email
-                    filtro = c => c.Email.Contains(Criterio_textBox.Text);
-                    break;
-                case 4://Direccion
-                    filtro = c => c.Direccion.Contains(Criterio_textBox.Text);
-                    break;
-                case 5://telefono
-                    filtro = c => c.Telefono.Contains(Criterio_textBox.Text);
-                    break;    
+                        break;
+                    case 2://Nombre
+                    
+                        if (Validar(2))
+                        {
+                            MessageBox.Show("Introduce un caracter");
+                            return;
+                        }
+                        filtro = repositorio.GetList(p => p.NombreProveedor.Contains(Criterio_textBox.Text));
+                        break;
+                    case 3://Email
+                       
+                        if (Validar(2))
+                        {
+                            MessageBox.Show("Introduce un caracter");
+                            return;
+                        }
+                        filtro = repositorio.GetList(p => p.Email.Contains(Criterio_textBox.Text));
+                        break;
+                    case 4://Direccion
+                        
+                        if (Validar(2))
+                        {
+                            MessageBox.Show("Introduce un caracter");
+                            return;
+                        }
+                        filtro = repositorio.GetList(p => p.Direccion.Contains(Criterio_textBox.Text));
+                        break;
+                    case 5://telefono
+                        Limpiar();
+
+                        if (Validar(1))
+                        {
+                            MessageBox.Show("Introduce un numero");
+                            return;
+                        }
+
+                        filtro = repositorio.GetList(p => p.Telefono.Contains(Criterio_textBox.Text));
+                        break;
+                }
+                filtro = filtro.Where(c => c.FechaProveedor.Date >= DesdedateTimePicker.Value.Date && c.FechaProveedor.Date <= HastadateTimePicker.Value.Date).ToList();
             }
-            filtro = c => c.FechaProveedor >= Desde_dateTimePicker.Value.Date && c.FechaProveedor <= Hasta_dateTimePicker.Value.Date;
-            Consulta_dataGridView.DataSource = repositorio.GetList(filtro);
+           
+            Consulta_dataGridView.DataSource = null;
+            Consulta_dataGridView.DataSource = filtro;
+            
+        }
 
+        private bool Validar(int error)
+        {
+            bool paso = false;
+            int ejem = 0;
+            double ejemplo = 0;
+            if(error ==1 && double.TryParse(Criterio_textBox.Text, out ejemplo) == false)
+            {
+                errorProvider.SetError(Criterio_textBox, "Debe de ser un numero");
+                paso = true;
+            }
+            if(error == 2 && int.TryParse(Criterio_textBox.Text, out ejem) == true)
+            {
+                errorProvider.SetError(Criterio_textBox, "Debe de ser un Caracter");
+                paso = true;
+            }
+            return paso;
+        }
+
+        private void Limpiar()
+        {
+            errorProvider.Clear();
+        }
+
+        private void Hasta_dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
 
         }
 
@@ -65,26 +131,30 @@ namespace PreyectoFinal.UI.Consultas
         /*
         private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Filtro_comboBox.SelectedIndex == 0)
+            Criterio_textBox.Clear();
+            Limpiar();
+            if(Filtro_comboBox.SelectedIndex ==5)
             {
-                Criterio_textBox.Visible = false;
-                label2.Visible = false;
+                Criterio_textBox.Enabled = false;
             }
-            if (Filtro_comboBox.SelectedIndex == 1)
+            else
             {
-                label3.Visible = false;
-                label4.Visible = false;
-                label5.Visible = false;
-                Hasta_dateTimePicker.Visible = false;
-                Desde_dateTimePicker.Visible = false;
-
-                Criterio_textBox.Visible = true;
-                label2.Visible = true;
-                // Criterio();
-                //Criterio_textBox = .Criterio_textBox();
-                */
+                Criterio_textBox.Enabled = true;
+            }
+            if(Filtro_comboBox.SelectedIndex == 3)
+            {
+                Criterio_textBox.MaxLength = 11;
+            }
+            if (Filtro_comboBox.SelectedIndex == 4)
+            {
+                Criterio_textBox.MaxLength = 10;
+            }
+            else
+                Criterio_textBox.MaxLength = 200;
+        }
+        */
     }
             
-        }
+  }
     
 

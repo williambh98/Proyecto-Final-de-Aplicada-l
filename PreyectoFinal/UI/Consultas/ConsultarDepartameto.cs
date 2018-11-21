@@ -1,5 +1,6 @@
 ﻿using PreyectoFinal.BLL;
 using PreyectoFinal.Entidades;
+using PreyectoFinal.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,8 @@ namespace PreyectoFinal.UI.Consultas
 {
     public partial class ConsultarDepartameto : Form
     {
-       
+        private List<Departamento> departamentos = new List<Departamento>();
+
         public ConsultarDepartameto()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace PreyectoFinal.UI.Consultas
             repositorio = new RepositorioBase<Departamento>();
             var filtro = new List<Departamento>();
             int id;
-            if (CristeriotextBox.Text.Trim().Length > 0)
+            if (CristeriotextBox.Text.Trim().Length >= 0)
             {
                 switch (FiltrocomboBox.SelectedIndex)
                 {
@@ -48,24 +50,26 @@ namespace PreyectoFinal.UI.Consultas
             }
             else
             {
-                filtro = repositorio.GetList(p => true);
+                departamentos = repositorio.GetList(p => true);
             }
-            ConsultaDataGridView.DataSource = null;
+           ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = filtro;
+            departamentos = filtro;
+
 
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            /*
+            
             if (departamentos.Count == 0)
             {
-                MessageBox.Show("No hay datos pra mostrar en el Reporte");
+                MessageBox.Show("No hay en el Reporte");
                 return;
             }
-            DepartamentosReviewer departamentosReviewer = new DepartamentosReviewer(departamentos);
+            DepartamentoReview departamentosReviewer = new DepartamentoReview(departamentos);
             departamentosReviewer.ShowDialog();
-            */
+            
 
         }
 

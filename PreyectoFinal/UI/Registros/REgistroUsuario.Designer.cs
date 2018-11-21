@@ -29,30 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(REgistroUsuario));
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.NoTelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.UsuarioIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UsuarioradioButton = new System.Windows.Forms.RadioButton();
+            this.AdministradorradioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(106, 84);
+            this.EmailTextBox.Location = new System.Drawing.Point(118, 132);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(215, 22);
@@ -70,45 +76,35 @@
             // 
             // NoTelefonoMaskedTextBox
             // 
-            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(133, 180);
+            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(122, 179);
             this.NoTelefonoMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NoTelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
-            this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(132, 22);
+            this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(211, 22);
             this.NoTelefonoMaskedTextBox.TabIndex = 82;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 188);
+            this.label4.Location = new System.Drawing.Point(33, 182);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 17);
+            this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 81;
-            this.label4.Text = "No. Telefono";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(334, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 256);
-            this.pictureBox1.TabIndex = 80;
-            this.pictureBox1.TabStop = false;
+            this.label4.Text = "Telefono";
             // 
             // ContraseñaTextBox
             // 
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(122, 235);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(122, 226);
             this.ContraseñaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.Size = new System.Drawing.Size(143, 22);
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(159, 22);
             this.ContraseñaTextBox.TabIndex = 79;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 244);
+            this.label3.Location = new System.Drawing.Point(33, 229);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 17);
@@ -117,7 +113,7 @@
             // 
             // NombresTextBox
             // 
-            this.NombresTextBox.Location = new System.Drawing.Point(106, 130);
+            this.NombresTextBox.Location = new System.Drawing.Point(118, 84);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(215, 22);
@@ -141,54 +137,6 @@
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(72, 22);
             this.UsuarioIdNumericUpDown.TabIndex = 75;
             // 
-            // EliminarButton
-            // 
-            this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EliminarButton.Location = new System.Drawing.Point(365, 310);
-            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(143, 28);
-            this.EliminarButton.TabIndex = 74;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
-            // 
-            // GuardarButton
-            // 
-            this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GuardarButton.Location = new System.Drawing.Point(188, 310);
-            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(139, 28);
-            this.GuardarButton.TabIndex = 73;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            // 
-            // NuevoButton
-            // 
-            this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NuevoButton.Location = new System.Drawing.Point(9, 310);
-            this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(132, 28);
-            this.NuevoButton.TabIndex = 72;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
-            // 
-            // BuscarButton
-            // 
-            this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Location = new System.Drawing.Point(189, 21);
-            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(137, 28);
-            this.BuscarButton.TabIndex = 71;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -203,11 +151,118 @@
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(345, 21);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 80;
+            this.pictureBox1.TabStop = false;
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.Location = new System.Drawing.Point(392, 271);
+            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(143, 49);
+            this.EliminarButton.TabIndex = 74;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.Location = new System.Drawing.Point(213, 271);
+            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(139, 49);
+            this.GuardarButton.TabIndex = 73;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
+            this.NuevoButton.Location = new System.Drawing.Point(36, 271);
+            this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(132, 49);
+            this.NuevoButton.TabIndex = 72;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
+            this.BuscarButton.Location = new System.Drawing.Point(189, 21);
+            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(137, 39);
+            this.BuscarButton.TabIndex = 71;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(288, 231);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 17);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "Nivel";
+            // 
+            // UsuarioradioButton
+            // 
+            this.UsuarioradioButton.AutoSize = true;
+            this.UsuarioradioButton.Location = new System.Drawing.Point(6, 14);
+            this.UsuarioradioButton.Name = "UsuarioradioButton";
+            this.UsuarioradioButton.Size = new System.Drawing.Size(78, 21);
+            this.UsuarioradioButton.TabIndex = 88;
+            this.UsuarioradioButton.TabStop = true;
+            this.UsuarioradioButton.Text = "Usuario";
+            this.UsuarioradioButton.UseVisualStyleBackColor = true;
+            // 
+            // AdministradorradioButton
+            // 
+            this.AdministradorradioButton.AutoSize = true;
+            this.AdministradorradioButton.Location = new System.Drawing.Point(87, 16);
+            this.AdministradorradioButton.Name = "AdministradorradioButton";
+            this.AdministradorradioButton.Size = new System.Drawing.Size(116, 21);
+            this.AdministradorradioButton.TabIndex = 90;
+            this.AdministradorradioButton.TabStop = true;
+            this.AdministradorradioButton.Text = "Administrador";
+            this.AdministradorradioButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.UsuarioradioButton);
+            this.groupBox1.Controls.Add(this.AdministradorradioButton);
+            this.groupBox1.Location = new System.Drawing.Point(333, 211);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(203, 53);
+            this.groupBox1.TabIndex = 91;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // REgistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 367);
+            this.ClientSize = new System.Drawing.Size(548, 333);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.NoTelefonoMaskedTextBox);
@@ -225,9 +280,11 @@
             this.Controls.Add(this.label1);
             this.Name = "REgistroUsuario";
             this.Text = "Registro Usuario";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +308,9 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton AdministradorradioButton;
+        private System.Windows.Forms.RadioButton UsuarioradioButton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

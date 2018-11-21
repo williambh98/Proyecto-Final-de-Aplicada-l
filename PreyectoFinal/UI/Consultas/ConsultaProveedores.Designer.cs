@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.Desde_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Criterio_textBox = new System.Windows.Forms.TextBox();
@@ -40,7 +41,9 @@
             this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Imprimirbutton
@@ -73,23 +76,24 @@
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 59;
             // 
-            // Hasta_dateTimePicker
+            // HastadateTimePicker
             // 
-            this.Hasta_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Hasta_dateTimePicker.Location = new System.Drawing.Point(354, 82);
-            this.Hasta_dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
-            this.Hasta_dateTimePicker.Name = "Hasta_dateTimePicker";
-            this.Hasta_dateTimePicker.Size = new System.Drawing.Size(184, 22);
-            this.Hasta_dateTimePicker.TabIndex = 58;
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HastadateTimePicker.Location = new System.Drawing.Point(354, 82);
+            this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.HastadateTimePicker.Name = "HastadateTimePicker";
+            this.HastadateTimePicker.Size = new System.Drawing.Size(184, 22);
+            this.HastadateTimePicker.TabIndex = 58;
+            this.HastadateTimePicker.ValueChanged += new System.EventHandler(this.Hasta_dateTimePicker_ValueChanged);
             // 
-            // Desde_dateTimePicker
+            // DesdedateTimePicker
             // 
-            this.Desde_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Desde_dateTimePicker.Location = new System.Drawing.Point(102, 87);
-            this.Desde_dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
-            this.Desde_dateTimePicker.Name = "Desde_dateTimePicker";
-            this.Desde_dateTimePicker.Size = new System.Drawing.Size(155, 22);
-            this.Desde_dateTimePicker.TabIndex = 57;
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(102, 87);
+            this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DesdedateTimePicker.Name = "DesdedateTimePicker";
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(155, 22);
+            this.DesdedateTimePicker.TabIndex = 57;
             // 
             // label4
             // 
@@ -164,6 +168,10 @@
             this.Consulta_dataGridView.Size = new System.Drawing.Size(704, 219);
             this.Consulta_dataGridView.TabIndex = 50;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ConsultaProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,8 +180,8 @@
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Hasta_dateTimePicker);
-            this.Controls.Add(this.Desde_dateTimePicker);
+            this.Controls.Add(this.HastadateTimePicker);
+            this.Controls.Add(this.DesdedateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Criterio_textBox);
@@ -185,6 +193,7 @@
             this.Text = "ConsultaProveedores";
             this.Load += new System.EventHandler(this.ConsultaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,8 +204,8 @@
         private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;
-        private System.Windows.Forms.DateTimePicker Desde_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker HastadateTimePicker;
+        private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Criterio_textBox;
@@ -204,5 +213,6 @@
         private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Consulta_dataGridView;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

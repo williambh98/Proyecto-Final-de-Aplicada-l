@@ -14,8 +14,10 @@ namespace PreyectoFinal.UI.Registros
 {
     public partial class REntradeDeProducto : Form
     {
+        public List<ArticuloDetalle> detalle { get; set; }
         public REntradeDeProducto()
         {
+            detalle = new List<ArticuloDetalle>();
             InitializeComponent();
             LlenarComboBox();
         }
@@ -27,7 +29,15 @@ namespace PreyectoFinal.UI.Registros
             ProductoComboBox.ValueMember = "Articuloid";
             ProductoComboBox.DisplayMember = "Descripcion";
         }
+        private void LlenaCampos(Entrada entrada)
+        {
+            FechaDateTimePicker.Value = entrada.Fecha;
+            ProductoComboBox.SelectedValue = entrada.ArticuloID;
+            CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
 
+            this.detalle = entrada.Detalle;
+            CargarGrid();
+        }
         private Entrada LlenaClase()
         {
             Entrada entrada = new Entrada();
@@ -37,6 +47,7 @@ namespace PreyectoFinal.UI.Registros
             entrada.ArticuloID = Convert.ToInt32(ProductoComboBox.SelectedValue);
             entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
 
+            entrada.Detalle = this.detalle;
             return entrada;
         }
 
@@ -46,6 +57,7 @@ namespace PreyectoFinal.UI.Registros
             FechaDateTimePicker.Value = DateTime.Now;
             ProductoComboBox.SelectedIndex = 0; ;
             CantidadnumericUpDown.Value = 0;
+            EntradadataGridView.DataSource = null;
             errorProvider.Clear();
         }
 
@@ -84,6 +96,7 @@ namespace PreyectoFinal.UI.Registros
                 paso = EntradaBLL.Guardar(entrada);
                 MessageBox.Show("Guardado!!", "Exito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
@@ -92,7 +105,7 @@ namespace PreyectoFinal.UI.Registros
 
                 if (entrada != null)
                 {
-                    paso = EntradaBLL.Modificar(LlenaClase());
+                    paso = EntradaBLL.Modificar(entrada);
                     MessageBox.Show("Modificado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -137,9 +150,7 @@ namespace PreyectoFinal.UI.Registros
 
             if (entrada != null)
             {
-                FechaDateTimePicker.Value = entrada.Fecha;
-                ProductoComboBox.SelectedValue = entrada.ArticuloID;
-                CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
+                LlenaCampos(entrada);
             }
         }
 
@@ -150,7 +161,7 @@ namespace PreyectoFinal.UI.Registros
 
         private void agregarbutton_Click(object sender, EventArgs e)
         {
-            List<ArticuloDetalle> detalle = new List<ArticuloDetalle>();
+            
 
             if (EntradadataGridView.DataSource != null)
             {
@@ -168,12 +179,12 @@ namespace PreyectoFinal.UI.Registros
             }
             else
             {
-                RArticulo ra = new RArticulo();
-                detalle.Add(
+                //RArticulo ra = new RArticulo();
+                this.detalle.Add(
                     new ArticuloDetalle(
                        id: 0,
                        fecha: DateTime.Now,
-                       articuloid: (int)EntradaIdNumericUpDown.Value,
+                       entradaId: (int)EntradaIdNumericUpDown.Value,
                        //: (int)ProductoComboBox.SelectedValue,
                        cantidad: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
                        precio: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
@@ -187,13 +198,18 @@ namespace PreyectoFinal.UI.Registros
                 EntradadataGridView.DataSource = null;
                 EntradadataGridView.DataSource = detalle;
                 EntradadataGridView.Columns[0].Visible = false;
+                CargarGrid();
                // LlenarValores();
             }
         }
-
+        private void CargarGrid()
+        {
+            EntradadataGridView.DataSource = null;
+            EntradadataGridView.DataSource = this.detalle;
+        }
         private void Removerbutton_Click(object sender, EventArgs e)
         {
-            if (EntradadataGridView.Rows.Count > 0 && EntradadataGridView.CurrentRow != null)
+            if (EntradadataGridView.Rows.Count >= 0 && EntradadataGridView.CurrentRow != null)
             {
                 List<ArticuloDetalle> detalle = (List<ArticuloDetalle>)EntradadataGridView.DataSource;
 

@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 50);
+            this.label1.Location = new System.Drawing.Point(22, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 17);
             this.label1.TabIndex = 0;
@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 136);
+            this.label2.Location = new System.Drawing.Point(22, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 1;
@@ -75,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 93);
+            this.label3.Location = new System.Drawing.Point(22, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 2;
@@ -84,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 219);
+            this.label4.Location = new System.Drawing.Point(18, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 3;
@@ -93,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 178);
+            this.label5.Location = new System.Drawing.Point(22, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 4;
@@ -102,94 +102,97 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(224, 219);
+            this.label6.Location = new System.Drawing.Point(259, 225);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 17);
+            this.label6.Size = new System.Drawing.Size(123, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "FechaDeEntrega";
+            this.label6.Text = "Fecha De Entrega";
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(92, 45);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(94, 44);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(162, 22);
             this.IDnumericUpDown.TabIndex = 6;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(92, 90);
+            this.NombretextBox.Location = new System.Drawing.Point(94, 89);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(379, 22);
+            this.NombretextBox.Size = new System.Drawing.Size(288, 22);
             this.NombretextBox.TabIndex = 7;
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(93, 136);
+            this.DirecciontextBox.Location = new System.Drawing.Point(94, 132);
+            this.DirecciontextBox.Multiline = true;
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(378, 22);
+            this.DirecciontextBox.Size = new System.Drawing.Size(288, 39);
             this.DirecciontextBox.TabIndex = 8;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(92, 173);
+            this.EmailtextBox.Location = new System.Drawing.Point(96, 182);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(379, 22);
+            this.EmailtextBox.Size = new System.Drawing.Size(455, 22);
             this.EmailtextBox.TabIndex = 9;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(304, 42);
+            this.Buscarbutton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
+            this.Buscarbutton.Location = new System.Drawing.Point(262, 28);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(104, 33);
+            this.Buscarbutton.Size = new System.Drawing.Size(120, 52);
             this.Buscarbutton.TabIndex = 10;
             this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // TelefonoMaskedTextBox
             // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(92, 216);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(98, 222);
             this.TelefonoMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(125, 22);
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(145, 22);
             this.TelefonoMaskedTextBox.TabIndex = 83;
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(358, 214);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(391, 222);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(113, 22);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(160, 22);
             this.FechadateTimePicker.TabIndex = 84;
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(26, 278);
+            this.Nuevobutton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
+            this.Nuevobutton.Location = new System.Drawing.Point(25, 267);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(104, 33);
+            this.Nuevobutton.Size = new System.Drawing.Size(104, 58);
             this.Nuevobutton.TabIndex = 85;
-            this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(198, 278);
+            this.Guardarbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
+            this.Guardarbutton.Location = new System.Drawing.Point(225, 267);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(104, 33);
+            this.Guardarbutton.Size = new System.Drawing.Size(104, 58);
             this.Guardarbutton.TabIndex = 86;
-            this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(367, 278);
+            this.Eliminarbutton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
+            this.Eliminarbutton.Location = new System.Drawing.Point(433, 267);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(104, 33);
+            this.Eliminarbutton.Size = new System.Drawing.Size(104, 58);
             this.Eliminarbutton.TabIndex = 87;
-            this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
@@ -204,10 +207,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(478, 13);
+            this.pictureBox1.Image = global::PreyectoFinal.Properties.Resources.descarga__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(389, 15);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 233);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
             // 
@@ -215,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 364);
+            this.ClientSize = new System.Drawing.Size(569, 337);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

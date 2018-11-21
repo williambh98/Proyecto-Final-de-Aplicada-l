@@ -17,6 +17,9 @@ namespace PreyectoFinal.UI.Consultas
         public ConsultaTipoArticulo()
         {
             InitializeComponent();
+            FiltrocomboBox.SelectedIndex = 0;
+
+
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -24,7 +27,8 @@ namespace PreyectoFinal.UI.Consultas
             RepositorioBase<TipoArticulo> repositorio;
             repositorio = new RepositorioBase<TipoArticulo>();
             var Filtro = new List<TipoArticulo>();
-            if (CristeriotextBox.Text.Trim().Length > 0)
+            
+            if (CristeriotextBox.Text.Trim().Length >= 0)
             {
                 switch (FiltrocomboBox.SelectedIndex)
                 {
@@ -32,7 +36,7 @@ namespace PreyectoFinal.UI.Consultas
                         Filtro = repositorio.GetList(p => true);
                         break;
                     case 1:
-                        int id = Convert.ToInt32(CristeriotextBox.Text);
+                         int id = Convert.ToInt32(CristeriotextBox.Text);
                         Filtro= repositorio.GetList(p => p.TiposId == id);
                         break;
                     case 2:
@@ -45,12 +49,10 @@ namespace PreyectoFinal.UI.Consultas
                 Filtro = Filtro.Where(c => c.FechaCreacion.Date >= DesdedateTimePicker.Value.Date && c.FechaCreacion.Date <= HastadateTimePicker.Value.Date).ToList();
 
             }
-            else
-            {
-                Filtro = repositorio.GetList(p => true);
-            }
+           
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Filtro;
+            
         }
     }
 }

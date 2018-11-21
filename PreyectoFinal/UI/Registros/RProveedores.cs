@@ -126,13 +126,17 @@ namespace PreyectoFinal.UI.Registros
             repositorio = new RepositorioBase<Proveedores>();
             Proveedores proveedores;
             bool paso = false;
-
+                if (!Validar())
+                {
+                    MessageBox.Show("Llenar campos ", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             proveedores = LlenarClase();
-            if (!Validar())
-                return;
 
             if (IDnumericUpDown.Value == 0)
-                paso = repositorio.Guardar(proveedores);
+            {
+                 paso = repositorio.Guardar(proveedores);
+            }
             else
             {
                 if (!ExiteEnLaDb())
@@ -167,6 +171,7 @@ namespace PreyectoFinal.UI.Registros
                 IDnumericUpDown.Focus();
                 return;
             }
+            Limpiar();
             if (repositorio.Eliminar(id))
                 MessageBox.Show("Eliminada ");
             else
@@ -174,7 +179,5 @@ namespace PreyectoFinal.UI.Registros
                 MessageBox.Show("No Elimino");
             }
         }
-
-        
     }
 }

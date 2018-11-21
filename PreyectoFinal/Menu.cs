@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PreyectoFinal
 {
-    public partial class Main : Form
+    public partial class Menu : Form
     {
-        public Main()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -92,6 +92,11 @@ namespace PreyectoFinal
             RProveedores Pro = new RProveedores();
             Pro.Show();
             Pro.MdiParent = this;
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using PreyectoFinal.BLL;
 using PreyectoFinal.Entidades;
+using PreyectoFinal.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,7 +130,7 @@ namespace PreyectoFinal.UI.Consultas
                     }
                     else
                     {
-                       filtro = p => p.sumar.Equals(CristeriotextBox.Text);
+                       //filtro = p => p.sumar.Equals(CristeriotextBox.Text);
                         if (ArticuloBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Porciento, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -179,8 +180,11 @@ namespace PreyectoFinal.UI.Consultas
                 MessageBox.Show("No hay datos pra mostrar en el Reporte");
                 return;
             }
-            //ProductosReviewer productoReviewer = new ProductosReviewer(articulo);
-            //productoReviewer.ShowDialog();
+            ArticuloReview articuloReview = new ArticuloReview(articulos);
+            articuloReview.Show();
+
+
+
         }
     }
 }

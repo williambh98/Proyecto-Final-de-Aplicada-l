@@ -31,6 +31,7 @@ namespace PreyectoFinal.UI.Registros
             usuario.Nombres = NombresTextBox.Text;
             usuario.Email = EmailTextBox.Text;
             usuario.NoTelefono = NoTelefonoMaskedTextBox.Text;
+            usuario.Administrador = true;
             usuario.Contraseña = ContraseñaTextBox.Text;
 
             return usuario;
@@ -41,6 +42,7 @@ namespace PreyectoFinal.UI.Registros
             UsuarioIdNumericUpDown.Value = 0;
             NombresTextBox.Clear();
             EmailTextBox.Clear();
+            AdministradorradioButton.Text = string.Empty;
             NoTelefonoMaskedTextBox.Clear();
             ContraseñaTextBox.Clear();
             ErrorProvider.Clear();
@@ -160,7 +162,32 @@ namespace PreyectoFinal.UI.Registros
                 EmailTextBox.Text = usuario.Email;
                 NoTelefonoMaskedTextBox.Text = usuario.NoTelefono;
                 ContraseñaTextBox.Text = usuario.Contraseña;
+                AdministradorradioButton.Checked = usuario.Administrador;
+            
             }
+        }
+
+        private void UsuariocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            REgistroUsuario usuario = new REgistroUsuario();
+            usuario.Show();
+        
+            
+
+        }
+
+        private void AdministradorcheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            REgistroUsuario usuario = new REgistroUsuario();
+          
+            
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

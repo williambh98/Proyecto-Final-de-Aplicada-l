@@ -1,4 +1,5 @@
-﻿using PreyectoFinal.BLL;
+﻿//using PreyectoFinal.BLL;
+using PreyectoFinal.BLL;
 using PreyectoFinal.Entidades;
 using System;
 using System.Collections.Generic;
@@ -137,8 +138,9 @@ namespace PreyectoFinal.UI.Registros
                 TipoIdNumericUpDown.Focus();
                 return;
             }
+            Limpiar();
             if (rep.Eliminar(id))
-                MessageBox.Show("Eliminada ");
+                MessageBox.Show("Eliminado ");
             else
             {
                 MessageBox.Show("No Elimino");

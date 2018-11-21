@@ -40,13 +40,13 @@ namespace PreyectoFinal.UI.Registros
 
         private bool HayErrores()
         {
-            bool paso = false;
+            bool paso = true;
 
             if (String.IsNullOrEmpty(NombreTextBox.Text))
             {
                 myErrorProvider.SetError(NombreTextBox,
                     "Debe escribir el Nombre para el Departamento");
-                paso = true;
+                paso = false;
             }
 
             return paso;
@@ -62,6 +62,7 @@ namespace PreyectoFinal.UI.Registros
             if (departamento != null)
             {
                 NombreTextBox.Text = departamento.Nombre;
+                FechadateTimePicker.Value = departamento.fecha;
             }
         }
 
@@ -72,12 +73,16 @@ namespace PreyectoFinal.UI.Registros
 
         private void GuardarButton_Click_1(object sender, EventArgs e)
         {
+            rep = new RepositorioBase<Departamento>();
             Departamento departamento;
             bool paso = false;
 
-            if (HayErrores())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
+            if (!HayErrores())
+                {
+                    MessageBox.Show("Llenar campos ", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
             departamento = LlenaClase();
 

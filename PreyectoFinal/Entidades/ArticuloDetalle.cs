@@ -11,9 +11,8 @@ namespace PreyectoFinal.Entidades
     public class ArticuloDetalle
     {
         [Key]
-
         public int Id { get; set; }
-        public int ArticuloID { get; set; }
+        public int EntradaId { get; set; }
         public double Cantidad { get; set; }
         public double Precio { get; set; }
         public double Importe { get; set; }
@@ -28,18 +27,18 @@ namespace PreyectoFinal.Entidades
         {
             Id = 0;
             Fecha = DateTime.Now;
-            ArticuloID = 0;
+            EntradaId = 0;
             Cantidad = 0;
             Precio = 0;
             Importe = 0;
             FechaVencimiento = DateTime.Now;
         }
 
-        public ArticuloDetalle(int id, DateTime fecha, int articuloid, double cantidad, double precio, double importe,DateTime vencimiento)
+        public ArticuloDetalle(int id, DateTime fecha, int entradaId, double cantidad, double precio, double importe,DateTime vencimiento)
         {
             Id = id;
             Fecha = fecha;
-            ArticuloID = articuloid;
+            EntradaId = entradaId;
             Cantidad = cantidad;
             Precio = precio;
             Importe = importe;
