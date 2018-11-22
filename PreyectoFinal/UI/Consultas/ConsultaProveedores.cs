@@ -133,12 +133,17 @@ namespace PreyectoFinal.UI.Consultas
         }
 
 
-        /*
+        
         private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void Filtro_comboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Criterio_textBox.Clear();
             Limpiar();
-            if(Filtro_comboBox.SelectedIndex ==5)
+            if (Filtro_comboBox.SelectedIndex == 0)
             {
                 Criterio_textBox.Enabled = false;
             }
@@ -146,19 +151,17 @@ namespace PreyectoFinal.UI.Consultas
             {
                 Criterio_textBox.Enabled = true;
             }
-            if(Filtro_comboBox.SelectedIndex == 3)
+            if (Filtro_comboBox.SelectedIndex == 3)
             {
-                Criterio_textBox.MaxLength = 11;
+                Criterio_textBox.MaxLength = 15;
             }
-            if (Filtro_comboBox.SelectedIndex == 4)
+            if (Filtro_comboBox.SelectedIndex == 5)
             {
                 Criterio_textBox.MaxLength = 10;
             }
             else
-                Criterio_textBox.MaxLength = 200;
+                Criterio_textBox.MaxLength = 100;
         }
-        */
-
     }
             
   }

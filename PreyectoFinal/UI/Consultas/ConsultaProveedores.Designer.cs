@@ -149,6 +149,7 @@
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(160, 24);
             this.Filtro_comboBox.TabIndex = 52;
+            this.Filtro_comboBox.SelectedIndexChanged += new System.EventHandler(this.Filtro_comboBox_SelectedIndexChanged_1);
             // 
             // label1
             // 

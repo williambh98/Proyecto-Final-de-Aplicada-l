@@ -72,6 +72,7 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(229, 22);
             this.HastadateTimePicker.TabIndex = 17;
+            this.HastadateTimePicker.ValueChanged += new System.EventHandler(this.HastadateTimePicker_ValueChanged);
             // 
             // DesdedateTimePicker
             // 
@@ -102,6 +103,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(199, 24);
             this.FiltrocomboBox.TabIndex = 14;
+            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
             // 
             // label4
             // 
