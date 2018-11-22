@@ -85,11 +85,13 @@ namespace PreyectoFinal.UI.Registros
         private bool Validar()
         {
             bool paso = true;
+           /*
             if (FechadateTimePicker.Value < DateTime.Now)
             {
                 errorProvider.SetError(FechadateTimePicker, "La fecha no esta Correcta");
                 paso = false;
             }
+            */
             if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
             {
                 errorProvider.SetError(TelefonoMaskedTextBox, "Llenar Campo");

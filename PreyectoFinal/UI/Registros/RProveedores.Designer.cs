@@ -104,9 +104,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(259, 225);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 17);
+            this.label6.Size = new System.Drawing.Size(47, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Fecha De Entrega";
+            this.label6.Text = "Fecha";
             // 
             // IDnumericUpDown
             // 
@@ -134,7 +134,7 @@
             // 
             this.EmailtextBox.Location = new System.Drawing.Point(96, 182);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(455, 22);
+            this.EmailtextBox.Size = new System.Drawing.Size(376, 22);
             this.EmailtextBox.TabIndex = 9;
             // 
             // Buscarbutton
@@ -160,8 +160,9 @@
             // 
             // FechadateTimePicker
             // 
+            this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(391, 222);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(312, 220);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(160, 22);
             this.FechadateTimePicker.TabIndex = 84;
@@ -179,7 +180,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
-            this.Guardarbutton.Location = new System.Drawing.Point(225, 267);
+            this.Guardarbutton.Location = new System.Drawing.Point(202, 267);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(104, 58);
             this.Guardarbutton.TabIndex = 86;
@@ -189,7 +190,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.Eliminarbutton.Location = new System.Drawing.Point(433, 267);
+            this.Eliminarbutton.Location = new System.Drawing.Point(368, 267);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 58);
             this.Eliminarbutton.TabIndex = 87;

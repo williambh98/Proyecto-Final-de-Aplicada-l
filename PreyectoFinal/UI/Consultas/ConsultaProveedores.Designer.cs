@@ -55,6 +55,7 @@
             this.Imprimirbutton.TabIndex = 61;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
@@ -84,7 +85,6 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(184, 22);
             this.HastadateTimePicker.TabIndex = 58;
-            this.HastadateTimePicker.ValueChanged += new System.EventHandler(this.Hasta_dateTimePicker_ValueChanged);
             // 
             // DesdedateTimePicker
             // 
@@ -135,6 +135,7 @@
             // 
             // Filtro_comboBox
             // 
+            this.Filtro_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Filtro_comboBox.FormattingEnabled = true;
             this.Filtro_comboBox.Items.AddRange(new object[] {
             "Todo",
@@ -191,7 +192,6 @@
             this.Controls.Add(this.Consulta_dataGridView);
             this.Name = "ConsultaProveedores";
             this.Text = "ConsultaProveedores";
-            this.Load += new System.EventHandler(this.ConsultaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

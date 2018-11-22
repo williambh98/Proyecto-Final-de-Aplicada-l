@@ -1,5 +1,6 @@
 ﻿using PreyectoFinal.BLL;
 using PreyectoFinal.Entidades;
+using PreyectoFinal.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace PreyectoFinal.UI.Consultas
 {
     public partial class ConsultaTipoArticulo : Form
     {
+        private List<TipoArticulo> tipoArticulos = new List<TipoArticulo>();
         public ConsultaTipoArticulo()
         {
             InitializeComponent();
             FiltrocomboBox.SelectedIndex = 0;
-
 
         }
 
@@ -32,27 +33,43 @@ namespace PreyectoFinal.UI.Consultas
             {
                 switch (FiltrocomboBox.SelectedIndex)
                 {
-                    case 0:
+                    case 0://Todo
                         Filtro = repositorio.GetList(p => true);
                         break;
-                    case 1:
+                    case 1://ID
                          int id = Convert.ToInt32(CristeriotextBox.Text);
                         Filtro= repositorio.GetList(p => p.TiposId == id);
                         break;
-                    case 2:
+                    case 2://Nombre
                         Filtro = repositorio.GetList(p => p.Nombre.Contains(CristeriotextBox.Text));
                         break;
-                    case 3:
+                    case 3://Descripcion
                         Filtro = repositorio.GetList(p => p.Descripcion.Contains(CristeriotextBox.Text));
                         break;
                 }
                 Filtro = Filtro.Where(c => c.FechaCreacion.Date >= DesdedateTimePicker.Value.Date && c.FechaCreacion.Date <= HastadateTimePicker.Value.Date).ToList();
 
             }
-           
+            else
+            {
+                tipoArticulos = repositorio.GetList(p => true);
+            }
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Filtro;
-            
+            tipoArticulos = Filtro;
+
+
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (tipoArticulos.Count == 0)
+            {
+                MessageBox.Show("No hay en el Reporte");
+                return;
+            }
+            TipoArticuloReview tipoArticuloReview = new TipoArticuloReview(tipoArticulos);
+            tipoArticuloReview.Show();
         }
     }
 }

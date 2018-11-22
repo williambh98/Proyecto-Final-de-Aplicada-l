@@ -189,5 +189,12 @@ namespace PreyectoFinal.UI.Registros
         {
 
         }
+
+        private void REgistroUsuario_Load(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }

@@ -29,8 +29,9 @@ namespace PreyectoFinal.UI
             
             DialogResult = DialogResult.OK;
             Close();
+            /*
             
-           /*
+           
             SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
                 + "Integrated Security = true;");
 
@@ -54,8 +55,9 @@ namespace PreyectoFinal.UI
                 MessageBox.Show("El Email o la Contraseña estan incorrectos", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             conexion.Close();
+            */
            
-    */
+    
         }
         
     

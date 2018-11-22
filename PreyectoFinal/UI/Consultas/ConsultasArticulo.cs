@@ -16,7 +16,7 @@ namespace PreyectoFinal.UI.Consultas
 {
     public partial class ConsultasArticulo : Form
     {
-        Expression<Func<Articulo, bool>> filtro = p => true;
+        
         private List<Articulo> articulos = new List<Articulo>();
         public ConsultasArticulo()
         {
@@ -25,159 +25,57 @@ namespace PreyectoFinal.UI.Consultas
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Expression<Func<Articulo, bool>> filtro = p => true;
+            RepositorioBase<Articulo> repositorio;
+            repositorio = new RepositorioBase<Articulo>();
+            var filtro = new List<Articulo>();
             int id;
-            switch (FiltrocomboBox.SelectedIndex)
+            if (CristeriotextBox.Text.Trim().Length >= 0)
             {
-                case 0://Filtrando por ID del Producto.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
+                switch (FiltrocomboBox.SelectedIndex)
+                {
+                    case 0://Todo
+                        filtro = repositorio.GetList(p => true);
+
+                        break;
+                    case 1: //Filtrando por ID del Producto.
                         id = Convert.ToInt32(CristeriotextBox.Text);
-                        filtro = p => p.ArticuloID == id;
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-                    break;
-                case 1://Filtrando por la Descripcion del Producto.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(3))
-                    {
-                        MessageBox.Show("Debe Digitar una Descripcion!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        filtro = p => p.Descripcion.Contains(CristeriotextBox.Text);
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Esta Descripcion, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        filtro = repositorio.GetList(p => p.ArticuloID == id);
 
-                        }
-                    }
-                    break;
-                case 2://Filtrando por Costo del Producto.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        filtro = p => p.Costo.Equals(CristeriotextBox.Text);
+                        break;
+                    case 2://Filtrando por la Descripcion del Producto.
+                       filtro = repositorio.GetList(p => p.Descripcion.Contains(CristeriotextBox.Text));
 
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 3://Filtrando por Costo del Producto.
+                        double costo = Convert.ToDouble(CristeriotextBox.Text);
+                        filtro = repositorio.GetList(p => p.Costo == costo);
 
-                        }
-                    }
 
-                    break;
-                case 3://Filtrando por Precio del Producto.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        filtro = p => p.Precio.Equals(CristeriotextBox.Text);
-
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Este Precio, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        }
-                    }
-                    break;
-                case 4://Suma.
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                       //filtro = p => p.sumar.Equals(CristeriotextBox.Text);
-                        if (ArticuloBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Este Porciento, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        }
-                    }
-                    break;
-                case 5://Todo
-                    filtro = p => true;
-                    break;
+                        break;
+                    case 4://Filtrando por Precio del Producto.
+                        double precio = Convert.ToDouble(CristeriotextBox.Text);
+                        filtro = repositorio.GetList(p => p.Precio == precio);
+                        break;
                     
+                }
+                filtro = filtro.Where(c => c.FechaCreacion.Date >= DesdedateTimePicker.Value.Date && c.FechaCreacion.Date <= HastadateTimePicker.Value.Date).ToList();
             }
-            filtro = p => p.FechaCreacion >= DesdedateTimePicker.Value.Date && p.FechaCreacion <= HastadateTimePicker.Value.Date;
-            ConsultaDataGridView.DataSource =  ArticuloBLL.GetList(filtro);
-            CristeriotextBox.Clear();
-            errorProvider.Clear();
+            else
+            {
+                articulos = repositorio.GetList(p => true);
+            }
+            ConsultaDataGridView.DataSource = null;
+            ConsultaDataGridView.DataSource = filtro;
+            articulos = filtro;
+
         }
 
-        private bool Validar(int error)
-        {
-            bool paso = false;
-            int num = 0;
 
-            if (error == 1 && string.IsNullOrEmpty(CristeriotextBox.Text))
-            {
-                errorProvider.SetError(CristeriotextBox, "Por Favor, Llenar Casilla!");
-                paso = true;
-            }
-            if (error == 2 && int.TryParse(CristeriotextBox.Text, out num) == false)
-            {
-                errorProvider.SetError(CristeriotextBox, "Ingrese un Numero");
-                paso = true;
-            }
-
-            if (error == 3 && int.TryParse(CristeriotextBox.Text, out num) == true)
-            {
-                errorProvider.SetError(CristeriotextBox, "Ingrese Caracteres");
-                paso = true;
-            }
-
-            return paso;
-        }
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
             if (articulos.Count == 0)
             {
-                MessageBox.Show("No hay datos pra mostrar en el Reporte");
+                MessageBox.Show("No hay datos");
                 return;
             }
             ArticuloReview articuloReview = new ArticuloReview(articulos);

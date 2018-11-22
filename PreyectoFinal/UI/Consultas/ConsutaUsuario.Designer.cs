@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,6 @@
             this.ConsultaDataGridView.RowTemplate.Height = 24;
             this.ConsultaDataGridView.Size = new System.Drawing.Size(815, 374);
             this.ConsultaDataGridView.TabIndex = 19;
-            this.ConsultaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultaDataGridView_CellContentClick);
             // 
             // Buscarbutton
             // 
@@ -91,11 +91,11 @@
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todos",
-            "VendedorID",
-            "Nombre",
-            "Sueldo",
-            "Retencion",
-            "Retencionp"});
+            "ID",
+            "Nombres",
+            "Email",
+            "Telefono",
+            "Contrasena"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(127, 25);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(253, 24);
@@ -137,11 +137,22 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Filtro";
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Location = new System.Drawing.Point(64, 501);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(99, 44);
+            this.Imprimirbutton.TabIndex = 21;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
             // ConsutaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 518);
+            this.ClientSize = new System.Drawing.Size(922, 553);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.HastadateTimePicker);
@@ -172,5 +183,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

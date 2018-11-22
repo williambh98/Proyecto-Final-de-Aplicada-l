@@ -1,6 +1,6 @@
 ﻿namespace PreyectoFinal.Reportes
 {
-    partial class UsuarioReview
+    partial class ProveedoresReview
     {
         /// <summary>
         /// Required designer variable.
@@ -43,14 +43,14 @@
             this.crystalReportViewer.TabIndex = 0;
             this.crystalReportViewer.Load += new System.EventHandler(this.crystalReportViewer_Load);
             // 
-            // UsuarioReview
+            // ProveedoresReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer);
-            this.Name = "UsuarioReview";
-            this.Text = "UsuarioReview";
+            this.Name = "ProveedoresReview";
+            this.Text = "ProveedoresReview";
             this.ResumeLayout(false);
 
         }

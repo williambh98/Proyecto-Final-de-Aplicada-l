@@ -170,6 +170,10 @@ namespace PreyectoFinal.UI.Registros
         {
             Limpiar();
         }
-        
+
+        private void RTipoArticulo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

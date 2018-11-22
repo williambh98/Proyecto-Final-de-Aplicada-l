@@ -50,6 +50,7 @@
             this.Imprimirbutton.TabIndex = 42;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // ConsultaDataGridView
             // 
@@ -99,9 +100,10 @@
             this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
-            "Todos",
-            "DepartamentoId",
-            "Nombre"});
+            "Todo",
+            "ID",
+            "Nombre",
+            "Descripcion"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(75, 33);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(199, 24);

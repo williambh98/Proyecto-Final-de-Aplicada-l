@@ -104,6 +104,30 @@
     <Compile Include="Reportes\DepartamentoReview.Designer.cs">
       <DependentUpon>DepartamentoReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ProveedoresReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProveedoresReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProveedoresReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProveedoresReview.Designer.cs">
+      <DependentUpon>ProveedoresReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TipoArticuloReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoArticuloReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\TipoArticuloReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\TipoArticuloReview.Designer.cs">
+      <DependentUpon>TipoArticuloReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\UsuarioReporte.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +244,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\DepartamentoReview.resx">
       <DependentUpon>DepartamentoReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProveedoresReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProveedoresReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProveedoresReview.resx">
+      <DependentUpon>ProveedoresReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TipoArticuloReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TipoArticuloReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TipoArticuloReview.resx">
+      <DependentUpon>TipoArticuloReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\UsuarioReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

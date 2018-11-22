@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TipoTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -152,11 +154,31 @@
             this.label2.TabIndex = 127;
             this.label2.Text = "Categoria:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(196, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Fecha";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Enabled = false;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(249, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(115, 22);
+            this.dateTimePicker.TabIndex = 130;
+            // 
             // RTipoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 251);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.TipoTextbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -169,6 +191,7 @@
             this.Controls.Add(this.BuscarButton);
             this.Name = "RTipoArticulo";
             this.Text = "Tipo Articulo";
+            this.Load += new System.EventHandler(this.RTipoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -188,5 +211,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TipoTextbox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label4;
     }
 }

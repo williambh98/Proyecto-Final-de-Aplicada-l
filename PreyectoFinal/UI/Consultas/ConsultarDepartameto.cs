@@ -52,7 +52,7 @@ namespace PreyectoFinal.UI.Consultas
             {
                 departamentos = repositorio.GetList(p => true);
             }
-           ConsultaDataGridView.DataSource = null;
+            ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = filtro;
             departamentos = filtro;
 

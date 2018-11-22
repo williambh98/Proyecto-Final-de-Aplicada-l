@@ -1,5 +1,6 @@
 ﻿using PreyectoFinal.BLL;
 using PreyectoFinal.Entidades;
+using PreyectoFinal.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,15 @@ namespace PreyectoFinal.UI.Consultas
 {
     public partial class ConsultaProveedores : Form
     {
-       
+
+        List<Proveedores> lista = new List<Proveedores>();
         public ConsultaProveedores()
         {
             InitializeComponent();
             Filtro_comboBox.SelectedIndex = 0;
 
         }
-        List<Proveedores> lista = new List<Proveedores>();
+      
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
@@ -37,8 +39,8 @@ namespace PreyectoFinal.UI.Consultas
                     case 0://Todos
                         filtro = repositorio.GetList(p => true);
                         break;
-                    case 1:
-                   
+                    case 1://id
+                        Limpiar();
                         if (Validar(1))
                         {
                             MessageBox.Show("Introduce un numero");
@@ -49,7 +51,7 @@ namespace PreyectoFinal.UI.Consultas
 
                         break;
                     case 2://Nombre
-                    
+                        Limpiar();
                         if (Validar(2))
                         {
                             MessageBox.Show("Introduce un caracter");
@@ -58,7 +60,7 @@ namespace PreyectoFinal.UI.Consultas
                         filtro = repositorio.GetList(p => p.NombreProveedor.Contains(Criterio_textBox.Text));
                         break;
                     case 3://Email
-                       
+                        Limpiar();
                         if (Validar(2))
                         {
                             MessageBox.Show("Introduce un caracter");
@@ -67,7 +69,7 @@ namespace PreyectoFinal.UI.Consultas
                         filtro = repositorio.GetList(p => p.Email.Contains(Criterio_textBox.Text));
                         break;
                     case 4://Direccion
-                        
+                        Limpiar();
                         if (Validar(2))
                         {
                             MessageBox.Show("Introduce un caracter");
@@ -89,10 +91,10 @@ namespace PreyectoFinal.UI.Consultas
                 }
                 filtro = filtro.Where(c => c.FechaProveedor.Date >= DesdedateTimePicker.Value.Date && c.FechaProveedor.Date <= HastadateTimePicker.Value.Date).ToList();
             }
-           
+
             Consulta_dataGridView.DataSource = null;
             Consulta_dataGridView.DataSource = filtro;
-            
+            lista = filtro;
         }
 
         private bool Validar(int error)
@@ -118,15 +120,18 @@ namespace PreyectoFinal.UI.Consultas
             errorProvider.Clear();
         }
 
-        private void Hasta_dateTimePicker_ValueChanged(object sender, EventArgs e)
+        private void Imprimirbutton_Click(object sender, EventArgs e)
         {
 
+            if (lista.Count == 0)
+            {
+                MessageBox.Show("No hay en el Reporte");
+                return;
+            }
+            ProveedoresReview proveedoresReview = new ProveedoresReview(lista);
+            proveedoresReview.Show();
         }
 
-        private void ConsultaProveedores_Load(object sender, EventArgs e)
-        {
-
-        }
 
         /*
         private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,6 +158,7 @@ namespace PreyectoFinal.UI.Consultas
                 Criterio_textBox.MaxLength = 200;
         }
         */
+
     }
             
   }

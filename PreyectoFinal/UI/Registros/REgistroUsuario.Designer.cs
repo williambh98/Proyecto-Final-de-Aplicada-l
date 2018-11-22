@@ -50,6 +50,8 @@
             this.UsuarioradioButton = new System.Windows.Forms.RadioButton();
             this.AdministradorradioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,10 +157,10 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(345, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(348, 33);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 183);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
@@ -253,14 +255,33 @@
             this.groupBox1.Size = new System.Drawing.Size(203, 53);
             this.groupBox1.TabIndex = 91;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(345, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Fecha";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Enabled = false;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(397, 9);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(138, 22);
+            this.dateTimePicker.TabIndex = 93;
             // 
             // REgistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 333);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.EmailTextBox);
@@ -280,6 +301,7 @@
             this.Controls.Add(this.label1);
             this.Name = "REgistroUsuario";
             this.Text = "Registro Usuario";
+            this.Load += new System.EventHandler(this.REgistroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -312,5 +334,7 @@
         private System.Windows.Forms.RadioButton AdministradorradioButton;
         private System.Windows.Forms.RadioButton UsuarioradioButton;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label7;
     }
 }
