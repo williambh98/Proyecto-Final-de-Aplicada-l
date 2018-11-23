@@ -208,46 +208,61 @@ namespace PreyectoFinal.UI.Registros
             LlenarCombo();
         }
 
-        private void CostotextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        
+        public static void SoloNumero(KeyPressEventArgs v)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (Char.IsDigit(v.KeyChar))
             {
-                e.Handled = false;
+                v.Handled = false;
             }
-            else if (Char.IsControl(e.KeyChar))
+            else if (Char.IsControl(v.KeyChar))
             {
-                e.Handled = false;
+                v.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
+            else if (Char.IsSeparator(v.KeyChar))
             {
-                e.Handled = false;
+                v.Handled = false;
             }
             else
             {
-                e.Handled = true;
-                MessageBox.Show("Solo Números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                v.Handled = true;
+                MessageBox.Show("Solo Números");
             }
+        }
+        public static void NumerosDecimal(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (v.KeyChar.ToString().Equals("."))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo Números con punto Decimal");
+            }
+        
+        }
+
+        private void CostotextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            NumerosDecimal(e);
         }
 
         private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo Números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            NumerosDecimal(e);
         }
     }
 }
