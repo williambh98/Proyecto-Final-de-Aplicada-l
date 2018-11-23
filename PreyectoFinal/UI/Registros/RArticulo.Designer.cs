@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.DepartamentoComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.CostoTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.TipoCombox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,6 +52,8 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.PreciotextBox = new System.Windows.Forms.TextBox();
+            this.CostotextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,14 +78,6 @@
             this.label8.Size = new System.Drawing.Size(102, 17);
             this.label8.TabIndex = 98;
             this.label8.Text = "Departamento:";
-            // 
-            // CostoTextBox
-            // 
-            this.CostoTextBox.Location = new System.Drawing.Point(117, 245);
-            this.CostoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.CostoTextBox.Name = "CostoTextBox";
-            this.CostoTextBox.Size = new System.Drawing.Size(99, 22);
-            this.CostoTextBox.TabIndex = 86;
             // 
             // label3
             // 
@@ -206,25 +198,16 @@
             this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 104;
             this.label10.Text = "Categoria:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 250);
+            this.label4.Location = new System.Drawing.Point(221, 248);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 87;
             this.label4.Text = "Precio:";
-            // 
-            // PrecioTextBox
-            // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(277, 248);
-            this.PrecioTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(125, 22);
-            this.PrecioTextBox.TabIndex = 108;
             // 
             // label5
             // 
@@ -249,7 +232,7 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::PreyectoFinal.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(410, 194);
+            this.pictureBox1.Location = new System.Drawing.Point(411, 199);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(126, 139);
@@ -301,23 +284,43 @@
             this.BuscarButton.Location = new System.Drawing.Point(262, 27);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(140, 41);
+            this.BuscarButton.Size = new System.Drawing.Size(140, 53);
             this.BuscarButton.TabIndex = 80;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // PreciotextBox
+            // 
+            this.PreciotextBox.Location = new System.Drawing.Point(281, 245);
+            this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PreciotextBox.Name = "PreciotextBox";
+            this.PreciotextBox.Size = new System.Drawing.Size(122, 22);
+            this.PreciotextBox.TabIndex = 114;
+            this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
+            // 
+            // CostotextBox
+            // 
+            this.CostotextBox.Location = new System.Drawing.Point(117, 243);
+            this.CostotextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CostotextBox.Name = "CostotextBox";
+            this.CostotextBox.Size = new System.Drawing.Size(96, 22);
+            this.CostotextBox.TabIndex = 115;
+            this.CostotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostotextBox_KeyPress_1);
+            // 
             // RArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(549, 354);
+            this.Controls.Add(this.CostotextBox);
+            this.Controls.Add(this.PreciotextBox);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.tipoButton);
             this.Controls.Add(this.TipoCombox);
             this.Controls.Add(this.label10);
@@ -331,7 +334,6 @@
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.CostoTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.label2);
@@ -341,7 +343,6 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RArticulo";
             this.Text = "Registro Articulo";
-            this.Load += new System.EventHandler(this.RArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -357,7 +358,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
-        private System.Windows.Forms.TextBox CostoTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.Label label2;
@@ -372,10 +372,11 @@
         private System.Windows.Forms.Button tipoButton;
         private System.Windows.Forms.ComboBox TipoCombox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox CostotextBox;
+        private System.Windows.Forms.TextBox PreciotextBox;
     }
 }

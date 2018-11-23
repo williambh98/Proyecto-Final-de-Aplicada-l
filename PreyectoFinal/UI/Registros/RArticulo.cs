@@ -47,12 +47,8 @@ namespace PreyectoFinal.UI.Registros
             FechadateTimePicker.Value = DateTime.Now;
             DepartamentoComboBox.SelectedIndex = 0;
             DescripcionTextBox.Clear();
-            CostoTextBox.Clear();
-            PrecioTextBox.Clear();
-           // CantidatextBox.Clear();
-     
-
-
+            CostotextBox.Clear();
+            PreciotextBox.Clear();
 
         }
         private Articulo LlenaClase()
@@ -63,10 +59,9 @@ namespace PreyectoFinal.UI.Registros
             articulo.DepartamentoId = Convert.ToInt32(DepartamentoComboBox.SelectedValue);
             articulo.FechaCreacion = FechadateTimePicker.Value;
             articulo.Descripcion = DescripcionTextBox.Text;
-            articulo.Costo = Convert.ToDouble(CostoTextBox.Text);
-            articulo.Precio = Convert.ToDouble(PrecioTextBox.Text);
-           // articulo.PorCientoGanancia = Convert.ToDouble(PctGananciaTextBox.Text);
-           // articulo.CantidadIventario = 0;
+            articulo.Costo = Convert.ToDouble(CostotextBox.Text);
+            articulo.Precio = Convert.ToDouble(PreciotextBox.Text);
+  
 
             return articulo;
         }
@@ -78,33 +73,27 @@ namespace PreyectoFinal.UI.Registros
 
             return Convert.ToDouble(retorno);
         }
-       /* private void CalcularGanancia()
-        {
-            double costo, precio;
-            costo = ToDouble(CostoTextBox.Text);
-            precio = ToDouble(PrecioTextBox.Text);
-         //   PctGananciaTextBox.Text = ArticuloBLL.PorcientoGanancia(costo, precio).ToString();
-        }*/
-        private bool HayErrores()
+      
+        private bool Validar()
         {
             bool paso = false;
 
-            if (String.IsNullOrEmpty(DescripcionTextBox.Text))
+            if (string.IsNullOrEmpty(DescripcionTextBox.Text))
             {
                 ErrorProvider.SetError(DescripcionTextBox,
-                    "Debe escribir una Descripción para el Articulo");
+                    "Llenar Campo Descripcion");
                 paso = true;
             }
-            if (String.IsNullOrEmpty(CostoTextBox.Text))
+            if (string.IsNullOrEmpty(CostotextBox.Text))
             {
-                ErrorProvider.SetError(CostoTextBox,
-                    "Debe ingresar un Costo para el Articulo");
+                ErrorProvider.SetError(CostotextBox,
+                    "Llenar Campo Articulo");
                 paso = true;
             }
-            if (String.IsNullOrEmpty(PrecioTextBox.Text))
+            if (string.IsNullOrEmpty(PreciotextBox.Text))
             {
-                ErrorProvider.SetError(PrecioTextBox,
-                    "Debe ingresar un Precio para el Articulo");
+                ErrorProvider.SetError(PreciotextBox,
+                    "Llenar Campo Precio");
                 paso = true;
             }
 
@@ -115,34 +104,13 @@ namespace PreyectoFinal.UI.Registros
         {
             Limpiar();
         }
-        private void CostoTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Articulo articulo;
             bool paso = false;
 
-            if (HayErrores())
+            if (Validar())
                 MessageBox.Show("Debe llenar los campos indicados", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -166,7 +134,7 @@ namespace PreyectoFinal.UI.Registros
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Id no existe", "Falló",
+                    MessageBox.Show("Id no existe", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -175,8 +143,7 @@ namespace PreyectoFinal.UI.Registros
                 Limpiar();
             }
             else
-                MessageBox.Show("No se pudo guardar!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar!!", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -193,10 +160,10 @@ namespace PreyectoFinal.UI.Registros
                     Limpiar();
                 }
                 else
-                    MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo eliminar!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No existe!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -209,12 +176,14 @@ namespace PreyectoFinal.UI.Registros
             {
                 DepartamentoComboBox.SelectedValue = articulo.DepartamentoId;
                 DescripcionTextBox.Text = articulo.Descripcion;
-                CostoTextBox.Text = articulo.Costo.ToString();
-                PrecioTextBox.Text = articulo.Precio.ToString();
+                CostotextBox.Text = articulo.Costo.ToString();
+                PreciotextBox.Text = articulo.Precio.ToString();
                 FechadateTimePicker.Value = articulo.FechaCreacion;
-               // PctGananciaTextBox.Text = articulo.PorCientoGanancia.ToString();
-               // InventarioTextBox.Text = articulo.CantidadIventario.ToString();
+              
             }
+            else
+                MessageBox.Show("No existe!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void Addbutton_Click(object sender, EventArgs e)
@@ -224,19 +193,7 @@ namespace PreyectoFinal.UI.Registros
             LlenarCombo();
         }
 
-        /*
-        public Articulo articulo()
-        {
-            
-            int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
-            Articulo articulo = ArticuloBLL.Buscar(id);
-            if (articulo != null)
-            {
-               // textBox1. = articulo.sumar;
-            }
-            return articulo;
-        }
-        */
+      
         private void tipoButton_Click(object sender, EventArgs e)
         {
             RTipoArticulo tp = new RTipoArticulo();
@@ -251,28 +208,46 @@ namespace PreyectoFinal.UI.Registros
             LlenarCombo();
         }
 
-        private void RArticulo_Load(object sender, EventArgs e)
+        private void CostotextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo Números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-          
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo Números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-        /*
-private void tipoButton_Click(object sender, EventArgs e)
-{
-RTipoArticulo tp = new RTipoArticulo();
-tp.ShowDialog();
-LlenarComb();
-}
-*/
     }
 }

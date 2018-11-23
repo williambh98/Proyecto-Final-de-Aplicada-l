@@ -156,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(405, 169);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FechadateTimePicker);

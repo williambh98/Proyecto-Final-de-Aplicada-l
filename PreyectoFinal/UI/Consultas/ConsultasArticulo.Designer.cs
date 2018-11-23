@@ -56,11 +56,12 @@
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_revista_24;
             this.Buscarbutton.Location = new System.Drawing.Point(674, 30);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(95, 74);
             this.Buscarbutton.TabIndex = 18;
-            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.Text = "Consultar";
             this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
@@ -143,11 +144,13 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_imprimir_24;
             this.Imprimirbutton.Location = new System.Drawing.Point(21, 430);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(99, 44);
+            this.Imprimirbutton.Size = new System.Drawing.Size(99, 59);
             this.Imprimirbutton.TabIndex = 20;
             this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
@@ -159,7 +162,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 501);
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
+            this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.Buscarbutton);

@@ -24,11 +24,14 @@ namespace PreyectoFinal
             Login lg = new Login();
            
             Application.Run(lg);
-            if(lg.DialogResult == DialogResult.OK)
-            {
-                lg.Dispose();
+           if(lg.DialogResult == DialogResult.OK)
+           {
+              lg.Dispose();
                 Application.Run(new Menu());
-            }
-        }
+           }
+           
+    }
+       
+
     }
 }

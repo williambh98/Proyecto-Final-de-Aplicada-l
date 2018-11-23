@@ -31,7 +31,7 @@ namespace PreyectoFinal.UI.Consultas
             RepositorioBase<Proveedores> repositorio;
             repositorio = new RepositorioBase<Proveedores>();
             var filtro = new List<Proveedores>();
-    
+
             if (Criterio_textBox.Text.Trim().Length >= 0)
             {
                 switch (Filtro_comboBox.SelectedIndex)
@@ -89,7 +89,12 @@ namespace PreyectoFinal.UI.Consultas
                         filtro = repositorio.GetList(p => p.Telefono.Contains(Criterio_textBox.Text));
                         break;
                 }
+
                 filtro = filtro.Where(c => c.FechaProveedor.Date >= DesdedateTimePicker.Value.Date && c.FechaProveedor.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else
+            {
+                filtro = repositorio.GetList(p => true);
             }
 
             Consulta_dataGridView.DataSource = null;
@@ -132,13 +137,6 @@ namespace PreyectoFinal.UI.Consultas
             proveedoresReview.Show();
         }
 
-
-        
-        private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-        }
-
         private void Filtro_comboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Criterio_textBox.Clear();
@@ -161,6 +159,14 @@ namespace PreyectoFinal.UI.Consultas
             }
             else
                 Criterio_textBox.MaxLength = 100;
+        }
+
+        private void HastadateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
+                errorProvider.SetError(HastadateTimePicker, "La fecha inicial no puede ser mayor que la Terminal");
+            else
+                errorProvider.Clear();
         }
     }
             

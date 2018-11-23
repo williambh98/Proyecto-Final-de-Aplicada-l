@@ -15,7 +15,6 @@ namespace PreyectoFinal.Entidades
         public int EntradaId { get; set; }
         public double Cantidad { get; set; }
         public double Precio { get; set; }
-        public double Importe { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime FechaVencimiento { get; set; }
         /*
@@ -30,7 +29,6 @@ namespace PreyectoFinal.Entidades
             EntradaId = 0;
             Cantidad = 0;
             Precio = 0;
-            Importe = 0;
             FechaVencimiento = DateTime.Now;
         }
 
@@ -41,7 +39,6 @@ namespace PreyectoFinal.Entidades
             EntradaId = entradaId;
             Cantidad = cantidad;
             Precio = precio;
-            Importe = importe;
             FechaVencimiento = vencimiento;
         }
 

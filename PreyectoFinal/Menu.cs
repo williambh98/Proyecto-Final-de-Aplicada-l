@@ -33,17 +33,7 @@ namespace PreyectoFinal
             rp.MdiParent = this;
         }
 
-        private void rArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            REntradeDeProducto Pro = new REntradeDeProducto();
-            Pro.Show();
-            Pro.MdiParent = this;
-        }
-
-        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void consutasDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,9 +44,10 @@ namespace PreyectoFinal
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaCapturarInventario cap = new ConsultaCapturarInventario();
-            cap.Show();
-            cap.MdiParent = this;
+            REntradeDeProducto Pro = new REntradeDeProducto();
+            Pro.Show();
+            Pro.MdiParent = this;
+            
         }
 
         private void consutaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +88,17 @@ namespace PreyectoFinal
 
         private void Menu_Load(object sender, EventArgs e)
         {
+         //  registroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
 
         }
+
+        private void captureDeInvetarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaCapturarInventario cap = new ConsultaCapturarInventario();
+            cap.Show();
+            cap.MdiParent = this;
+        }
+
+      
     }
 }

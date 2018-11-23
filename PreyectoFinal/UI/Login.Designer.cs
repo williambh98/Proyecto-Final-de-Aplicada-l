@@ -67,6 +67,7 @@
             // 
             this.ContraseñaTextBox.Location = new System.Drawing.Point(108, 222);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.PasswordChar = '*';
             this.ContraseñaTextBox.Size = new System.Drawing.Size(200, 22);
             this.ContraseñaTextBox.TabIndex = 3;
             // 
@@ -109,6 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(361, 359);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.Salirbutton);

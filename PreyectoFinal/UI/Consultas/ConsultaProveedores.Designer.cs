@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -42,29 +41,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Location = new System.Drawing.Point(13, 355);
-            this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(100, 43);
-            this.Imprimirbutton.TabIndex = 61;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
             // Consultarbutton
             // 
-            this.Consultarbutton.Location = new System.Drawing.Point(570, 20);
+            this.Consultarbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_revista_241;
+            this.Consultarbutton.Location = new System.Drawing.Point(576, 17);
             this.Consultarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Consultarbutton.Name = "Consultarbutton";
             this.Consultarbutton.Size = new System.Drawing.Size(100, 58);
             this.Consultarbutton.TabIndex = 60;
             this.Consultarbutton.Text = "Consultar";
+            this.Consultarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
@@ -80,16 +71,17 @@
             // HastadateTimePicker
             // 
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(354, 82);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(354, 71);
             this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(184, 22);
             this.HastadateTimePicker.TabIndex = 58;
+            this.HastadateTimePicker.ValueChanged += new System.EventHandler(this.HastadateTimePicker_ValueChanged);
             // 
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(102, 87);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(102, 71);
             this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(155, 22);
@@ -98,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 87);
+            this.label4.Location = new System.Drawing.Point(286, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
@@ -108,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 87);
+            this.label3.Location = new System.Drawing.Point(30, 71);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
@@ -167,18 +159,32 @@
             this.Consulta_dataGridView.Location = new System.Drawing.Point(13, 117);
             this.Consulta_dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.Consulta_dataGridView.Name = "Consulta_dataGridView";
-            this.Consulta_dataGridView.Size = new System.Drawing.Size(704, 219);
+            this.Consulta_dataGridView.Size = new System.Drawing.Size(704, 261);
             this.Consulta_dataGridView.TabIndex = 50;
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::PreyectoFinal.Properties.Resources.icons8_imprimir_24;
+            this.Imprimirbutton.Location = new System.Drawing.Point(13, 386);
+            this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(116, 52);
+            this.Imprimirbutton.TabIndex = 61;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
             // ConsultaProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 433);
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
+            this.ClientSize = new System.Drawing.Size(736, 449);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);

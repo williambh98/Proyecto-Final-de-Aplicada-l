@@ -60,7 +60,7 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(118, 132);
+            this.EmailTextBox.Location = new System.Drawing.Point(118, 84);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(215, 22);
@@ -115,7 +115,7 @@
             // 
             // NombresTextBox
             // 
-            this.NombresTextBox.Location = new System.Drawing.Point(118, 84);
+            this.NombresTextBox.Location = new System.Drawing.Point(118, 130);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(215, 22);
@@ -279,6 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(548, 333);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label7);

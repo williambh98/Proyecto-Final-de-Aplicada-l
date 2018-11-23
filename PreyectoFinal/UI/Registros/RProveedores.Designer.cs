@@ -221,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(569, 337);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);

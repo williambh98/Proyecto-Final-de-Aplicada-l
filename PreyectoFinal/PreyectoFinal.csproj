@@ -382,5 +382,47 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\william2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-imprimir-filled-50 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-imprimir-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-revista-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ver-archivo-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-revista-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marca-registrada-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marca-registrada-24 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marca-registrada-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ver-archivo-filled-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pregunta-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mover-por-carretilla-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mover-por-carretilla-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-caja-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

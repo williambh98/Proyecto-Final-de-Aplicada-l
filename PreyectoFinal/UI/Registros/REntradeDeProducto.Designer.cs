@@ -47,17 +47,19 @@
             this.Removerbutton = new System.Windows.Forms.Button();
             this.agregarbutton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GuardarButton
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
-            this.GuardarButton.Location = new System.Drawing.Point(270, 474);
+            this.GuardarButton.Location = new System.Drawing.Point(323, 511);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(117, 49);
@@ -69,7 +71,7 @@
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
-            this.NuevoButton.Location = new System.Drawing.Point(63, 474);
+            this.NuevoButton.Location = new System.Drawing.Point(116, 511);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(120, 49);
@@ -81,7 +83,7 @@
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.EliminarButton.Location = new System.Drawing.Point(484, 474);
+            this.EliminarButton.Location = new System.Drawing.Point(537, 511);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(113, 49);
@@ -96,7 +98,7 @@
             // EntradadataGridView
             // 
             this.EntradadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EntradadataGridView.Location = new System.Drawing.Point(18, 214);
+            this.EntradadataGridView.Location = new System.Drawing.Point(2, 21);
             this.EntradadataGridView.Name = "EntradadataGridView";
             this.EntradadataGridView.RowTemplate.Height = 24;
             this.EntradadataGridView.Size = new System.Drawing.Size(729, 211);
@@ -201,7 +203,7 @@
             // Removerbutton
             // 
             this.Removerbutton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.Removerbutton.Location = new System.Drawing.Point(18, 431);
+            this.Removerbutton.Location = new System.Drawing.Point(6, 243);
             this.Removerbutton.Name = "Removerbutton";
             this.Removerbutton.Size = new System.Drawing.Size(114, 36);
             this.Removerbutton.TabIndex = 107;
@@ -236,18 +238,29 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.EntradadataGridView);
+            this.groupBox1.Controls.Add(this.Removerbutton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 200);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(734, 285);
+            this.groupBox1.TabIndex = 109;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // REntradeDeProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 558);
+            this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
+            this.ClientSize = new System.Drawing.Size(759, 573);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.agregarbutton);
-            this.Controls.Add(this.Removerbutton);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.EntradadataGridView);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label2);
@@ -265,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EntradadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +303,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button agregarbutton;
         private System.Windows.Forms.Button Removerbutton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
