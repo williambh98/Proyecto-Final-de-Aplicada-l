@@ -13,6 +13,7 @@ namespace PreyectoFinal.Entidades
 
         public int EntradaId { get; set; }
         public DateTime Fecha { get; set; }
+        public DateTime FechaVencimiento { get; set; }
         public int ProvedorID { get; set; }
         public int ArticuloID { get; set; }
         public double Cantidad { get; set; }
@@ -26,6 +27,7 @@ namespace PreyectoFinal.Entidades
               ArticuloID = 0;
               Cantidad = 0;
               ProvedorID = 0;
+            FechaVencimiento = DateTime.Now;
 
             this.Detalle = new List<ArticuloDetalle>();
         }

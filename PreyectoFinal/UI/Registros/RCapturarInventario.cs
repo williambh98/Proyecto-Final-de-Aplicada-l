@@ -41,7 +41,7 @@ namespace PreyectoFinal.UI.Registros
         }
         private void LlenaCampos(Entrada entrada)
         {
-            FechaDateTimePicker.Value = entrada.Fecha;
+            FechaDateTimePicker.Value = entrada.FechaVencimiento;
             ProductoComboBox.SelectedValue = entrada.ArticuloID;
             CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
 
@@ -53,7 +53,8 @@ namespace PreyectoFinal.UI.Registros
             Entrada entrada = new Entrada();
 
             entrada.EntradaId = Convert.ToInt32(EntradaIdNumericUpDown.Value);
-            entrada.Fecha = FechaDateTimePicker.Value;
+            entrada.FechaVencimiento = FechaDateTimePicker.Value;
+            entrada.Fecha = DateTime.Now;
             entrada.ArticuloID = Convert.ToInt32(ProductoComboBox.SelectedValue);
             entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
             
@@ -110,7 +111,7 @@ namespace PreyectoFinal.UI.Registros
                    
                     foreach(ArticuloDetalle d in entrada.Detalle)
                     {
-                        Articulo articulo = ArticuloBLL.Buscar(d.Id);
+                        Articulo articulo = ArticuloBLL.Buscar(entrada.ArticuloID);
                         articulo.Cantidad += Convert.ToInt32(d.Cantidad);
                         contexto.Entry<Articulo>(articulo).State = System.Data.Entity.EntityState.Modified;
 
@@ -141,11 +142,11 @@ namespace PreyectoFinal.UI.Registros
                 {
                     if(id == 0)
                     {
-                        MessageBox.Show("Registro guardado correctamente");
+                        MessageBox.Show("Registro guardado Con Exito");
                     }
                     else
                     {
-                        MessageBox.Show("Registro actualizado correctamente");
+                        MessageBox.Show("Registro actualizado Con Exito");
                     }
                 }
 

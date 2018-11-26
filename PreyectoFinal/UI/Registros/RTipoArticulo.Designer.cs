@@ -109,9 +109,9 @@
             this.label1.Location = new System.Drawing.Point(17, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 108;
-            this.label1.Text = "TipoId";
+            this.label1.Text = "CategoriaID";
             // 
             // BuscarButton
             // 
@@ -197,7 +197,7 @@
             this.Controls.Add(this.BuscarButton);
             this.Name = "RTipoArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tipo Articulo";
+            this.Text = "Categoria";
             this.Load += new System.EventHandler(this.RTipoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();

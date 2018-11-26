@@ -21,15 +21,13 @@ namespace PreyectoFinal.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Proveedores proveedores = new Proveedores();
-            proveedores.IDProveedor = 1002;
-            proveedores.NombreProveedor = "William";
-            proveedores.Email = "Williamelnene@hotmail.com";
-            proveedores.Telefono = "809-125-445";
-            proveedores.Direccion = "polo";
-            proveedores.FechaProveedor = DateTime.Now;
-            RepositorioBase<Proveedores> repositorio;
-            repositorio = new RepositorioBase<Proveedores>();
+            TipoArticulo proveedores = new TipoArticulo();
+            proveedores.TiposId = 1003;
+            proveedores.Nombre = "William";
+            proveedores.Descripcion= "sfsazdcsa";
+            proveedores.FechaCreacion = DateTime.Now;
+            RepositorioBase<TipoArticulo> repositorio;
+            repositorio = new RepositorioBase<TipoArticulo>();
             Assert.IsTrue(repositorio.Guardar(proveedores));
            
         }

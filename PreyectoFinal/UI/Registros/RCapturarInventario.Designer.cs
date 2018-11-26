@@ -258,6 +258,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.groupBox1.Controls.Add(this.EntradadataGridView);
             this.groupBox1.Controls.Add(this.Removerbutton);
             this.groupBox1.Location = new System.Drawing.Point(14, 217);

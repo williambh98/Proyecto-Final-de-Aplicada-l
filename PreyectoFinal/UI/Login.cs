@@ -91,9 +91,9 @@ namespace PreyectoFinal.UI
                 {
                     repositorio.Guardar(new CrearUsuario()
                     {
-                        Nombres = "root",
+                        Nombres = "william",
                         Administrador = true,
-                        Contraseña = Program.Hash("root"),
+                        Contraseña = Program.Hash("polo"),
                         Email = "root",
                         NoTelefono = "root",
                         FechaCreacion = DateTime.Now
@@ -114,19 +114,6 @@ namespace PreyectoFinal.UI
                     errorProvider.SetError(UsuarioTextBox, "Llenar Campo");
                 }
             }
-
-        }
-
-
-
-        private void Entrarbutton_Click(object sender, EventArgs e)
-        {
-
-            Entrar();
-            /*
-            DialogResult = DialogResult.OK;
-            Close();
-            */
 
         }
 

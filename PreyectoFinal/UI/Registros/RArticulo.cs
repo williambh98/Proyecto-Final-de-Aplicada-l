@@ -199,14 +199,14 @@ namespace PreyectoFinal.UI.Registros
         private void tipoButton_Click(object sender, EventArgs e)
         {
             RTipoArticulo tp = new RTipoArticulo();
-            tp.Show();
+            tp.ShowDialog();
             LlenarCombo();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             RProveedores pv = new RProveedores();
-            pv.Show();
+            pv.ShowDialog();
             LlenarCombo();
         }
 
@@ -252,7 +252,6 @@ namespace PreyectoFinal.UI.Registros
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo Números con punto Decimal");
             }
 
         }
@@ -267,9 +266,5 @@ namespace PreyectoFinal.UI.Registros
             NumerosDecimal(e);
         }
 
-        private void RArticulo_Load(object sender, EventArgs e)
-        {
-           
-        }
     }
 }

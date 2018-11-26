@@ -24,7 +24,7 @@ namespace PreyectoFinal.Reportes
         {
             ArticuloReporte reporte = new ArticuloReporte();
             reporte.SetDataSource(articulo);
-            crystalReportViewer1.ReportSource = reporte;
+            crystalReportViewer.ReportSource = reporte;
             reporte.Refresh();
         }
     }

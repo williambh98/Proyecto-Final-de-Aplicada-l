@@ -219,7 +219,6 @@ namespace PreyectoFinal.UI.Registros
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Solo Letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

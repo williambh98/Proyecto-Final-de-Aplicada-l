@@ -192,7 +192,6 @@ namespace PreyectoFinal.UI.Registros
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo Letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
