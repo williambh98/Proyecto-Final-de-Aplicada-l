@@ -1,4 +1,5 @@
 ﻿using PreyectoFinal.BLL;
+using PreyectoFinal.DAL;
 using PreyectoFinal.Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ using System.Windows.Forms;
 
 namespace PreyectoFinal.UI.Registros
 {
-    public partial class REntradeDeProducto : Form
+    public partial class RCapturarInventario : Form
     {
-        public List<ArticuloDetalle> detalle { get; set; }
-        public REntradeDeProducto()
+        public List<ArticuloDetalle> detalle = new List<ArticuloDetalle>();
+        public RCapturarInventario()
         {
             detalle = new List<ArticuloDetalle>();
             InitializeComponent();
@@ -28,6 +29,15 @@ namespace PreyectoFinal.UI.Registros
             ProductoComboBox.DataSource = ArtRepositorio.GetList(c => true);
             ProductoComboBox.ValueMember = "Articuloid";
             ProductoComboBox.DisplayMember = "Descripcion";
+
+            CostocomboBox.DataSource = ArtRepositorio.GetList(c => true);
+            CostocomboBox.ValueMember = "Articuloid";
+            CostocomboBox.DisplayMember = "Costo";
+
+            PreciocomboBox.DataSource = ArtRepositorio.GetList(c => true);
+            PreciocomboBox.ValueMember = "Articuloid";
+            PreciocomboBox.DisplayMember = "Precio";
+
         }
         private void LlenaCampos(Entrada entrada)
         {
@@ -46,6 +56,7 @@ namespace PreyectoFinal.UI.Registros
             entrada.Fecha = FechaDateTimePicker.Value;
             entrada.ArticuloID = Convert.ToInt32(ProductoComboBox.SelectedValue);
             entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
+            
 
             entrada.Detalle = this.detalle;
             return entrada;
@@ -64,7 +75,11 @@ namespace PreyectoFinal.UI.Registros
         private bool Validar()
         {
             bool paso = false;
-
+            if (FechaDateTimePicker.Value > DateTime.Now)
+            {
+                errorProvider.SetError(FechaDateTimePicker, "La fecha debe ser mayor que la de actual");
+                paso = false;
+            }
             if (String.IsNullOrEmpty(CantidadnumericUpDown.Text))
             {
                 errorProvider.SetError(CantidadnumericUpDown,
@@ -82,45 +97,64 @@ namespace PreyectoFinal.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Entrada entrada;
-            bool paso = false;
+            int id = Convert.ToInt32(EntradaIdNumericUpDown.Value);
 
-            if (Validar())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            entrada = LlenaClase();
-
-            if (EntradaIdNumericUpDown.Value == 0)
+            if (Validar()== false)
             {
-                paso = EntradaBLL.Guardar(entrada);
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
-            }
-            else
-            {
-                int id = Convert.ToInt32(EntradaIdNumericUpDown.Value);
-                entrada = EntradaBLL.Buscar(id);
-
-                if (entrada != null)
+                bool paso = false;
+                Entrada entrada = LlenaClase();
+                Contexto contexto = new Contexto();
+                if(id == 0)
                 {
-                    paso = EntradaBLL.Modificar(entrada);
-                    MessageBox.Show("Modificado!!", "Exito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    contexto.Entrada.Add(entrada);
+                   
+                    foreach(ArticuloDetalle d in entrada.Detalle)
+                    {
+                        Articulo articulo = ArticuloBLL.Buscar(d.Id);
+                        articulo.Cantidad += Convert.ToInt32(d.Cantidad);
+                        contexto.Entry<Articulo>(articulo).State = System.Data.Entity.EntityState.Modified;
+
+                    }
+                    
+                    paso = contexto.SaveChanges() > 0;
                 }
                 else
-                    MessageBox.Show("Id no existe", "Falló",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                {
+                    foreach(ArticuloDetalle articulo in entrada.Detalle)
+                    {
+                        if(entrada.ArticuloID == articulo.Id)
+                        {
+                            articulo.Cantidad = entrada.Cantidad;
+                            Articulo buscado = ArticuloBLL.Buscar(entrada.ArticuloID);
+                            buscado.Cantidad = Convert.ToInt32(articulo.Cantidad);
+                            ArticuloBLL.Modificar(buscado);
+                        }
+                        contexto.Entry<ArticuloDetalle>(articulo).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    contexto.Entry<Entrada>(entrada).State = System.Data.Entity.EntityState.Modified;
+                    paso = contexto.SaveChanges() > 0;
+                }
 
-            if (paso)
-            {
-                Limpiar();
+                contexto.Dispose();
+
+                if (paso)
+                {
+                    if(id == 0)
+                    {
+                        MessageBox.Show("Registro guardado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro actualizado correctamente");
+                    }
+                }
+
+
             }
             else
-                MessageBox.Show("No se pudo guardar!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show("Rellene todos los campos");
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -151,6 +185,10 @@ namespace PreyectoFinal.UI.Registros
             if (entrada != null)
             {
                 LlenaCampos(entrada);
+            }
+            else
+            {
+                errorProvider.SetError(EntradaIdNumericUpDown, " No Existe");
             }
         }
 
@@ -186,9 +224,8 @@ namespace PreyectoFinal.UI.Registros
                        fecha: DateTime.Now,
                        entradaId: (int)EntradaIdNumericUpDown.Value,
                        //: (int)ProductoComboBox.SelectedValue,
-                       cantidad: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
-                       precio: (double)Convert.ToDouble(CantidadnumericUpDown.Text),
-                       importe: (double)Convert.ToDouble(CantidadnumericUpDown.Value * 10),
+                       cantidad: Convert.ToDouble(CantidadnumericUpDown.Text),
+                       precio: Convert.ToDouble(PreciocomboBox.Text),
                        vencimiento: (DateTime)dateTimePicker1.Value
                //    precio: (double)Convert.ToDouble(PrecioTextBox.Text),
                //  importe: (double)Convert.ToDouble(ImporteTextBox.Text)
@@ -196,8 +233,10 @@ namespace PreyectoFinal.UI.Registros
                ));
 
                 EntradadataGridView.DataSource = null;
+                
                 EntradadataGridView.DataSource = detalle;
-                EntradadataGridView.Columns[0].Visible = false;
+                EntradadataGridView.Columns[1].Visible = false;
+
                 CargarGrid();
                // LlenarValores();
             }

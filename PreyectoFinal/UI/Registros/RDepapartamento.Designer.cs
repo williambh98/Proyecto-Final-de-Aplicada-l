@@ -46,7 +46,7 @@
             // 
             // NombreTextBox
             // 
-            this.NombreTextBox.Location = new System.Drawing.Point(134, 83);
+            this.NombreTextBox.Location = new System.Drawing.Point(134, 90);
             this.NombreTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(242, 22);
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 83);
+            this.label2.Location = new System.Drawing.Point(17, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
@@ -66,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 42);
+            this.label1.Location = new System.Drawing.Point(17, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
@@ -75,8 +75,13 @@
             // 
             // DepartamentoIdNumericUpDown
             // 
-            this.DepartamentoIdNumericUpDown.Location = new System.Drawing.Point(139, 39);
+            this.DepartamentoIdNumericUpDown.Location = new System.Drawing.Point(139, 46);
             this.DepartamentoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.DepartamentoIdNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.DepartamentoIdNumericUpDown.Name = "DepartamentoIdNumericUpDown";
             this.DepartamentoIdNumericUpDown.Size = new System.Drawing.Size(119, 22);
             this.DepartamentoIdNumericUpDown.TabIndex = 71;
@@ -85,10 +90,10 @@
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.EliminarButton.Location = new System.Drawing.Point(266, 113);
+            this.EliminarButton.Location = new System.Drawing.Point(266, 120);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(115, 43);
+            this.EliminarButton.Size = new System.Drawing.Size(115, 57);
             this.EliminarButton.TabIndex = 70;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
@@ -97,10 +102,10 @@
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
-            this.NuevoButton.Location = new System.Drawing.Point(20, 113);
+            this.NuevoButton.Location = new System.Drawing.Point(20, 120);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(115, 43);
+            this.NuevoButton.Size = new System.Drawing.Size(115, 57);
             this.NuevoButton.TabIndex = 68;
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
@@ -108,11 +113,11 @@
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
-            this.BuscarButton.Location = new System.Drawing.Point(261, 36);
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_google_web_search_32;
+            this.BuscarButton.Location = new System.Drawing.Point(261, 33);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(115, 39);
+            this.BuscarButton.Size = new System.Drawing.Size(115, 49);
             this.BuscarButton.TabIndex = 67;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -145,10 +150,10 @@
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
-            this.GuardarButton.Location = new System.Drawing.Point(143, 113);
+            this.GuardarButton.Location = new System.Drawing.Point(143, 120);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(115, 43);
+            this.GuardarButton.Size = new System.Drawing.Size(115, 57);
             this.GuardarButton.TabIndex = 69;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click_1);
@@ -158,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
-            this.ClientSize = new System.Drawing.Size(405, 169);
+            this.ClientSize = new System.Drawing.Size(405, 195);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.NombreTextBox);
@@ -170,6 +175,7 @@
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.BuscarButton);
             this.Name = "RDepapartamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Departamento";
             ((System.ComponentModel.ISupportInitialize)(this.DepartamentoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myErrorProvider)).EndInit();

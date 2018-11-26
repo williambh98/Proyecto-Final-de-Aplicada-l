@@ -37,7 +37,6 @@
             this.ArticuloIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Addbutton = new System.Windows.Forms.Button();
-            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.ProvedorCOmbobox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,9 +53,12 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.CostotextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidadTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // DepartamentoComboBox
@@ -111,6 +113,11 @@
             // 
             this.ArticuloIdNumericUpDown.Location = new System.Drawing.Point(117, 44);
             this.ArticuloIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.ArticuloIdNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.ArticuloIdNumericUpDown.Name = "ArticuloIdNumericUpDown";
             this.ArticuloIdNumericUpDown.Size = new System.Drawing.Size(138, 22);
             this.ArticuloIdNumericUpDown.TabIndex = 82;
@@ -134,10 +141,6 @@
             this.Addbutton.Text = "+";
             this.Addbutton.UseVisualStyleBackColor = true;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
-            // 
-            // ErrorProvider
-            // 
-            this.ErrorProvider.ContainerControl = this;
             // 
             // button1
             // 
@@ -212,7 +215,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(352, 1);
+            this.label5.Location = new System.Drawing.Point(221, 290);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 17);
@@ -223,9 +226,9 @@
             // 
             this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(410, 1);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(281, 287);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(127, 22);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(123, 22);
             this.FechadateTimePicker.TabIndex = 111;
             // 
             // pictureBox1
@@ -244,10 +247,10 @@
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.EliminarButton.Location = new System.Drawing.Point(296, 286);
+            this.EliminarButton.Location = new System.Drawing.Point(296, 344);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(107, 55);
+            this.EliminarButton.Size = new System.Drawing.Size(107, 61);
             this.EliminarButton.TabIndex = 97;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
@@ -256,10 +259,10 @@
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
-            this.GuardarButton.Location = new System.Drawing.Point(155, 286);
+            this.GuardarButton.Location = new System.Drawing.Point(155, 344);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(100, 55);
+            this.GuardarButton.Size = new System.Drawing.Size(100, 61);
             this.GuardarButton.TabIndex = 96;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
@@ -268,10 +271,10 @@
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
-            this.NuevoButton.Location = new System.Drawing.Point(18, 286);
+            this.NuevoButton.Location = new System.Drawing.Point(18, 344);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(95, 56);
+            this.NuevoButton.Size = new System.Drawing.Size(95, 61);
             this.NuevoButton.TabIndex = 95;
             this.NuevoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -280,8 +283,8 @@
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
-            this.BuscarButton.Location = new System.Drawing.Point(262, 27);
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_google_web_search_32;
+            this.BuscarButton.Location = new System.Drawing.Point(262, 33);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(140, 53);
@@ -309,13 +312,39 @@
             this.CostotextBox.TabIndex = 115;
             this.CostotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostotextBox_KeyPress_1);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // CantidadTextBox
+            // 
+            this.CantidadTextBox.Enabled = false;
+            this.CantidadTextBox.Location = new System.Drawing.Point(117, 287);
+            this.CantidadTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CantidadTextBox.Name = "CantidadTextBox";
+            this.CantidadTextBox.Size = new System.Drawing.Size(96, 22);
+            this.CantidadTextBox.TabIndex = 117;
+            this.CantidadTextBox.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 287);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 17);
+            this.label6.TabIndex = 116;
+            this.label6.Text = "Cantidad:";
+            // 
             // RArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
-            this.ClientSize = new System.Drawing.Size(549, 354);
+            this.ClientSize = new System.Drawing.Size(549, 418);
+            this.Controls.Add(this.CantidadTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.CostotextBox);
             this.Controls.Add(this.PreciotextBox);
             this.Controls.Add(this.FechadateTimePicker);
@@ -342,10 +371,12 @@
             this.Controls.Add(this.BuscarButton);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Articulo";
+            this.Load += new System.EventHandler(this.RArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloIdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +396,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button Addbutton;
-        private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox ProvedorCOmbobox;
         private System.Windows.Forms.Label label9;
@@ -378,5 +408,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CostotextBox;
         private System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox CantidadTextBox;
+        private System.Windows.Forms.Label label6;
     }
 }

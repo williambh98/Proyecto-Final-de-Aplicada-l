@@ -20,13 +20,21 @@ namespace PreyectoFinal.Entidades
         public Proveedores()
         {
             IDProveedor = 0;
-     
             Direccion = string.Empty;
             Telefono = string.Empty;
             NombreProveedor = string.Empty;
             Email = string.Empty;
             FechaProveedor= DateTime.Now;
         }
-        
+
+        public Proveedores(int iDProveedor, string nombreProveedor, string direccion, string telefono, string email, DateTime fechaProveedor)
+        {
+            IDProveedor = iDProveedor;
+            NombreProveedor = nombreProveedor;
+            Direccion = direccion;
+            Telefono = telefono;
+            Email = email;
+            FechaProveedor = fechaProveedor;
+        }
     }
 }

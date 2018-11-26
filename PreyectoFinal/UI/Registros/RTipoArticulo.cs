@@ -162,7 +162,7 @@ namespace PreyectoFinal.UI.Registros
             }
             else
             {
-                MessageBox.Show("No Encotro");
+                ErrorProvider.SetError(TipoIdNumericUpDown, "No Existe");
             }
         }
 

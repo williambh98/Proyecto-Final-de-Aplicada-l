@@ -17,6 +17,7 @@ namespace PreyectoFinal
         public Menu()
         {
             InitializeComponent();
+            registroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
         }
 
         private void entradaDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace PreyectoFinal
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            REntradeDeProducto Pro = new REntradeDeProducto();
+            RCapturarInventario Pro = new RCapturarInventario();
             Pro.Show();
             Pro.MdiParent = this;
             
@@ -88,7 +89,8 @@ namespace PreyectoFinal
 
         private void Menu_Load(object sender, EventArgs e)
         {
-         //  registroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
+            
+         //  istroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
 
         }
 

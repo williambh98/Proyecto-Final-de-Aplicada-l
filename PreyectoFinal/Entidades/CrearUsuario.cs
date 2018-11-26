@@ -31,6 +31,15 @@ namespace PreyectoFinal.Entidades
                 FechaCreacion = DateTime.Now;
             }
 
-
+        public CrearUsuario(int usuarioId, string nombres, string noTelefono, string email, string contraseña, bool administrador, DateTime fechaCreacion)
+        {
+            UsuarioId = usuarioId;
+            Nombres = nombres;
+            NoTelefono = noTelefono;
+            Email = email;
+            Contraseña = contraseña;
+            Administrador = administrador;
+            FechaCreacion = fechaCreacion;
         }
+    }
     }

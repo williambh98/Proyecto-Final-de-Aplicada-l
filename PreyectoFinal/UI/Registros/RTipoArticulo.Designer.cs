@@ -50,10 +50,10 @@
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EliminarButton.Image = global::PreyectoFinal.Properties.Resources.Eliminar;
-            this.EliminarButton.Location = new System.Drawing.Point(245, 182);
+            this.EliminarButton.Location = new System.Drawing.Point(245, 175);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(107, 56);
+            this.EliminarButton.Size = new System.Drawing.Size(107, 63);
             this.EliminarButton.TabIndex = 124;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
@@ -62,10 +62,10 @@
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GuardarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_guardar_48;
-            this.GuardarButton.Location = new System.Drawing.Point(137, 182);
+            this.GuardarButton.Location = new System.Drawing.Point(137, 175);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(100, 56);
+            this.GuardarButton.Size = new System.Drawing.Size(100, 63);
             this.GuardarButton.TabIndex = 123;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
@@ -74,17 +74,17 @@
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NuevoButton.Image = global::PreyectoFinal.Properties.Resources.icons8_nuevo_48;
-            this.NuevoButton.Location = new System.Drawing.Point(32, 182);
+            this.NuevoButton.Location = new System.Drawing.Point(32, 175);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(97, 56);
+            this.NuevoButton.Size = new System.Drawing.Size(97, 63);
             this.NuevoButton.TabIndex = 122;
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(120, 120);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(119, 130);
             this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(245, 22);
@@ -94,6 +94,11 @@
             // 
             this.TipoIdNumericUpDown.Location = new System.Drawing.Point(120, 44);
             this.TipoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.TipoIdNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.TipoIdNumericUpDown.Name = "TipoIdNumericUpDown";
             this.TipoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.TipoIdNumericUpDown.TabIndex = 109;
@@ -111,11 +116,11 @@
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.Buscar;
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_google_web_search_32;
             this.BuscarButton.Location = new System.Drawing.Point(245, 29);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(119, 43);
+            this.BuscarButton.Size = new System.Drawing.Size(119, 48);
             this.BuscarButton.TabIndex = 107;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -129,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 125);
+            this.label3.Location = new System.Drawing.Point(17, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
@@ -138,7 +143,7 @@
             // 
             // TipoTextbox
             // 
-            this.TipoTextbox.Location = new System.Drawing.Point(120, 85);
+            this.TipoTextbox.Location = new System.Drawing.Point(120, 87);
             this.TipoTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoTextbox.Name = "TipoTextbox";
             this.TipoTextbox.Size = new System.Drawing.Size(245, 22);
@@ -177,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
-            this.ClientSize = new System.Drawing.Size(394, 251);
+            this.ClientSize = new System.Drawing.Size(383, 251);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TipoTextbox);
@@ -191,6 +196,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
             this.Name = "RTipoArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo Articulo";
             this.Load += new System.EventHandler(this.RTipoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDown)).EndInit();

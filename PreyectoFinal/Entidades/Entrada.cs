@@ -30,9 +30,15 @@ namespace PreyectoFinal.Entidades
             this.Detalle = new List<ArticuloDetalle>();
         }
 
-        /*public void ArticuloDetalle(int id, DateTime fecha, int articuloid, double cantidad, double precio, double importe, DateTime vencimiento)
+        public Entrada(int entradaId, DateTime fecha, int provedorID, int articuloID, double cantidad, List<ArticuloDetalle> detalle)
         {
-            this.Detalle.Add(new ArticuloDetalle(id, fecha, articuloid, cantidad, precio, importe, vencimiento));
-        }*/
+            EntradaId = entradaId;
+            Fecha = fecha;
+            ProvedorID = provedorID;
+            ArticuloID = articuloID;
+            Cantidad = cantidad;
+            Detalle = detalle;
+        }
+
     }
 }

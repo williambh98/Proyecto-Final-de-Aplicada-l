@@ -24,7 +24,6 @@ namespace PreyectoFinal.UI.Registros
         private void LlenarCombo()
         {
             RepositorioBase<Departamento> DepRepositorio = new RepositorioBase<Departamento>();
-
             DepartamentoComboBox.DataSource = DepRepositorio.GetList(c => true);
             DepartamentoComboBox.ValueMember = "DepartamentoId";
             DepartamentoComboBox.DisplayMember = "Nombre";
@@ -33,6 +32,7 @@ namespace PreyectoFinal.UI.Registros
             TipoCombox.DataSource = TipRepositorio.GetList(x => true);
             TipoCombox.ValueMember = "TiposId";
             TipoCombox.DisplayMember = "Nombre";
+            
 
             RepositorioBase<Proveedores> com = new RepositorioBase<Proveedores>();
             ProvedorCOmbobox.DataSource = com.GetList(x => true);
@@ -42,7 +42,8 @@ namespace PreyectoFinal.UI.Registros
 
         private void Limpiar()
         {
-            ErrorProvider.Clear();
+            errorProvider1.Clear();
+            CantidadTextBox.Clear();
             ArticuloIdNumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
             DepartamentoComboBox.SelectedIndex = 0;
@@ -54,7 +55,7 @@ namespace PreyectoFinal.UI.Registros
         private Articulo LlenaClase()
         {
             Articulo articulo = new Articulo();
-
+            articulo.Cantidad = Convert.ToInt32(CantidadTextBox.Text);
             articulo.ArticuloID = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
             articulo.DepartamentoId = Convert.ToInt32(DepartamentoComboBox.SelectedValue);
             articulo.FechaCreacion = FechadateTimePicker.Value;
@@ -80,19 +81,19 @@ namespace PreyectoFinal.UI.Registros
 
             if (string.IsNullOrEmpty(DescripcionTextBox.Text))
             {
-                ErrorProvider.SetError(DescripcionTextBox,
+                errorProvider1.SetError(DescripcionTextBox,
                     "Llenar Campo Descripcion");
                 paso = true;
             }
             if (string.IsNullOrEmpty(CostotextBox.Text))
             {
-                ErrorProvider.SetError(CostotextBox,
+                errorProvider1.SetError(CostotextBox,
                     "Llenar Campo Articulo");
                 paso = true;
             }
             if (string.IsNullOrEmpty(PreciotextBox.Text))
             {
-                ErrorProvider.SetError(PreciotextBox,
+                errorProvider1.SetError(PreciotextBox,
                     "Llenar Campo Precio");
                 paso = true;
             }
@@ -179,10 +180,11 @@ namespace PreyectoFinal.UI.Registros
                 CostotextBox.Text = articulo.Costo.ToString();
                 PreciotextBox.Text = articulo.Precio.ToString();
                 FechadateTimePicker.Value = articulo.FechaCreacion;
-              
+                CantidadTextBox.Text = Convert.ToString(articulo.Cantidad);
+
             }
             else
-                MessageBox.Show("No existe!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(ArticuloIdNumericUpDown, "No Existe");
 
         }
 
@@ -252,7 +254,7 @@ namespace PreyectoFinal.UI.Registros
                 v.Handled = true;
                 MessageBox.Show("Solo Números con punto Decimal");
             }
-        
+
         }
 
         private void CostotextBox_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -263,6 +265,11 @@ namespace PreyectoFinal.UI.Registros
         private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             NumerosDecimal(e);
+        }
+
+        private void RArticulo_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

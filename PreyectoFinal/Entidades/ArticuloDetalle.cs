@@ -32,7 +32,7 @@ namespace PreyectoFinal.Entidades
             FechaVencimiento = DateTime.Now;
         }
 
-        public ArticuloDetalle(int id, DateTime fecha, int entradaId, double cantidad, double precio, double importe,DateTime vencimiento)
+        public ArticuloDetalle(int id, DateTime fecha, int entradaId, double cantidad, double precio,DateTime vencimiento)
         {
             Id = id;
             Fecha = fecha;

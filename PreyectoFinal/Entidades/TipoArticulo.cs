@@ -22,5 +22,13 @@ namespace PreyectoFinal.Entidades
             Descripcion = string.Empty;
             FechaCreacion = DateTime.Now;
         }
+
+        public TipoArticulo(int tiposId, string nombre, string descripcion, DateTime fechaCreacion)
+        {
+            TiposId = tiposId;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            FechaCreacion = fechaCreacion;
+        }
     }
 }

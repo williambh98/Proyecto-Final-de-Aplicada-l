@@ -64,6 +64,10 @@ namespace PreyectoFinal.UI.Registros
                 NombreTextBox.Text = departamento.Nombre;
                 FechadateTimePicker.Value = departamento.fecha;
             }
+            else
+            {
+                myErrorProvider.SetError(DepartamentoIdNumericUpDown, "No Existe");
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -161,5 +165,7 @@ namespace PreyectoFinal.UI.Registros
         {
             SoloLetras(e);
         }
+
+       
     }
 }

@@ -72,7 +72,7 @@ namespace PreyectoFinal.UI.Registros
             }
             else
             {
-                MessageBox.Show("No Encotro");
+                errorProvider.SetError(IDnumericUpDown, "No Existe");
             }
 
         }
@@ -85,13 +85,7 @@ namespace PreyectoFinal.UI.Registros
         private bool Validar()
         {
             bool paso = true;
-           /*
-            if (FechadateTimePicker.Value < DateTime.Now)
-            {
-                errorProvider.SetError(FechadateTimePicker, "La fecha no esta Correcta");
-                paso = false;
-            }
-            */
+          
             if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
             {
                 errorProvider.SetError(TelefonoMaskedTextBox, "Llenar Campo");
@@ -181,5 +175,31 @@ namespace PreyectoFinal.UI.Registros
                 MessageBox.Show("No Elimino");
             }
         }
+        public static void SoloLetras(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo Letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+       
     }
 }

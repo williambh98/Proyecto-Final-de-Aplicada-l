@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.Salirbutton = new System.Windows.Forms.Button();
             this.Entrarbutton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,12 +59,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Passwerd";
             // 
-            // EmailTextBox
+            // UsuarioTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(108, 158);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(200, 22);
-            this.EmailTextBox.TabIndex = 2;
+            this.UsuarioTextBox.Location = new System.Drawing.Point(108, 158);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(200, 22);
+            this.UsuarioTextBox.TabIndex = 2;
             // 
             // ContraseñaTextBox
             // 
@@ -103,7 +106,11 @@
             this.Entrarbutton.Text = "Entrar";
             this.Entrarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Entrarbutton.UseVisualStyleBackColor = true;
-            this.Entrarbutton.Click += new System.EventHandler(this.Entrarbutton_Click);
+            this.Entrarbutton.Click += new System.EventHandler(this.Entrarbutton_Click_1);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // Login
             // 
@@ -111,18 +118,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
-            this.ClientSize = new System.Drawing.Size(361, 359);
+            this.ClientSize = new System.Drawing.Size(350, 386);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.Salirbutton);
             this.Controls.Add(this.Entrarbutton);
             this.Controls.Add(this.ContraseñaTextBox);
-            this.Controls.Add(this.EmailTextBox);
+            this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,10 +141,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox EmailTextBox;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.TextBox ContraseñaTextBox;
         private System.Windows.Forms.Button Entrarbutton;
         private System.Windows.Forms.Button Salirbutton;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

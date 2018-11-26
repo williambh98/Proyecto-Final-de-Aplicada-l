@@ -16,10 +16,11 @@ namespace PreyectoFinal.UI.Registros
     public partial class REgistroUsuario : Form
     {
 
-       
+
         public REgistroUsuario()
         {
             InitializeComponent();
+            UsuarioradioButton.Checked = true;
         }
 
 
@@ -31,12 +32,22 @@ namespace PreyectoFinal.UI.Registros
             usuario.Nombres = NombresTextBox.Text;
             usuario.Email = EmailTextBox.Text;
             usuario.NoTelefono = NoTelefonoMaskedTextBox.Text;
-            usuario.Administrador = true;
-            usuario.Contraseña = ContraseñaTextBox.Text;
+            usuario.Administrador = (UsuarioradioButton.Checked) ? false : true;
+            usuario.Contraseña = Program.Hash(ContraseñaTextBox.Text);
 
             return usuario;
         }
 
+        public void LLenaCampo(CrearUsuario usuario)
+        {
+            UsuarioIdNumericUpDown.Value = usuario.UsuarioId;
+            NombresTextBox.Text = usuario.Nombres;
+            if (usuario.Administrador) AdministradorradioButton.Checked = true; else UsuarioradioButton.Checked = true;
+            EmailTextBox.Text = usuario.Email;
+            NoTelefonoMaskedTextBox.Text = usuario.NoTelefono;
+            ContraseñaTextBox.Text = Program.Hash(usuario.Contraseña);
+
+        }
         private void Limpiar()
         {
             UsuarioIdNumericUpDown.Value = 0;
@@ -131,70 +142,89 @@ namespace PreyectoFinal.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<CrearUsuario> repos = new RepositorioBase<CrearUsuario>();
+            RepositorioBase<CrearUsuario> repositorio = new RepositorioBase<CrearUsuario>();
             int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-
-            CrearUsuario usuario = repos.Buscar(id);
-            if (usuario != null)
+            if(id <= 0)
             {
-                if (repos.Eliminar(id))
-                {
-                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
-                else
-                    MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorProvider.SetError(UsuarioIdNumericUpDown, "Incorrecto");
             }
             else
-                MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                CrearUsuario usuario = repositorio.Buscar(id);
+                if (usuario != null)
+                {
+                    if(Program.usuario.UsuarioId == usuario.UsuarioId)
+                    {
+                        MessageBox.Show("Error No Puede Eliminarse el mismo Usuario");
+                    }
+                    else
+                    {
+                        if(repositorio.Eliminar(id))
+                        {
+                            MessageBox.Show("Usuario Eliminado");
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error no se puede eliminar");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No existe ");
+                }
+            }
+           
 
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<CrearUsuario> repos = new RepositorioBase<CrearUsuario>();
+            RepositorioBase<CrearUsuario> repositorio = new RepositorioBase<CrearUsuario>();
             int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-            CrearUsuario usuario = repos.Buscar(id);
 
-            if (usuario != null)
+            if (id <= 0)
             {
-                NombresTextBox.Text = usuario.Nombres;
-                EmailTextBox.Text = usuario.Email;
-                NoTelefonoMaskedTextBox.Text = usuario.NoTelefono;
-                ContraseñaTextBox.Text = usuario.Contraseña;
-                AdministradorradioButton.Checked = usuario.Administrador;
-            
+                ErrorProvider.SetError(UsuarioIdNumericUpDown, "No Exite");
+            }
+            else
+            {
+                CrearUsuario usuario = repositorio.Buscar(id);
+                if (usuario != null)
+                {
+                    LLenaCampo(usuario);
+                }
+                else
+                {
+                    ErrorProvider.SetError(UsuarioIdNumericUpDown, " No existe");
+                }
             }
         }
 
-        private void UsuariocheckBox_CheckedChanged(object sender, EventArgs e)
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            REgistroUsuario usuario = new REgistroUsuario();
-            usuario.Show();
-        
-            
-
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo Letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void AdministradorcheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            REgistroUsuario usuario = new REgistroUsuario();
-          
-            
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void REgistroUsuario_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
     }
 }
+
+
+

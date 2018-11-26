@@ -25,66 +25,122 @@ namespace PreyectoFinal.UI
             Application.Exit();
         }
 
-        private void Entrarbutton_Click(object sender, EventArgs e)
+        public void Limpiar()
         {
+            errorProvider.Clear();
+            UsuarioTextBox.Clear();
+            ContraseñaTextBox.Clear();
+        }
 
-            
-                     DialogResult = DialogResult.OK;
-                     Close();
+        public bool Validar()
+        {
+            bool paso = true;
+            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text) || string.IsNullOrWhiteSpace(ContraseñaTextBox.Text))
+            {
+                paso = true;
+            }
+            return paso;
+        }
 
-          
-            /*
-                   SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-4RSAB0P\\SQLEXPRESS; Initial Catalog=ProyectoFinalBD;"
-                       + "Integrated Security = true;");
-
-                   conexion.Open();
-                   string cadena = "select Email, Contraseña from CrearUsuarios where Email ='" + EmailTextBox.Text + "' and Contraseña = '" + ContraseñaTextBox.Text + "' ";
-                   SqlCommand comando = new SqlCommand(cadena, conexion);
-                   SqlDataReader registro = comando.ExecuteReader();
-                   if (registro.Read())
-                   {
-
-                       if ((registro["Email"].ToString() == EmailTextBox.Text) && (registro["Contraseña"].ToString() == ContraseñaTextBox.Text))
-                       {
-                           //MessageBox.Show("Correcto");
-                           Menu M = new Menu();
-                           M.Show();
-                          // M.Activos();
-                           this.Hide();
-                       }
-                   }
-                   else
-                       MessageBox.Show("El Email o la Contraseña estan incorrectos", "Error",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   conexion.Close();
-                     
-            string usuario = EmailTextBox.Text;
-                   string clave = ContraseñaTextBox.Text;
-                   RepositorioBase<CrearUsuario> repositorio = new RepositorioBase<CrearUsuario>();
-                   List<CrearUsuario> lista = repositorio.GetList(x => true);
-                   foreach (var item in lista)
-                   {
-                       if (usuario== item.Email && clave == item.Contraseña)
-                       {
-                           new Menu().Show();
-                           Program.usuario = item;
-                           this.Visible = false;
-                           MessageBox.Show("Bienbenido ");
-                           break;
-                       }
-                       else
-                       {
-                           MessageBox.Show("usuario o password incorrectos ");
-                           break;
-                       }
-                   */
-                   }
-                   
-                 
+        public CrearUsuario Llenarclase()
+        {
+            CrearUsuario usuario = new CrearUsuario()
+            {
+                Nombres = UsuarioTextBox.Text,
+                Contraseña = Program.Hash(ContraseñaTextBox.Text)
+            };
+            return usuario;
         }
 
 
+        public void Entrar()
+        {
+            if (Validar())
+            {
+                CrearUsuario usuario = Llenarclase();
+                RepositorioBase<CrearUsuario> repositorio = new RepositorioBase<CrearUsuario>();
+                List<CrearUsuario> lista = repositorio.GetList(u => true);
+                if (lista.Count > 0)
+                {
+                    bool paso = false;
+                    CrearUsuario UsuarioIniciado = null;
+                    foreach (var item in lista)
+                    {
+                        if (item.Nombres == usuario.Nombres && item.Contraseña == usuario.Contraseña)
+                        {
+                            UsuarioIniciado = item;
+                            paso = true;
+                            break;
+                        }
+                    }
+
+                    if (paso)
+                    {
+                        Limpiar();
+                        Program.usuario = UsuarioIniciado;
+                        Program.menu = new Menu();
+                        Program.menu.Show();
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario y la Contrasena No conciden");
+                    }
+                }
+                else
+                {
+                    repositorio.Guardar(new CrearUsuario()
+                    {
+                        Nombres = "root",
+                        Administrador = true,
+                        Contraseña = Program.Hash("root"),
+                        Email = "root",
+                        NoTelefono = "root",
+                        FechaCreacion = DateTime.Now
+                    });
+                    MessageBox.Show("Intentar De Nuevo");
+                    Limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("LLenar Todo  lo Campo");
+                if (string.IsNullOrEmpty(ContraseñaTextBox.Text))
+                {
+                    errorProvider.SetError(ContraseñaTextBox, " LLenar Este Campo");
+                }
+                if (string.IsNullOrEmpty(UsuarioTextBox.Text))
+                {
+                    errorProvider.SetError(UsuarioTextBox, "Llenar Campo");
+                }
+            }
+
+        }
+
+
+
+        private void Entrarbutton_Click(object sender, EventArgs e)
+        {
+
+            Entrar();
+            /*
+            DialogResult = DialogResult.OK;
+            Close();
+            */
+
+        }
+
+        private void Entrarbutton_Click_1(object sender, EventArgs e)
+        {
+            Entrar();
+        }
     }
+
+}
+
+
+
+    
 
     
 

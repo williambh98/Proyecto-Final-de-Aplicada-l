@@ -21,5 +21,11 @@ namespace PreyectoFinal.Entidades
             fecha = DateTime.Now;
         }
 
+        public Departamento(int departamentoId, string nombre, DateTime fecha)
+        {
+            DepartamentoId = departamentoId;
+            Nombre = nombre;
+            this.fecha = fecha;
+        }
     }
 }

@@ -58,7 +58,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1014, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1667, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,7 +93,7 @@
             // 
             // entradaInventarioToolStripMenuItem
             // 
-            this.entradaInventarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.descarga2;
+            this.entradaInventarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.iconos_usuario5;
             this.entradaInventarioToolStripMenuItem.Name = "entradaInventarioToolStripMenuItem";
             this.entradaInventarioToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.entradaInventarioToolStripMenuItem.Text = "Registrar Proveedores";
@@ -153,6 +153,7 @@
             // 
             // consutasDepartamentoToolStripMenuItem
             // 
+            this.consutasDepartamentoToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.icons8_mover_por_carretilla_50;
             this.consutasDepartamentoToolStripMenuItem.Name = "consutasDepartamentoToolStripMenuItem";
             this.consutasDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.consutasDepartamentoToolStripMenuItem.Text = "Departamento";
@@ -160,6 +161,7 @@
             // 
             // consultaTipoarticuloToolStripMenuItem
             // 
+            this.consultaTipoarticuloToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.images__1_;
             this.consultaTipoarticuloToolStripMenuItem.Name = "consultaTipoarticuloToolStripMenuItem";
             this.consultaTipoarticuloToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.consultaTipoarticuloToolStripMenuItem.Text = "Tipo articulo";
@@ -167,6 +169,7 @@
             // 
             // captureDeInvetarioToolStripMenuItem
             // 
+            this.captureDeInvetarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.descarga2;
             this.captureDeInvetarioToolStripMenuItem.Name = "captureDeInvetarioToolStripMenuItem";
             this.captureDeInvetarioToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.captureDeInvetarioToolStripMenuItem.Text = "Capture De Invetario";
@@ -185,7 +188,7 @@
             // 
             this.inventarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.icons8_mover_por_carretilla_50;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.inventarioToolStripMenuItem.Text = "Capturar";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -203,12 +206,13 @@
             this.AutoSize = true;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1014, 659);
+            this.ClientSize = new System.Drawing.Size(1667, 789);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

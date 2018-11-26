@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreyectoFinal", "PreyectoFinal\PreyectoFinal.csproj", "{FA5AB750-9F04-4DCE-AA2B-26DECA6958C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreyectoFinalTests1", "PreyectoFinalTests1\PreyectoFinalTests1.csproj", "{D8D95EC1-C034-412C-8112-FEFC7832190D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreyectoFinalTests", "PreyectoFinalTests1\PreyectoFinalTests.csproj", "{D8D95EC1-C034-412C-8112-FEFC7832190D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

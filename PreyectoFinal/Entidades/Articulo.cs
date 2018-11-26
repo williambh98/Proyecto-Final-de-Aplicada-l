@@ -16,8 +16,9 @@ namespace PreyectoFinal.Entidades
         public double Costo { get; set; }
         public double Precio { get; set; }
         public DateTime FechaCreacion { get; set; }
+        public int Cantidad { get; set; }
+      
 
-    
         public Articulo()
         {
             ArticuloID = 0;
@@ -26,7 +27,19 @@ namespace PreyectoFinal.Entidades
             Costo = 0;
             Precio = 0;
             FechaCreacion = DateTime.Now;
+            Cantidad = 0;
 
+        }
+
+        public Articulo(int articuloID, int departamentoId, string descripcion, double costo, int cantidad, double precio, DateTime fechaCreacion)
+        {
+            ArticuloID = articuloID;
+            DepartamentoId = departamentoId;
+            Descripcion = descripcion;
+            Costo = costo;
+            Precio = precio;
+            FechaCreacion = fechaCreacion;
+            Cantidad = cantidad;
         }
 
         public override string ToString()

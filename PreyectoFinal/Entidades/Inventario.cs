@@ -23,5 +23,12 @@ namespace PreyectoFinal.Entidades
             precio = 0;
         }
 
+        public Inventario(int iDInveentario, string descripcion, DateTime fechaInventario, decimal precio)
+        {
+            IDInveentario = iDInveentario;
+            Descripcion = descripcion;
+            FechaInventario = fechaInventario;
+            this.precio = precio;
+        }
     }
 }

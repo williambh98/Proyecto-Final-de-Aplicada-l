@@ -159,6 +159,7 @@
             this.Consulta_dataGridView.Location = new System.Drawing.Point(13, 117);
             this.Consulta_dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.Consulta_dataGridView.Name = "Consulta_dataGridView";
+            this.Consulta_dataGridView.ReadOnly = true;
             this.Consulta_dataGridView.Size = new System.Drawing.Size(704, 261);
             this.Consulta_dataGridView.TabIndex = 50;
             // 

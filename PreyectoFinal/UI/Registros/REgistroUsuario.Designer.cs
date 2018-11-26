@@ -60,7 +60,7 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(118, 84);
+            this.EmailTextBox.Location = new System.Drawing.Point(118, 130);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(215, 22);
@@ -78,7 +78,7 @@
             // 
             // NoTelefonoMaskedTextBox
             // 
-            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(122, 179);
+            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(122, 177);
             this.NoTelefonoMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NoTelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
@@ -115,11 +115,12 @@
             // 
             // NombresTextBox
             // 
-            this.NombresTextBox.Location = new System.Drawing.Point(118, 130);
+            this.NombresTextBox.Location = new System.Drawing.Point(118, 84);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(215, 22);
             this.NombresTextBox.TabIndex = 77;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // label2
             // 
@@ -135,6 +136,11 @@
             // 
             this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(110, 25);
             this.UsuarioIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.UsuarioIdNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(72, 22);
             this.UsuarioIdNumericUpDown.TabIndex = 75;
@@ -172,7 +178,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(392, 271);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(143, 49);
+            this.EliminarButton.Size = new System.Drawing.Size(143, 66);
             this.EliminarButton.TabIndex = 74;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
@@ -184,7 +190,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(213, 271);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(139, 49);
+            this.GuardarButton.Size = new System.Drawing.Size(139, 66);
             this.GuardarButton.TabIndex = 73;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
@@ -196,7 +202,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(36, 271);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(132, 49);
+            this.NuevoButton.Size = new System.Drawing.Size(132, 66);
             this.NuevoButton.TabIndex = 72;
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
@@ -204,11 +210,11 @@
             // BuscarButton
             // 
             this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(189, 21);
+            this.BuscarButton.Image = global::PreyectoFinal.Properties.Resources.icons8_google_web_search_32;
+            this.BuscarButton.Location = new System.Drawing.Point(190, 9);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(137, 39);
+            this.BuscarButton.Size = new System.Drawing.Size(137, 67);
             this.BuscarButton.TabIndex = 71;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -218,7 +224,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(288, 231);
+            this.label6.Location = new System.Drawing.Point(288, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 17);
             this.label6.TabIndex = 85;
@@ -255,7 +261,6 @@
             this.groupBox1.Size = new System.Drawing.Size(203, 53);
             this.groupBox1.TabIndex = 91;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label7
             // 
@@ -280,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
-            this.ClientSize = new System.Drawing.Size(548, 333);
+            this.ClientSize = new System.Drawing.Size(548, 350);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
@@ -301,8 +306,8 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label1);
             this.Name = "REgistroUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Usuario";
-            this.Load += new System.EventHandler(this.REgistroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
