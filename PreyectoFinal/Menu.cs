@@ -101,6 +101,18 @@ namespace PreyectoFinal
             cap.MdiParent = this;
         }
 
-      
+        private void rArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RDepapartamento dp = new RDepapartamento();
+            dp.Show();
+            dp.MdiParent = this;
+        }
+
+        private void registroTipoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RTipoArticulo tp = new RTipoArticulo();
+            tp.Show();
+            tp.MdiParent = this;
+        }
     }
 }

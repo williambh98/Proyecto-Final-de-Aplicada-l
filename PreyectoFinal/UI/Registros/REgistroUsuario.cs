@@ -61,31 +61,31 @@ namespace PreyectoFinal.UI.Registros
 
         private bool HayErrores()
         {
-            bool paso = false;
+            bool paso = true;
 
             if (String.IsNullOrEmpty(NombresTextBox.Text))
             {
                 ErrorProvider.SetError(NombresTextBox,
                     "Debe escribir el Nombre Completo para el Usuario");
-                paso = true;
+                paso = false;
             }
             if (String.IsNullOrEmpty(EmailTextBox.Text))
             {
                 ErrorProvider.SetError(EmailTextBox,
                     "Debe ingresar un Email para el Usuario");
-                paso = true;
+                paso = false;
             }
             if (String.IsNullOrEmpty(NoTelefonoMaskedTextBox.Text))
             {
                 ErrorProvider.SetError(NoTelefonoMaskedTextBox,
                     "Debe ingresar un Número de Teléfono para el Usuario");
-                paso = true;
+                paso = false;
             }
             if (String.IsNullOrEmpty(ContraseñaTextBox.Text))
             {
                 ErrorProvider.SetError(ContraseñaTextBox,
                     "Debe ingresar una Contraseña para el Usuario");
-                paso = true;
+                paso = false;
             }
 
             return paso;
@@ -103,36 +103,38 @@ namespace PreyectoFinal.UI.Registros
             bool paso = false;
 
             if (HayErrores())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            usuario = LlenaClase();
-
-            if (UsuarioIdNumericUpDown.Value == 0)
             {
-                paso = repos.Guardar(usuario);
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-                usuario = repos.Buscar(id);
 
-                if (usuario != null)
+                usuario = LlenaClase();
+
+                if (UsuarioIdNumericUpDown.Value == 0)
                 {
-                    paso = repos.Modificar(LlenaClase());
-                    MessageBox.Show("Modificado!!", "Exito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    paso = repos.Guardar(usuario);
+                    MessageBox.Show("Guardado!!", "Exito",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Id no existe", "Falló",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                {
+                    int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
+                    usuario = repos.Buscar(id);
 
-            if (paso)
-            {
-                Limpiar();
+                    if (usuario != null)
+                    {
+                        paso = repos.Modificar(LlenaClase());
+                        MessageBox.Show("Modificado!!", "Exito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error", "Falló",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (paso)
+                {
+                    MessageBox.Show("Guardado!!", "Exito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
             }
             else
                 MessageBox.Show("No se pudo guardar!!", "Falló",

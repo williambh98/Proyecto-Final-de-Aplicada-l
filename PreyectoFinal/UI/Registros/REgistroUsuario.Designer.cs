@@ -118,6 +118,7 @@
             this.NombresTextBox.Location = new System.Drawing.Point(118, 84);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
+            this.NombresTextBox.ShortcutsEnabled = false;
             this.NombresTextBox.Size = new System.Drawing.Size(215, 22);
             this.NombresTextBox.TabIndex = 77;
             this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);

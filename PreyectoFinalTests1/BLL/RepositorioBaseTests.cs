@@ -21,6 +21,7 @@ namespace PreyectoFinal.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
+            
             TipoArticulo proveedores = new TipoArticulo();
             proveedores.TiposId = 1003;
             proveedores.Nombre = "William";
@@ -29,14 +30,14 @@ namespace PreyectoFinal.BLL.Tests
             RepositorioBase<TipoArticulo> repositorio;
             repositorio = new RepositorioBase<TipoArticulo>();
             Assert.IsTrue(repositorio.Guardar(proveedores));
+            
            
         }
-
         [TestMethod()]
         public void ModificarTest()
         {
             Assert.Fail();
-            /*
+            
             CrearUsuario usuario = new CrearUsuario();
             usuario.UsuarioId = 1002;
             usuario.Nombres = "Willia";
@@ -47,7 +48,7 @@ namespace PreyectoFinal.BLL.Tests
             RepositorioBase<CrearUsuario> repositorio;
             repositorio = new RepositorioBase<CrearUsuario>();
             Assert.IsTrue(repositorio.Modificar(usuario));
-            */
+            
         }
 
         [TestMethod()]

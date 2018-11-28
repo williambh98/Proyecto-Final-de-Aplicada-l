@@ -75,17 +75,17 @@ namespace PreyectoFinal.UI.Registros
 
         private bool Validar()
         {
-            bool paso = false;
-            if (FechaDateTimePicker.Value > DateTime.Now)
-            {
-                errorProvider.SetError(FechaDateTimePicker, "La fecha debe ser mayor que la de actual");
-                paso = false;
-            }
+            bool paso = true;
+            //if (FechaDateTimePicker.Value >= DateTime.Now)
+            //{
+            //    errorProvider.SetError(FechaDateTimePicker, "La fecha debe ser mayor que la de actual");
+            //    paso = false;
+            //}
             if (String.IsNullOrEmpty(CantidadnumericUpDown.Text))
             {
                 errorProvider.SetError(CantidadnumericUpDown,
                     "Debe digitar un Cantidad de Entrada para el Producto");
-                paso = true;
+                paso = false;
             }
 
             return paso;
@@ -100,7 +100,7 @@ namespace PreyectoFinal.UI.Registros
         {
             int id = Convert.ToInt32(EntradaIdNumericUpDown.Value);
 
-            if (Validar()== false)
+            if (Validar())
             {
                 bool paso = false;
                 Entrada entrada = LlenaClase();
@@ -152,10 +152,7 @@ namespace PreyectoFinal.UI.Registros
 
 
             }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos");
-            }
+           
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)

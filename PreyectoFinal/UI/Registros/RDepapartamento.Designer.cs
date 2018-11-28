@@ -49,6 +49,7 @@
             this.NombreTextBox.Location = new System.Drawing.Point(134, 90);
             this.NombreTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.ShortcutsEnabled = false;
             this.NombreTextBox.Size = new System.Drawing.Size(242, 22);
             this.NombreTextBox.TabIndex = 74;
             this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);

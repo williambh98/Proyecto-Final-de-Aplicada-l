@@ -77,25 +77,25 @@ namespace PreyectoFinal.UI.Registros
       
         private bool Validar()
         {
-            bool paso = false;
+            bool paso = true;
 
             if (string.IsNullOrEmpty(DescripcionTextBox.Text))
             {
                 errorProvider1.SetError(DescripcionTextBox,
                     "Llenar Campo Descripcion");
-                paso = true;
+                paso = false;
             }
             if (string.IsNullOrEmpty(CostotextBox.Text))
             {
                 errorProvider1.SetError(CostotextBox,
                     "Llenar Campo Articulo");
-                paso = true;
+                paso = false;
             }
             if (string.IsNullOrEmpty(PreciotextBox.Text))
             {
                 errorProvider1.SetError(PreciotextBox,
                     "Llenar Campo Precio");
-                paso = true;
+                paso = false;
             }
 
             return paso;
@@ -112,31 +112,37 @@ namespace PreyectoFinal.UI.Registros
             bool paso = false;
 
             if (Validar())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            articulo = LlenaClase();
-
-            if (ArticuloIdNumericUpDown.Value == 0)
             {
-                paso = ArticuloBLL.Guardar(articulo);
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
-                articulo = ArticuloBLL.Buscar(id);
 
-                if (articulo != null)
+                articulo = LlenaClase();
+
+
+                if (ArticuloIdNumericUpDown.Value == 0)
                 {
-                    paso = ArticuloBLL.Modificar(LlenaClase());
-                    MessageBox.Show("Modificado!!", "Exito",
+                    paso = ArticuloBLL.Guardar(articulo);
+                    MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Id no existe", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
+                    articulo = ArticuloBLL.Buscar(id);
+
+                    if (articulo != null)
+                    {
+                        paso = ArticuloBLL.Modificar(LlenaClase());
+                        MessageBox.Show("Modificado!!", "Exito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Id no existe", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                 MessageBox.Show("Error!!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if (paso)

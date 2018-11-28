@@ -105,6 +105,7 @@
             this.rArticuloToolStripMenuItem.Name = "rArticuloToolStripMenuItem";
             this.rArticuloToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.rArticuloToolStripMenuItem.Text = "Registro Departamentos";
+            this.rArticuloToolStripMenuItem.Click += new System.EventHandler(this.rArticuloToolStripMenuItem_Click);
             // 
             // registroTipoArticuloToolStripMenuItem
             // 
@@ -112,6 +113,7 @@
             this.registroTipoArticuloToolStripMenuItem.Name = "registroTipoArticuloToolStripMenuItem";
             this.registroTipoArticuloToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.registroTipoArticuloToolStripMenuItem.Text = "Registro Tipo Articulo";
+            this.registroTipoArticuloToolStripMenuItem.Click += new System.EventHandler(this.registroTipoArticuloToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -188,7 +190,7 @@
             // 
             this.inventarioToolStripMenuItem.Image = global::PreyectoFinal.Properties.Resources.icons8_mover_por_carretilla_50;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.inventarioToolStripMenuItem.Text = "Capturar";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 

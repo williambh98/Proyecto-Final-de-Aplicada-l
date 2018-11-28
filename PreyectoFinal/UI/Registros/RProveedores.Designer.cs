@@ -122,6 +122,7 @@
             // 
             this.NombretextBox.Location = new System.Drawing.Point(94, 89);
             this.NombretextBox.Name = "NombretextBox";
+            this.NombretextBox.ShortcutsEnabled = false;
             this.NombretextBox.Size = new System.Drawing.Size(288, 22);
             this.NombretextBox.TabIndex = 7;
             this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
