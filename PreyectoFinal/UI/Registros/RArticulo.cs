@@ -55,7 +55,6 @@ namespace PreyectoFinal.UI.Registros
         private Articulo LlenaClase()
         {
             Articulo articulo = new Articulo();
-            articulo.Cantidad = Convert.ToInt32(CantidadTextBox.Text);
             articulo.ArticuloID = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
             articulo.DepartamentoId = Convert.ToInt32(DepartamentoComboBox.SelectedValue);
             articulo.FechaCreacion = FechadateTimePicker.Value;
