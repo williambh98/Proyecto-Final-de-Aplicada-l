@@ -13,34 +13,32 @@ namespace PreyectoFinal.Entidades
         [Key]
         public int Id { get; set; }
         public int EntradaId { get; set; }
+        public int ArticuloID { get; set; }
         public double Cantidad { get; set; }
         public double Precio { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime FechaVencimiento { get; set; }
-        /*
-        [ForeignKey("ProductoId")]
-        public virtual Articulo Articulo { get; set; }
-        */
-
+        /*[ForeignKey("ArticuloID")]
+        public virtual Articulo Articulo { get; set; }*/
         public ArticuloDetalle()
         {
             Id = 0;
             Fecha = DateTime.Now;
             EntradaId = 0;
+            ArticuloID = 0;
             Cantidad = 0;
             Precio = 0;
             FechaVencimiento = DateTime.Now;
         }
-
-        public ArticuloDetalle(int id, DateTime fecha, int entradaId, double cantidad, double precio,DateTime vencimiento)
+        public ArticuloDetalle(int id, int entradaId, int articuloID, double cantidad, double precio, DateTime fecha, DateTime fechaVencimiento)
         {
             Id = id;
-            Fecha = fecha;
             EntradaId = entradaId;
+            ArticuloID = articuloID;
             Cantidad = cantidad;
             Precio = precio;
-            FechaVencimiento = vencimiento;
+            Fecha = fecha;
+            FechaVencimiento = fechaVencimiento;
         }
-
     }
 }

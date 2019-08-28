@@ -17,7 +17,7 @@ namespace PreyectoFinal
         public Menu()
         {
             InitializeComponent();
-            registroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
+            //registroUsuarioToolStripMenuItem.Visible = Program.usuario.Administrador;
         }
 
         private void entradaDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)

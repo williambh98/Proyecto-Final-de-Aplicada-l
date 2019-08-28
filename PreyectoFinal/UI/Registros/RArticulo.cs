@@ -190,7 +190,6 @@ namespace PreyectoFinal.UI.Registros
             }
             else
                 errorProvider1.SetError(ArticuloIdNumericUpDown, "No Existe");
-
         }
 
         private void Addbutton_Click(object sender, EventArgs e)

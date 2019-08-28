@@ -16,6 +16,7 @@ namespace PreyectoFinal.DAL
         public DbSet<TipoArticulo> Tipo { get; set; }
         public DbSet<CrearUsuario> Usuario { get; set; }
         public DbSet<Entrada> Entrada { get; set; }
+        public DbSet<ArticuloDetalle> Detalle { get; set; }
         public Contexto() : base("ConStr")
         {
 

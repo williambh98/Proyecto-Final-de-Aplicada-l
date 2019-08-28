@@ -50,9 +50,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.CostocomboBox = new System.Windows.Forms.ComboBox();
-            this.PreciocomboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CostoTextBox = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.articuloDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradadataGridView)).BeginInit();
@@ -105,10 +105,13 @@
             // 
             // EntradadataGridView
             // 
+            this.EntradadataGridView.AllowUserToAddRows = false;
+            this.EntradadataGridView.AllowUserToDeleteRows = false;
             this.EntradadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EntradadataGridView.Location = new System.Drawing.Point(6, 21);
             this.EntradadataGridView.Name = "EntradadataGridView";
             this.EntradadataGridView.ReadOnly = true;
+            this.EntradadataGridView.RowHeadersWidth = 51;
             this.EntradadataGridView.RowTemplate.Height = 24;
             this.EntradadataGridView.Size = new System.Drawing.Size(818, 285);
             this.EntradadataGridView.TabIndex = 73;
@@ -155,6 +158,7 @@
             this.ProductoComboBox.Name = "ProductoComboBox";
             this.ProductoComboBox.Size = new System.Drawing.Size(219, 24);
             this.ProductoComboBox.TabIndex = 66;
+            this.ProductoComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductoComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -285,26 +289,6 @@
             this.label6.TabIndex = 111;
             this.label6.Text = "Costo";
             // 
-            // CostocomboBox
-            // 
-            this.CostocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CostocomboBox.FormattingEnabled = true;
-            this.CostocomboBox.Location = new System.Drawing.Point(105, 134);
-            this.CostocomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.CostocomboBox.Name = "CostocomboBox";
-            this.CostocomboBox.Size = new System.Drawing.Size(219, 24);
-            this.CostocomboBox.TabIndex = 112;
-            // 
-            // PreciocomboBox
-            // 
-            this.PreciocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PreciocomboBox.FormattingEnabled = true;
-            this.PreciocomboBox.Location = new System.Drawing.Point(518, 131);
-            this.PreciocomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PreciocomboBox.Name = "PreciocomboBox";
-            this.PreciocomboBox.Size = new System.Drawing.Size(193, 24);
-            this.PreciocomboBox.TabIndex = 113;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PreyectoFinal.Properties.Resources.descarga__1_;
@@ -314,6 +298,22 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
+            // 
+            // CostoTextBox
+            // 
+            this.CostoTextBox.Enabled = false;
+            this.CostoTextBox.Location = new System.Drawing.Point(105, 131);
+            this.CostoTextBox.Name = "CostoTextBox";
+            this.CostoTextBox.Size = new System.Drawing.Size(219, 22);
+            this.CostoTextBox.TabIndex = 115;
+            // 
+            // PrecioTextBox
+            // 
+            this.PrecioTextBox.Enabled = false;
+            this.PrecioTextBox.Location = new System.Drawing.Point(518, 131);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(192, 22);
+            this.PrecioTextBox.TabIndex = 115;
             // 
             // articuloDetalleBindingSource
             // 
@@ -325,9 +325,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PreyectoFinal.Properties.Resources.william2;
             this.ClientSize = new System.Drawing.Size(898, 651);
+            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.CostoTextBox);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PreciocomboBox);
-            this.Controls.Add(this.CostocomboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
@@ -383,11 +383,11 @@
         private System.Windows.Forms.Button agregarbutton;
         private System.Windows.Forms.Button Removerbutton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox PreciocomboBox;
-        private System.Windows.Forms.ComboBox CostocomboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource articuloDetalleBindingSource;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.TextBox CostoTextBox;
     }
 }

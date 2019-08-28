@@ -19,53 +19,54 @@ namespace PreyectoFinal.BLL
             Contexto contexto = new Contexto();
             try
             {
+                foreach (var item in entrada.Detalle)
+                {
+                    Articulo articulo = new Articulo();
+                    articulo = ArticuloBLL.Buscar(item.ArticuloID);
+                    articulo.Cantidad += item.Cantidad;
+                    ArticuloBLL.Modificar(articulo);
+                }
                 if (contexto.Entrada.Add(entrada) != null)
                 {
-                    contexto._Articulo.Find(entrada.ArticuloID);
-
-                    contexto.SaveChanges();
-                    paso = true;
+                    paso = contexto.SaveChanges() > 0;
                 }
-                contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            { contexto.Dispose(); }
             return paso;
         }
-
-
         public static bool Modificar(Entrada entrada)
         {
             bool paso = false;
-
             Contexto contexto = new Contexto();
             try
             {
-                Entrada EntrAnt = EntradaBLL.Buscar(entrada.EntradaId);
 
-                if (EntrAnt.ArticuloID != entrada.ArticuloID)
+                foreach (var item in entrada.Detalle)
                 {
-                    ModificarBien(entrada, EntrAnt);
+                    Articulo articulo = new Articulo();
+                    articulo = ArticuloBLL.Buscar(item.ArticuloID);
+                    if (item.Id == 0)
+                    {
+                        articulo.Cantidad += item.Cantidad;
+                        contexto.Entry(item).State = EntityState.Added;
+                    }
+
+                    ArticuloBLL.Modificar(articulo);
                 }
-
-                double modificado = entrada.Cantidad - EntrAnt.Cantidad;
-
-                var Articulo = contexto._Articulo.Find(entrada.ArticuloID);
-                ArticuloBLL.Modificar(Articulo);
-
                 contexto.Entry(entrada).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            { contexto.Dispose(); }
             return paso;
         }
 
@@ -75,21 +76,26 @@ namespace PreyectoFinal.BLL
             bool paso = false;
 
             Contexto contexto = new Contexto();
+            Entrada entrada = contexto.Entrada.Find(id);
             try
             {
-                Entrada entrada = contexto.Entrada.Find(id);
-                contexto.Entrada.Remove(entrada);
-
-                if (contexto.SaveChanges() > 0)
+                foreach (var item in entrada.Detalle)
                 {
-                    paso = true;
+                    Articulo articulo = new Articulo();
+                    articulo = ArticuloBLL.Buscar(item.ArticuloID);
+                    articulo.Cantidad -= item.Cantidad;
+                    ArticuloBLL.Modificar(articulo);
                 }
+                contexto.Entrada.Remove(entrada);
+                paso = contexto.SaveChanges() > 0;
                 contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            {  contexto.Dispose();}
             return paso;
         }
 
@@ -132,15 +138,25 @@ namespace PreyectoFinal.BLL
 
             return entradas;
         }
-
-        public static void ModificarBien(Entrada entradas, Entrada EntradasAnteriores)
+        public static void EliminarDetalle(Entrada entrada)
         {
             Contexto contexto = new Contexto();
-            var Producto = contexto._Articulo.Find(entradas.ArticuloID);
-            var ProductosAnteriores = contexto._Articulo.Find(EntradasAnteriores.ArticuloID);
-            ArticuloBLL.Modificar(Producto);
-            ArticuloBLL.Modificar(ProductosAnteriores);
-        }
+            foreach (var item in entrada.Detalle)
+            {
+                Articulo articulo = new Articulo();
+                articulo = ArticuloBLL.Buscar(item.ArticuloID);
 
+                RepositorioBase<ArticuloDetalle> db = new RepositorioBase<ArticuloDetalle>();
+                ArticuloDetalle details = db.Buscar(item.Id);
+                if (details is null)
+                    return;
+                articulo.Cantidad -= details.Cantidad;
+                contexto.Entry(item).State = EntityState.Deleted;
+                contexto.SaveChanges();
+                ArticuloBLL.Modificar(articulo);
+            }
+
+
+        }
     }
 }

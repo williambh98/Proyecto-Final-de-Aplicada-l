@@ -21,8 +21,8 @@ namespace PreyectoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Login lg = new Login();
-            Application.Run(lg);  
+            //Application.Run(new Login());
+            Application.Run(new Menu());
         }
 
         public static Menu menu = null;

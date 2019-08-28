@@ -16,7 +16,7 @@ namespace PreyectoFinal.Entidades
         public double Costo { get; set; }
         public double Precio { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public int Cantidad { get; set; }
+        public double Cantidad { get; set; }
       
 
         public Articulo()
@@ -31,7 +31,7 @@ namespace PreyectoFinal.Entidades
 
         }
 
-        public Articulo(int articuloID, int departamentoId, string descripcion, double costo, int cantidad, double precio, DateTime fechaCreacion)
+        public Articulo(int articuloID, int departamentoId, string descripcion, double costo, double cantidad, double precio, DateTime fechaCreacion)
         {
             ArticuloID = articuloID;
             DepartamentoId = departamentoId;

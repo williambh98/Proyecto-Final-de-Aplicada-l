@@ -16,35 +16,26 @@ namespace PreyectoFinal.UI.Registros
     public partial class RCapturarInventario : Form
     {
         public List<ArticuloDetalle> detalle = new List<ArticuloDetalle>();
+        public List<ArticuloDetalle> DetalleEliminar = new List<ArticuloDetalle>();
         public RCapturarInventario()
         {
             detalle = new List<ArticuloDetalle>();
             InitializeComponent();
             LlenarComboBox();
+            ProductoComboBox.SelectedIndex = 0;
         }
         private void LlenarComboBox()
         {
             RepositorioBase<Articulo> ArtRepositorio = new RepositorioBase<Articulo>();
-
-            ProductoComboBox.DataSource = ArtRepositorio.GetList(c => true);
             ProductoComboBox.ValueMember = "Articuloid";
             ProductoComboBox.DisplayMember = "Descripcion";
-
-            CostocomboBox.DataSource = ArtRepositorio.GetList(c => true);
-            CostocomboBox.ValueMember = "Articuloid";
-            CostocomboBox.DisplayMember = "Costo";
-
-            PreciocomboBox.DataSource = ArtRepositorio.GetList(c => true);
-            PreciocomboBox.ValueMember = "Articuloid";
-            PreciocomboBox.DisplayMember = "Precio";
-
+            ProductoComboBox.DataSource = ArtRepositorio.GetList(c => true);
         }
         private void LlenaCampos(Entrada entrada)
         {
-            FechaDateTimePicker.Value = entrada.FechaVencimiento;
-            ProductoComboBox.SelectedValue = entrada.ArticuloID;
-            CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
 
+            FechaDateTimePicker.Value = entrada.FechaVencimiento;
+            CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
             this.detalle = entrada.Detalle;
             CargarGrid();
         }
@@ -55,14 +46,10 @@ namespace PreyectoFinal.UI.Registros
             entrada.EntradaId = Convert.ToInt32(EntradaIdNumericUpDown.Value);
             entrada.FechaVencimiento = FechaDateTimePicker.Value;
             entrada.Fecha = DateTime.Now;
-            entrada.ArticuloID = Convert.ToInt32(ProductoComboBox.SelectedValue);
             entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
-            
-
             entrada.Detalle = this.detalle;
             return entrada;
         }
-
         private void Limpiar()
         {
             EntradaIdNumericUpDown.Value = 0;
@@ -71,6 +58,8 @@ namespace PreyectoFinal.UI.Registros
             CantidadnumericUpDown.Value = 0;
             EntradadataGridView.DataSource = null;
             errorProvider.Clear();
+            this.detalle = new List<ArticuloDetalle>();
+            this.DetalleEliminar = new List<ArticuloDetalle>();
         }
 
         private bool Validar()
@@ -99,60 +88,39 @@ namespace PreyectoFinal.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(EntradaIdNumericUpDown.Value);
-
-            if (Validar())
+            bool paso = false;
+            if (!Validar())
+                return;
+            if (id == 0)
+                paso = EntradaBLL.Guardar(LlenaClase());
+            else
             {
-                bool paso = false;
-                Entrada entrada = LlenaClase();
-                Contexto contexto = new Contexto();
-                if(id == 0)
+                if (EntradaBLL.Buscar(id) != null)
                 {
-                    contexto.Entrada.Add(entrada);
-                   
-                    foreach(ArticuloDetalle d in entrada.Detalle)
+                    if(this.DetalleEliminar.Count > 0)
                     {
-                        Articulo articulo = ArticuloBLL.Buscar(entrada.ArticuloID);
-                        articulo.Cantidad += Convert.ToInt32(d.Cantidad);
-                        contexto.Entry<Articulo>(articulo).State = System.Data.Entity.EntityState.Modified;
-
+                        Entrada eliminar = LlenaClase();
+                        eliminar.Detalle = this.DetalleEliminar;
+                        EntradaBLL.EliminarDetalle(eliminar);
                     }
-                    
-                    paso = contexto.SaveChanges() > 0;
+                    paso = EntradaBLL.Modificar(LlenaClase());
+                    MessageBox.Show("Modificado");
                 }
                 else
                 {
-                    foreach(ArticuloDetalle articulo in entrada.Detalle)
-                    {
-                        if(entrada.ArticuloID == articulo.Id)
-                        {
-                            articulo.Cantidad = entrada.Cantidad;
-                            Articulo buscado = ArticuloBLL.Buscar(entrada.ArticuloID);
-                            buscado.Cantidad = Convert.ToInt32(articulo.Cantidad);
-                            ArticuloBLL.Modificar(buscado);
-                        }
-                        contexto.Entry<ArticuloDetalle>(articulo).State = System.Data.Entity.EntityState.Modified;
-                    }
-                    contexto.Entry<Entrada>(entrada).State = System.Data.Entity.EntityState.Modified;
-                    paso = contexto.SaveChanges() > 0;
+                    MessageBox.Show("No se pudo modificar");
+                    return;
                 }
-
-                contexto.Dispose();
-
-                if (paso)
-                {
-                    if(id == 0)
-                    {
-                        MessageBox.Show("Registro guardado Con Exito");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro actualizado Con Exito");
-                    }
-                }
-
-
             }
-           
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Registro guardado Con Exito");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo modificar");
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -197,7 +165,7 @@ namespace PreyectoFinal.UI.Registros
 
         private void agregarbutton_Click(object sender, EventArgs e)
         {
-            
+
 
             if (EntradadataGridView.DataSource != null)
             {
@@ -208,55 +176,53 @@ namespace PreyectoFinal.UI.Registros
                 MessageBox.Show("Cantidad mayor a la existente en inventario!!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else*/ if (CantidadnumericUpDown.Value == 0)
+            else*/
+            if (CantidadnumericUpDown.Value == 0)
             {
                 MessageBox.Show("Cantidad no puede ser cero!!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //RArticulo ra = new RArticulo();
                 this.detalle.Add(
                     new ArticuloDetalle(
                        id: 0,
-                       fecha: DateTime.Now,
                        entradaId: (int)EntradaIdNumericUpDown.Value,
-                       //: (int)ProductoComboBox.SelectedValue,
                        cantidad: Convert.ToDouble(CantidadnumericUpDown.Text),
-                       precio: Convert.ToDouble(PreciocomboBox.Text),
-                       vencimiento: (DateTime)dateTimePicker1.Value
-               //    precio: (double)Convert.ToDouble(PrecioTextBox.Text),
-               //  importe: (double)Convert.ToDouble(ImporteTextBox.Text)
-
+                       precio: Convert.ToDouble(PrecioTextBox.Text),
+                       articuloID: ConvertToArticulo(ProductoComboBox).ArticuloID,
+                       fecha: DateTime.Now,
+                       fechaVencimiento: (DateTime)dateTimePicker1.Value
                ));
-
-                EntradadataGridView.DataSource = null;
-                
-                EntradadataGridView.DataSource = detalle;
-                EntradadataGridView.Columns[1].Visible = false;
-
                 CargarGrid();
-               // LlenarValores();
             }
         }
         private void CargarGrid()
         {
             EntradadataGridView.DataSource = null;
             EntradadataGridView.DataSource = this.detalle;
+            EntradadataGridView.Columns[1].Visible = false;
         }
         private void Removerbutton_Click(object sender, EventArgs e)
         {
             if (EntradadataGridView.Rows.Count >= 0 && EntradadataGridView.CurrentRow != null)
             {
                 List<ArticuloDetalle> detalle = (List<ArticuloDetalle>)EntradadataGridView.DataSource;
-
+                DetalleEliminar.Add(detalle.ElementAt(EntradadataGridView.CurrentRow.Index));
                 detalle.RemoveAt(EntradadataGridView.CurrentRow.Index);
-
-                EntradadataGridView.DataSource = null;
-                EntradadataGridView.DataSource = detalle;
-
-                //RebajarValores();
+                CargarGrid();
             }
+        }
+        private static Articulo ConvertToArticulo(ComboBox con)
+        {
+            return (Articulo)con.SelectedItem;
+        }
+        private void ProductoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Articulo articulo = (Articulo)ProductoComboBox.SelectedItem;
+            PrecioTextBox.Text = articulo.Precio.ToString();
+            CostoTextBox.Text = articulo.Costo.ToString();
         }
     }
 }
