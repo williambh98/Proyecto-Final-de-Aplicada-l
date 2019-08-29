@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PreyectoFinal.Entidades
+namespace Entidades
 {
     public class Entrada
     {
@@ -15,14 +15,14 @@ namespace PreyectoFinal.Entidades
         public DateTime Fecha { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public int ProvedorID { get; set; }
-        public double Cantidad { get; set; }
+        public double CantidadTotal { get; set; }
         public virtual List<ArticuloDetalle> Detalle { get; set; }
 
         public Entrada()
         {
             EntradaId = 0;
             Fecha = DateTime.Now;
-            Cantidad = 0;
+            CantidadTotal = 0;
             ProvedorID = 0;
             FechaVencimiento = DateTime.Now;
             this.Detalle = new List<ArticuloDetalle>();
@@ -33,7 +33,7 @@ namespace PreyectoFinal.Entidades
             EntradaId = entradaId;
             Fecha = fecha;
             ProvedorID = provedorID;
-            Cantidad = cantidad;
+            CantidadTotal = cantidad;
             Detalle = detalle;
         }
 

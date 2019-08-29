@@ -1,5 +1,5 @@
-﻿using PreyectoFinal.DAL;
-using PreyectoFinal.Entidades;
+﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PreyectoFinal.BLL
+namespace BLL
 {
     public class EntradaBLL
     {

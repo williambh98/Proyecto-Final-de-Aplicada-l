@@ -1,4 +1,4 @@
-﻿using PreyectoFinal.Entidades;
+﻿using Entidades;
 using PreyectoFinal.UI;
 using System;
 using System.Collections.Generic;

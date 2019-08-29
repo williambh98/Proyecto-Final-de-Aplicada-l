@@ -1,6 +1,6 @@
-﻿using PreyectoFinal.BLL;
-using PreyectoFinal.DAL;
-using PreyectoFinal.Entidades;
+﻿using BLL;
+using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

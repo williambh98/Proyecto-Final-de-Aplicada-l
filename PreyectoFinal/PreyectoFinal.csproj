@@ -59,19 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ArticuloBLL.cs" />
-    <Compile Include="BLL\EntradaBLL.cs" />
-    <Compile Include="BLL\IRepository.cs" />
-    <Compile Include="BLL\RepositorioBase.cs" />
-    <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="Entidades\Articulo.cs" />
-    <Compile Include="Entidades\Departamento.cs" />
-    <Compile Include="Entidades\Entrada.cs" />
-    <Compile Include="Entidades\Inventario.cs" />
-    <Compile Include="Entidades\Proveedores.cs" />
-    <Compile Include="Entidades\CrearUsuario.cs" />
-    <Compile Include="Entidades\ArticuloDetalle.cs" />
-    <Compile Include="Entidades\TipoArticulo.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +442,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-más-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{0125dbbf-b9f9-41a0-ae47-5001a38a1407}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{b6b5f5fe-3e20-4402-bcd3-cf3160e6a768}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{e74773ff-a310-4cac-a7b2-e70c0b5b9e6e}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

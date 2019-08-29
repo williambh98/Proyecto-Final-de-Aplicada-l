@@ -1,5 +1,5 @@
-﻿using PreyectoFinal.BLL;
-using PreyectoFinal.Entidades;
+﻿using BLL;
+using Entidades;
 using PreyectoFinal.Reportes;
 using System;
 using System.Collections.Generic;

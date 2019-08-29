@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PreyectoFinal.Entidades
+namespace Entidades
 {
     public class ArticuloDetalle
     {

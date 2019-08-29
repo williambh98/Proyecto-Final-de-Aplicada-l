@@ -53,14 +53,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CostoTextBox = new System.Windows.Forms.TextBox();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
-            this.articuloDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CantidadTotaltextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloDetalleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // GuardarButton
@@ -263,6 +263,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.CantidadTotaltextBox);
             this.groupBox1.Controls.Add(this.EntradadataGridView);
             this.groupBox1.Controls.Add(this.Removerbutton);
             this.groupBox1.Location = new System.Drawing.Point(14, 217);
@@ -315,9 +317,22 @@
             this.PrecioTextBox.Size = new System.Drawing.Size(192, 22);
             this.PrecioTextBox.TabIndex = 115;
             // 
-            // articuloDetalleBindingSource
+            // CantidadTotaltextBox
             // 
-            this.articuloDetalleBindingSource.DataSource = typeof(PreyectoFinal.Entidades.ArticuloDetalle);
+            this.CantidadTotaltextBox.Enabled = false;
+            this.CantidadTotaltextBox.Location = new System.Drawing.Point(724, 312);
+            this.CantidadTotaltextBox.Name = "CantidadTotaltextBox";
+            this.CantidadTotaltextBox.Size = new System.Drawing.Size(100, 22);
+            this.CantidadTotaltextBox.TabIndex = 108;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(622, 317);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 17);
+            this.label8.TabIndex = 109;
+            this.label8.Text = "CantidadTotal";
             // 
             // RCapturarInventario
             // 
@@ -356,8 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloDetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,9 +400,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.BindingSource articuloDetalleBindingSource;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.TextBox CostoTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox CantidadTotaltextBox;
     }
 }

@@ -1,6 +1,6 @@
-﻿using PreyectoFinal.BLL;
-using PreyectoFinal.DAL;
-using PreyectoFinal.Entidades;
+﻿using BLL;
+using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +35,7 @@ namespace PreyectoFinal.UI.Registros
         {
 
             FechaDateTimePicker.Value = entrada.FechaVencimiento;
-            CantidadnumericUpDown.Text = entrada.Cantidad.ToString();
+            CantidadTotaltextBox.Text = entrada.CantidadTotal.ToString();
             this.detalle = entrada.Detalle;
             CargarGrid();
         }
@@ -46,7 +46,7 @@ namespace PreyectoFinal.UI.Registros
             entrada.EntradaId = Convert.ToInt32(EntradaIdNumericUpDown.Value);
             entrada.FechaVencimiento = FechaDateTimePicker.Value;
             entrada.Fecha = DateTime.Now;
-            entrada.Cantidad = Convert.ToDouble(CantidadnumericUpDown.Text);
+            entrada.CantidadTotal = Convert.ToDouble(CantidadTotaltextBox.Text);
             entrada.Detalle = this.detalle;
             return entrada;
         }
@@ -162,10 +162,17 @@ namespace PreyectoFinal.UI.Registros
         {
 
         }
-
+        private void SumarTotalCantidad()
+        {
+            double Suma = 0;
+            foreach(var item in this.detalle)
+            {
+                Suma += item.Cantidad;
+            }
+            CantidadTotaltextBox.Text = Suma.ToString();
+        }
         private void agregarbutton_Click(object sender, EventArgs e)
         {
-
 
             if (EntradadataGridView.DataSource != null)
             {
@@ -195,6 +202,7 @@ namespace PreyectoFinal.UI.Registros
                        fechaVencimiento: (DateTime)dateTimePicker1.Value
                ));
                 CargarGrid();
+                SumarTotalCantidad();
             }
         }
         private void CargarGrid()
@@ -211,6 +219,7 @@ namespace PreyectoFinal.UI.Registros
                 DetalleEliminar.Add(detalle.ElementAt(EntradadataGridView.CurrentRow.Index));
                 detalle.RemoveAt(EntradadataGridView.CurrentRow.Index);
                 CargarGrid();
+                SumarTotalCantidad();
             }
         }
         private static Articulo ConvertToArticulo(ComboBox con)
